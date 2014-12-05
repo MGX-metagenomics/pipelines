@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="unnamed" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="30" y="20">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="250" y="30">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="77" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonRank" x="980" y="590">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="78" name="" type="Conveyor.Taxonomy.NCBI.GetRankName" x="1060" y="660">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="79" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonName" x="810" y="900">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="80" name="" type="Conveyor.Text.StringGenerator" x="1280" y="720">
+      <configuration_items>
+        <configuration_item name="value" value="NCBI"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="81" name="" type="Conveyor.Text.Concat" x="1160" y="720">
+      <configuration_items>
+        <configuration_item name="delimiter" value="_"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="96" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="1160" y="930">
+      <configuration_items>
+        <configuration_item name="attrType" value="DISCRETE"/>
+        <configuration_item name="attrStruct" value="HIERARCHICAL"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="97" name="" type="Conveyor.Core.Repeat`1" x="150" y="930">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXJob"/>
+      </typeParameters>
+    </node>
+    <node id="98" name="" type="Conveyor.MGX.AnnotateAttribute" x="384" y="877">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="99" name="" type="Conveyor.MGX.CreateHierarchicalMGXAttribute`1" x="558" y="675">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="101" name="" type="Conveyor.MGX.GetMajorRankedParent" x="630" y="890">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="102" name="" type="Conveyor.MGX.GetMajorRankedParent" x="780" y="510">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="103" name="" type="Conveyor.Tree.GetParent`1" x="530" y="840">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="104" name="" type="Conveyor.MetaPhlAn.MetaPhlAn`1" x="388" y="151">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="60000"/>
+        <configuration_item user_name="alignment method" user_description="alignment algorithm" name="alnMethod" value="BOWTIE"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="105" name="" type="Conveyor.Pair.FirstElement`2" x="190" y="610">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="106" name="" type="Conveyor.Pair.SecondElement`2" x="700" y="170">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="107" name="" type="Sequence.GetLength" x="489" y="358">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="108" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="300" y="620">
+      <configuration_items>
+        <configuration_item name="value" value="1"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="109" name="" type="Conveyor.Core.Repeat`1" x="380" y="700">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.ULong"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="97"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="inputSequence" to_node="104"/>
+    <link from_connector="output" from_node="77" to_connector="input" to_node="78"/>
+    <link from_connector="output" from_node="78" to_connector="secondArgument" to_node="81"/>
+    <link from_connector="output" from_node="79" to_connector="dataIn" to_node="99"/>
+    <link from_connector="output" from_node="80" to_connector="firstArgument" to_node="81"/>
+    <link from_connector="result" from_node="81" to_connector="name" to_node="96"/>
+    <link from_connector="output" from_node="96" to_connector="typeIn" to_node="99"/>
+    <link from_connector="output" from_node="97" to_connector="jobIn" to_node="96"/>
+    <link from_connector="current" from_node="99" to_connector="input" to_node="79"/>
+    <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
+    <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
+    <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="98"/>
+    <link from_connector="output" from_node="101" to_connector="parentIn" to_node="99"/>
+    <link from_connector="output" from_node="102" to_connector="nodeIn" to_node="99"/>
+    <link from_connector="output" from_node="103" to_connector="input" to_node="101"/>
+    <link from_connector="classified" from_node="104" to_connector="input" to_node="105"/>
+    <link from_connector="classified" from_node="104" to_connector="input" to_node="106"/>
+    <link from_connector="output" from_node="105" to_connector="seqIn" to_node="98"/>
+    <link from_connector="output" from_node="105" to_connector="input" to_node="107"/>
+    <link from_connector="output" from_node="106" to_connector="input" to_node="102"/>
+    <link from_connector="output" from_node="107" to_connector="stopIn" to_node="98"/>
+    <link from_connector="output" from_node="108" to_connector="input" to_node="109"/>
+    <link from_connector="output" from_node="109" to_connector="startIn" to_node="98"/>
+  </links>
+</graph>

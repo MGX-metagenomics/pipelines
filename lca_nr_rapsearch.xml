@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="unnamed" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="30" y="20">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="243" y="48">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="549" y="170">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.List.List`1">
+          <type name="Conveyor.Blast.BlastHit`2">
+            <type name="Conveyor.MGX.MGXSequence"/>
+            <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+          </type>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="16" name="" type="Conveyor.List.HasElements`1" x="754" y="215">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="20" name="" type="Conveyor.List.GetElement`1" x="208" y="499">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="23" name="" type="Conveyor.Math.IntegerOps.IntegerGenerator" x="198" y="399">
+      <configuration_items>
+        <configuration_item name="value" value="0"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="230" y="583">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="57" name="" type="Conveyor.Tree.GetLCA`1" x="970" y="390">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="60" name="" type="Conveyor.MGX.CoveredSubregion`2" x="540" y="330">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="61" name="" type="Conveyor.Pair.FirstElement`2" x="500" y="390">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.ULong"/>
+        <type name="Conveyor.Math.ULong"/>
+      </typeParameters>
+    </node>
+    <node id="62" name="" type="Conveyor.Pair.SecondElement`2" x="692" y="398">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.ULong"/>
+        <type name="Conveyor.Math.ULong"/>
+      </typeParameters>
+    </node>
+    <node id="63" name="" type="Conveyor.Blast.GetNCBITaxonsForEntry`1" x="1200" y="315">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="50000"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="64" name="" type="Conveyor.List.Map`2" x="910" y="350">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="67" name="" type="Conveyor.Tree.GetLCA`1" x="860" y="450">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="77" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonRank" x="980" y="590">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="78" name="" type="Conveyor.Taxonomy.NCBI.GetRankName" x="1060" y="660">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="79" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonName" x="810" y="900">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="80" name="" type="Conveyor.Text.StringGenerator" x="1280" y="720">
+      <configuration_items>
+        <configuration_item name="value" value="NCBI"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="81" name="" type="Conveyor.Text.Concat" x="1160" y="720">
+      <configuration_items>
+        <configuration_item name="delimiter" value="_"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="84" name="" type="Conveyor.MGX.FilterBlastIdentity`2" x="546" y="246">
+      <configuration_items>
+        <configuration_item name="threshold" user_description="relative identity with regard to best hit to keep" user_name="relative identity" value="0.8"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="85" name="" type="Conveyor.Blast.GetSubject`2" x="1010" y="310">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="96" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="1160" y="930">
+      <configuration_items>
+        <configuration_item name="attrType" value="DISCRETE"/>
+        <configuration_item name="attrStruct" value="HIERARCHICAL"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="97" name="" type="Conveyor.Core.Repeat`1" x="150" y="930">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXJob"/>
+      </typeParameters>
+    </node>
+    <node id="98" name="" type="Conveyor.MGX.AnnotateAttribute" x="384" y="877">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="99" name="" type="Conveyor.MGX.CreateHierarchicalMGXAttribute`1" x="558" y="675">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="101" name="" type="Conveyor.MGX.GetMajorRankedParent" x="630" y="890">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="102" name="" type="Conveyor.MGX.GetMajorRankedParent" x="780" y="510">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="103" name="" type="Conveyor.Tree.GetParent`1" x="530" y="840">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="104" name="" type="Conveyor.Logic.FlowThrottle`1" x="441" y="30">
+      <configuration_items>
+        <configuration_item name="processAhead" value="900001"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="105" name="" type="Conveyor.Blast.PublicAADB" x="1004" y="51">
+      <configuration_items>
+        <configuration_item name="database" value="nr.pal"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="106" name="" type="Conveyor.Blast.RAPSearch2.GetWrappedRAPSearch2Database`1" x="825" y="102">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="107" name="" type="Conveyor.Blast.RAPSearch2.RAPSearch2`2" x="649" y="30">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="300"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="108" name="" type="Conveyor.Blast.FilterBlastHits`2" x="629" y="99">
+      <configuration_items>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff" user_name="cutoff" value="1e-5" />
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
+    <link from_connector="output" from_node="108" to_connector="input" to_node="15"/>
+    <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
+    <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
+    <link from_connector="output" from_node="23" to_connector="secondArgument" to_node="20"/>
+    <link from_connector="filtered" from_node="84" to_connector="firstArgument" to_node="20"/>
+    <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
+    <link from_connector="taxons" from_node="63" to_connector="vertices" to_node="57"/>
+    <link from_connector="filtered" from_node="84" to_connector="input" to_node="60"/>
+    <link from_connector="coveredRegionout" from_node="60" to_connector="input" to_node="61"/>
+    <link from_connector="coveredRegionout" from_node="60" to_connector="input" to_node="62"/>
+    <link from_connector="output" from_node="85" to_connector="entry" to_node="63"/>
+    <link from_connector="db" from_node="105" to_connector="database" to_node="63"/>
+    <link from_connector="lca" from_node="57" to_connector="elementIn" to_node="64"/>
+    <link from_connector="filtered" from_node="84" to_connector="listIn" to_node="64"/>
+    <link from_connector="listOut" from_node="64" to_connector="vertices" to_node="67"/>
+    <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
+    <link from_connector="output" from_node="77" to_connector="input" to_node="78"/>
+    <link from_connector="current" from_node="99" to_connector="input" to_node="79"/>
+    <link from_connector="output" from_node="78" to_connector="secondArgument" to_node="81"/>
+    <link from_connector="output" from_node="80" to_connector="firstArgument" to_node="81"/>
+    <link from_connector="output" from_node="15" to_connector="listIn" to_node="84"/>
+    <link from_connector="elementOut" from_node="64" to_connector="input" to_node="85"/>
+    <link from_connector="result" from_node="81" to_connector="name" to_node="96"/>
+    <link from_connector="output" from_node="97" to_connector="jobIn" to_node="96"/>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="97"/>
+    <link from_connector="output" from_node="29" to_connector="seqIn" to_node="98"/>
+    <link from_connector="output" from_node="62" to_connector="stopIn" to_node="98"/>
+    <link from_connector="output" from_node="61" to_connector="startIn" to_node="98"/>
+    <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="98"/>
+    <link from_connector="output" from_node="96" to_connector="typeIn" to_node="99"/>
+    <link from_connector="output" from_node="101" to_connector="parentIn" to_node="99"/>
+    <link from_connector="output" from_node="79" to_connector="dataIn" to_node="99"/>
+    <link from_connector="output" from_node="102" to_connector="nodeIn" to_node="99"/>
+    <link from_connector="output" from_node="103" to_connector="input" to_node="101"/>
+    <link from_connector="lca" from_node="67" to_connector="input" to_node="102"/>
+    <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
+    <link from_connector="result" from_node="107" to_connector="trigger" to_node="104"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="104"/>
+    <link from_connector="db" from_node="105" to_connector="systemDatabase" to_node="106"/>
+    <link from_connector="output" from_node="104" to_connector="query" to_node="107"/>
+    <link from_connector="rapsearchDatabase" from_node="106" to_connector="database" to_node="107"/>
+    <link from_connector="result" from_node="107" to_connector="input" to_node="108"/>
+  </links>
+</graph>

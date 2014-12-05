@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="refmapping" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="1" name="mgx" type="Conveyor.MGX.GetMGXJob" x="29" y="24">
+      <configuration_items>
+        <configuration_item name="username" value=""/>
+        <configuration_item name="host" value=""/>
+        <configuration_item name="password" value=""/>
+        <configuration_item name="database" value=""/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="2" name="" type="Conveyor.MGX.ReadCSFFile" x="21" y="188">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="3" name="" type="Conveyor.MGX.GetMGXReference" x="521" y="48">
+      <configuration_items>
+        <configuration_item name="refId" user_name="reference" user_description="reference sequence to map reads against"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="4" name="" type="Conveyor.MGX.CreateMapping" x="577" y="658">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="6" name="" type="Conveyor.List.Iterator`1" x="217" y="579">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.ReadMapping.Applications.Bowtie.BowtieMappedRead`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.MGX.MGXReference"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="7" name="" type="Conveyor.ReadMapping.Applications.Bowtie.Bowtie`2" x="255" y="348">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="50000"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.MGX.MGXReference"/>
+      </typeParameters>
+    </node>
+    <node id="8" name="" type="Conveyor.ReadMapping.Applications.Bowtie.CreateBowtieIndex`1" x="427" y="172">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXReference"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="1" to_connector="input" to_node="2"/>
+    <link from_connector="output" from_node="1" to_connector="input" to_node="3"/>
+    <link from_connector="output" from_node="6" to_connector="mappingIn" to_node="4"/>
+    <link from_connector="output" from_node="3" to_connector="referenceIn" to_node="4"/>
+    <link from_connector="mappings" from_node="7" to_connector="input" to_node="6"/>
+    <link from_connector="index" from_node="8" to_connector="references" to_node="7"/>
+    <link from_connector="sequenceOut" from_node="2" to_connector="read" to_node="7"/>
+    <link from_connector="output" from_node="3" to_connector="sequence" to_node="8"/>
+  </links>
+</graph>
