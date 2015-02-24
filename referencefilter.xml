@@ -1,1 +1,77 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><graph description="" name="unnamed" service="MGX"><composites/><nodes><node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="212" y="106"><configuration_items/><typeParameters/></node><node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="205" y="243"><configuration_items/><typeParameters/></node><node id="16" name="" type="Conveyor.MGX.MarkDiscard" x="203" y="662"><configuration_items/><typeParameters/></node><node id="17" name="" type="Conveyor.ReadMapping.Applications.BWA.BWA_SingleEnded`2" x="407" y="362"><configuration_items><configuration_item name="chunkSize" value="100000"/></configuration_items><typeParameters><type name="Conveyor.QualitySequence.ArtificalDNAQSequence`1"><type name="Conveyor.MGX.MGXSequence"/></type><type name="Conveyor.BioIO.FastaDNASequence"/></typeParameters></node><node id="18" name="" type="Conveyor.ReadMapping.Applications.BWA.CreateBWAIndex`1" x="605" y="360"><configuration_items/><typeParameters><type name="Conveyor.BioIO.FastaDNASequence"/></typeParameters></node><node id="19" name="" type="Conveyor.BioIO.Fasta.ReadDNAFastaFile" x="794" y="359"><configuration_items><configuration_item name="inputFile" value="/vol/mgx-data/MGX_Metafosmids/files/ref/pCC1Fos.fas"/></configuration_items><typeParameters/></node><node id="20" name="" type="Conveyor.Logic.PassCheck`1" x="203" y="489"><configuration_items/><typeParameters><type name="Conveyor.MGX.MGXSequence"/></typeParameters></node><node id="21" name="" type="Conveyor.List.HasElements`1" x="407" y="489"><configuration_items/><typeParameters><type name="Conveyor.ReadMapping.Applications.BWA.BWAMappedRead`2"><type name="Conveyor.QualitySequence.ArtificalDNAQSequence`1"><type name="Conveyor.MGX.MGXSequence"/></type><type name="Conveyor.BioIO.FastaDNASequence"/></type></typeParameters></node><node id="22" name="" type="Conveyor.QualitySequence.CreateFromDNASequence`1" x="407" y="244"><configuration_items><configuration_item name="qualityValue" value="30"/></configuration_items><typeParameters><type name="Conveyor.MGX.MGXSequence"/></typeParameters></node></nodes><links><link from_connector="output" from_node="9" to_connector="input" to_node="10"/><link from_connector="output" from_node="20" to_connector="seqIn" to_node="16"/><link from_connector="index" from_node="18" to_connector="references" to_node="17"/><link from_connector="output" from_node="22" to_connector="read" to_node="17"/><link from_connector="sequenceOut" from_node="19" to_connector="sequence" to_node="18"/><link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="20"/><link from_connector="output" from_node="21" to_connector="pass" to_node="20"/><link from_connector="mappings" from_node="17" to_connector="input" to_node="21"/><link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="22"/></links></graph>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="unnamed" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="212" y="106">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="205" y="243">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="16" name="" type="Conveyor.MGX.MarkDiscard" x="203" y="662">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="17" name="" type="Conveyor.ReadMapping.Applications.BWA.BWA_SingleEnded`2" x="407" y="362">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="100000"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.QualitySequence.ArtificalDNAQSequence`1">
+          <type name="Conveyor.MGX.MGXSequence"/>
+        </type>
+        <type name="Conveyor.BioIO.FastaDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="18" name="" type="Conveyor.ReadMapping.Applications.BWA.CreateBWAIndex`1" x="605" y="360">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.BioIO.FastaDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="19" name="" type="Conveyor.BioIO.Fasta.ReadDNAFastaFile" x="794" y="359">
+      <configuration_items>
+        <configuration_item name="inputFile" value="/vol/mgx-data/MGX_Metafosmids/files/ref/pCC1Fos.fas"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="20" name="" type="Conveyor.Logic.PassCheck`1" x="203" y="489">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="21" name="" type="Conveyor.List.HasElements`1" x="407" y="489">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.ReadMapping.Applications.BWA.BWAMappedRead`2">
+          <type name="Conveyor.QualitySequence.ArtificalDNAQSequence`1">
+            <type name="Conveyor.MGX.MGXSequence"/>
+          </type>
+          <type name="Conveyor.BioIO.FastaDNASequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="22" name="" type="Conveyor.QualitySequence.CreateFromDNASequence`1" x="407" y="244">
+      <configuration_items>
+        <configuration_item name="qualityValue" value="30"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
+    <link from_connector="output" from_node="20" to_connector="seqIn" to_node="16"/>
+    <link from_connector="index" from_node="18" to_connector="references" to_node="17"/>
+    <link from_connector="output" from_node="22" to_connector="read" to_node="17"/>
+    <link from_connector="sequenceOut" from_node="19" to_connector="sequence" to_node="18"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="20"/>
+    <link from_connector="output" from_node="21" to_connector="pass" to_node="20"/>
+    <link from_connector="mappings" from_node="17" to_connector="input" to_node="21"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="22"/>
+  </links>
+</graph>
