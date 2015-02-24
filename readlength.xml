@@ -1,1 +1,64 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><graph description="" name="unnamed" service="MGX"><composites/><nodes><node id="6" name="" type="Sequence.GetLength" x="440" y="370"><configuration_items/><typeParameters/></node><node id="8" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="720" y="60"><configuration_items><configuration_item name="value" value="1"/></configuration_items><typeParameters/></node><node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="141" y="62"><configuration_items/><typeParameters/></node><node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="380" y="60"><configuration_items/><typeParameters/></node><node id="11" name="" type="Conveyor.MGX.AnnotateAttribute" x="740" y="480"><configuration_items/><typeParameters/></node><node id="12" name="" type="Conveyor.Text.StringGenerator" x="40" y="270"><configuration_items><configuration_item name="value" value="readlength"/></configuration_items><typeParameters/></node><node id="13" name="" type="Conveyor.MGX.CreateMGXAttribute" x="330" y="490"><configuration_items/><typeParameters/></node><node id="14" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="160" y="270"><configuration_items><configuration_item name="attrType" value="NUMERICAL"/><configuration_item name="attrStruct" value="BASIC"/></configuration_items><typeParameters/></node><node id="15" name="" type="Conveyor.Core.Repeat`1" x="290" y="390"><configuration_items/><typeParameters><type name="Conveyor.MGX.MGXAttributeType"/></typeParameters></node></nodes><links><link from_connector="output" from_node="6" to_connector="stopIn" to_node="11"/><link from_connector="output" from_node="6" to_connector="valueIn" to_node="13"/><link from_connector="output" from_node="8" to_connector="startIn" to_node="11"/><link from_connector="output" from_node="9" to_connector="input" to_node="10"/><link from_connector="output" from_node="9" to_connector="jobIn" to_node="14"/><link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="6"/><link from_connector="sequenceOut" from_node="10" to_connector="seqIn" to_node="11"/><link from_connector="output" from_node="12" to_connector="name" to_node="14"/><link from_connector="output" from_node="13" to_connector="attributeIn" to_node="11"/><link from_connector="output" from_node="14" to_connector="input" to_node="15"/><link from_connector="output" from_node="15" to_connector="typeIn" to_node="13"/></links></graph>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="unnamed" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="6" name="" type="Sequence.GetLength" x="440" y="370">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="8" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="720" y="60">
+      <configuration_items>
+        <configuration_item name="value" value="1"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="141" y="62">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="380" y="60">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="11" name="" type="Conveyor.MGX.AnnotateAttribute" x="740" y="480">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="12" name="" type="Conveyor.Text.StringGenerator" x="40" y="270">
+      <configuration_items>
+        <configuration_item name="value" value="readlength"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="13" name="" type="Conveyor.MGX.CreateMGXAttribute" x="330" y="490">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="14" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="160" y="270">
+      <configuration_items>
+        <configuration_item name="attrType" value="NUMERICAL"/>
+        <configuration_item name="attrStruct" value="BASIC"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="15" name="" type="Conveyor.Core.Repeat`1" x="290" y="390">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXAttributeType"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="6" to_connector="stopIn" to_node="11"/>
+    <link from_connector="output" from_node="6" to_connector="valueIn" to_node="13"/>
+    <link from_connector="output" from_node="8" to_connector="startIn" to_node="11"/>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="14"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="6"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="seqIn" to_node="11"/>
+    <link from_connector="output" from_node="12" to_connector="name" to_node="14"/>
+    <link from_connector="output" from_node="13" to_connector="attributeIn" to_node="11"/>
+    <link from_connector="output" from_node="14" to_connector="input" to_node="15"/>
+    <link from_connector="output" from_node="15" to_connector="typeIn" to_node="13"/>
+  </links>
+</graph>
