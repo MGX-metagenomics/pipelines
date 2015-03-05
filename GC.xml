@@ -8,7 +8,7 @@
     </node>
     <node id="8" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="550" y="210">
       <configuration_items>
-        <configuration_item name="value" value="1"/>
+        <configuration_item name="value" value="0"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -24,7 +24,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="12" name="" type="Conveyor.Text.StringGenerator" x="100" y="370">
+    <node id="12" name="" type="Conveyor.Text.StringGenerator" x="61" y="405">
       <configuration_items>
         <configuration_item name="value" value="GC"/>
       </configuration_items>
@@ -42,8 +42,8 @@
     </node>
     <node id="15" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="210" y="310">
       <configuration_items>
-        <configuration_item name="attrType" value="NUMERICAL"/>
         <configuration_item name="attrStruct" value="BASIC"/>
+        <configuration_item name="attrType" value="NUMERICAL"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -57,20 +57,25 @@
         <type name="Conveyor.MGX.MGXAttributeType"/>
       </typeParameters>
     </node>
+    <node id="18" name="" type="Conveyor.MGX.MinusOne" x="716" y="319">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
   </nodes>
   <links>
-    <link from_connector="output" from_node="6" to_connector="stopIn" to_node="11"/>
-    <link from_connector="output" from_node="8" to_connector="startIn" to_node="11"/>
-    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="15"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="6"/>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="seqIn" to_node="11"/>
+    <link from_connector="output" from_node="18" to_connector="stopIn" to_node="11"/>
+    <link from_connector="output" from_node="16" to_connector="attributeIn" to_node="11"/>
+    <link from_connector="output" from_node="8" to_connector="startIn" to_node="11"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="13"/>
-    <link from_connector="output" from_node="12" to_connector="name" to_node="15"/>
     <link from_connector="output" from_node="13" to_connector="input" to_node="14"/>
+    <link from_connector="output" from_node="12" to_connector="name" to_node="15"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="15"/>
+    <link from_connector="output" from_node="17" to_connector="typeIn" to_node="16"/>
     <link from_connector="output" from_node="14" to_connector="valueIn" to_node="16"/>
     <link from_connector="output" from_node="15" to_connector="input" to_node="17"/>
-    <link from_connector="output" from_node="16" to_connector="attributeIn" to_node="11"/>
-    <link from_connector="output" from_node="17" to_connector="typeIn" to_node="16"/>
+    <link from_connector="output" from_node="6" to_connector="input" to_node="18"/>
   </links>
 </graph>
