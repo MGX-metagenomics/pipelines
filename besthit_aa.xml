@@ -12,11 +12,11 @@
     </node>
     <node id="13" name="" type="Conveyor.Blast.BlastvsDB`2" x="608" y="36">
       <configuration_items>
-        <configuration_item name="useComplexityFilter" value="False"/>
-        <configuration_item name="evalueCutoff" value="0.01" user_name="E-Value cutoff" user_description="E-Value cutoff for homology search"/>
         <configuration_item name="chunkSize" value="5000"/>
-        <configuration_item name="maxAlignments" value="2"/>
         <configuration_item name="blastType" value="blastx"/>
+        <configuration_item name="maxAlignments" value="2"/>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="0.01"/>
+        <configuration_item name="useComplexityFilter" value="False"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -110,8 +110,8 @@
     </node>
     <node id="118" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="768" y="856">
       <configuration_items>
-        <configuration_item name="attrType" value="DISCRETE"/>
         <configuration_item name="attrStruct" value="BASIC"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -140,7 +140,7 @@
     </node>
     <node id="149" name="" type="Conveyor.Text.StringGenerator" x="959" y="693">
       <configuration_items>
-        <configuration_item name="value" value="besthit" user_name="attribute type name" user_description="name of attribute type to identify results within MGX"/>
+        <configuration_item name="value" user_description="name of attribute type to identify results within MGX" user_name="attribute type name" value="besthit"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -165,16 +165,22 @@
       </typeParameters>
     </node>
     <node id="155" name="" type="Conveyor.BioIO.Fasta.ReadAAFastaFile" x="1044" y="26">
-      <configuration_items>
-        <configuration_item name="inputFile" value="" user_name="FASTA amino-acid file" user_description="target sequences to be used as BLAST database"/>
-      </configuration_items>
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="156" name="" type="Conveyor.MGX.MinusOne" x="254" y="595">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="157" name="" type="Conveyor.MGX.MinusOne" x="418" y="661">
+      <configuration_items/>
       <typeParameters/>
     </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="output" from_node="151" to_connector="query" to_node="13"/>
     <link from_connector="db" from_node="154" to_connector="database" to_node="13"/>
+    <link from_connector="output" from_node="151" to_connector="query" to_node="13"/>
     <link from_connector="output" from_node="21" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
@@ -186,13 +192,13 @@
     <link from_connector="output" from_node="107" to_connector="input" to_node="108"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="109"/>
     <link from_connector="output" from_node="29" to_connector="seqIn" to_node="110"/>
-    <link from_connector="output" from_node="112" to_connector="stopIn" to_node="110"/>
-    <link from_connector="output" from_node="111" to_connector="startIn" to_node="110"/>
+    <link from_connector="output" from_node="157" to_connector="stopIn" to_node="110"/>
     <link from_connector="output" from_node="117" to_connector="attributeIn" to_node="110"/>
+    <link from_connector="output" from_node="156" to_connector="startIn" to_node="110"/>
     <link from_connector="output" from_node="108" to_connector="input" to_node="111"/>
     <link from_connector="output" from_node="109" to_connector="input" to_node="112"/>
-    <link from_connector="output" from_node="148" to_connector="valueIn" to_node="117"/>
     <link from_connector="output" from_node="144" to_connector="typeIn" to_node="117"/>
+    <link from_connector="output" from_node="148" to_connector="valueIn" to_node="117"/>
     <link from_connector="output" from_node="150" to_connector="name" to_node="118"/>
     <link from_connector="output" from_node="9" to_connector="jobIn" to_node="118"/>
     <link from_connector="output" from_node="99" to_connector="input" to_node="130"/>
@@ -200,8 +206,10 @@
     <link from_connector="result" from_node="20" to_connector="input" to_node="147"/>
     <link from_connector="output" from_node="147" to_connector="input" to_node="148"/>
     <link from_connector="output" from_node="149" to_connector="input" to_node="150"/>
-    <link from_connector="result" from_node="13" to_connector="trigger" to_node="151"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="151"/>
+    <link from_connector="result" from_node="13" to_connector="trigger" to_node="151"/>
     <link from_connector="sequenceOut" from_node="155" to_connector="sequence" to_node="154"/>
+    <link from_connector="output" from_node="111" to_connector="input" to_node="156"/>
+    <link from_connector="output" from_node="112" to_connector="input" to_node="157"/>
   </links>
 </graph>

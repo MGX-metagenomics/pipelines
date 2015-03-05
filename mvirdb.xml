@@ -99,8 +99,8 @@
     </node>
     <node id="207" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="-277" y="700">
       <configuration_items>
-        <configuration_item name="attrType" value="DISCRETE"/>
         <configuration_item name="attrStruct" value="BASIC"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -136,7 +136,7 @@
     </node>
     <node id="219" name="" type="Conveyor.MVir.SelectVirulenceFactorType" x="685" y="578">
       <configuration_items>
-        <configuration_item user_name="virulence factor type" user_description="MVirDB type of virulence factor" name="type" value="antibiotic resistance"/>
+        <configuration_item name="type" user_description="MVirDB type of virulence factor" user_name="virulence factor type" value="antibiotic resistance"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -158,11 +158,11 @@
     </node>
     <node id="223" name="" type="Conveyor.Blast.BlastvsDB`2" x="578" y="-42">
       <configuration_items>
-        <configuration_item name="useComplexityFilter" value="False"/>
-        <configuration_item name="evalueCutoff" value="1e-5" user_name="E-Value cutoff" user_description="E-Value cutoff for homology search"/>
         <configuration_item name="chunkSize" value="5000"/>
-        <configuration_item name="maxAlignments" value="1"/>
         <configuration_item name="blastType" value="blastx"/>
+        <configuration_item name="maxAlignments" value="1"/>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-5"/>
+        <configuration_item name="useComplexityFilter" value="False"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -183,8 +183,8 @@
     </node>
     <node id="226" name="" type="Conveyor.Text.StringReplace" x="365" y="803">
       <configuration_items>
-        <configuration_item name="replacement" value="_"/>
         <configuration_item name="match" value=" "/>
+        <configuration_item name="replacement" value="_"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -198,6 +198,14 @@
       <configuration_items>
         <configuration_item name="value" value="MVirDB"/>
       </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="229" name="" type="Conveyor.MGX.MinusOne" x="212" y="813">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="230" name="" type="Conveyor.MGX.MinusOne" x="145" y="722">
+      <configuration_items/>
       <typeParameters/>
     </node>
   </nodes>
@@ -217,11 +225,11 @@
     <link from_connector="output" from_node="99" to_connector="input" to_node="130"/>
     <link from_connector="output" from_node="217" to_connector="input" to_node="147"/>
     <link from_connector="output" from_node="29" to_connector="seqIn" to_node="192"/>
-    <link from_connector="output" from_node="112" to_connector="stopIn" to_node="192"/>
-    <link from_connector="output" from_node="111" to_connector="startIn" to_node="192"/>
+    <link from_connector="output" from_node="229" to_connector="stopIn" to_node="192"/>
     <link from_connector="output" from_node="206" to_connector="attributeIn" to_node="192"/>
-    <link from_connector="output" from_node="215" to_connector="valueIn" to_node="206"/>
+    <link from_connector="output" from_node="230" to_connector="startIn" to_node="192"/>
     <link from_connector="output" from_node="209" to_connector="typeIn" to_node="206"/>
+    <link from_connector="output" from_node="215" to_connector="valueIn" to_node="206"/>
     <link from_connector="result" from_node="227" to_connector="name" to_node="207"/>
     <link from_connector="output" from_node="9" to_connector="jobIn" to_node="207"/>
     <link from_connector="output" from_node="207" to_connector="input" to_node="209"/>
@@ -233,12 +241,14 @@
     <link from_connector="output" from_node="222" to_connector="secondArgument" to_node="221"/>
     <link from_connector="output" from_node="220" to_connector="firstArgument" to_node="221"/>
     <link from_connector="output" from_node="219" to_connector="input" to_node="222"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="query" to_node="223"/>
     <link from_connector="output" from_node="212" to_connector="database" to_node="223"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="query" to_node="223"/>
     <link from_connector="output" from_node="219" to_connector="input" to_node="224"/>
     <link from_connector="output" from_node="224" to_connector="input" to_node="225"/>
     <link from_connector="output" from_node="225" to_connector="input" to_node="226"/>
     <link from_connector="output" from_node="226" to_connector="secondArgument" to_node="227"/>
     <link from_connector="output" from_node="228" to_connector="firstArgument" to_node="227"/>
+    <link from_connector="output" from_node="112" to_connector="input" to_node="229"/>
+    <link from_connector="output" from_node="111" to_connector="input" to_node="230"/>
   </links>
 </graph>
