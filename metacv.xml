@@ -43,8 +43,8 @@
     </node>
     <node id="96" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="1160" y="930">
       <configuration_items>
-        <configuration_item name="attrType" value="DISCRETE"/>
         <configuration_item name="attrStruct" value="HIERARCHICAL"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -54,7 +54,7 @@
         <type name="Conveyor.MGX.MGXJob"/>
       </typeParameters>
     </node>
-    <node id="98" name="" type="Conveyor.MGX.AnnotateAttribute" x="384" y="877">
+    <node id="98" name="" type="Conveyor.MGX.AnnotateAttribute" x="271" y="838">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -110,7 +110,7 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="109" name="" type="Conveyor.Core.Repeat`1" x="400" y="440">
+    <node id="109" name="" type="Conveyor.Core.Repeat`1" x="326" y="447">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Math.ULong"/>
@@ -123,35 +123,40 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
+    <node id="309" name="" type="Conveyor.MGX.MinusOne" x="429" y="572">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="output" from_node="9" to_connector="input" to_node="97"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="106"/>
-    <link from_connector="output" from_node="61" to_connector="seqIn" to_node="98"/>
-    <link from_connector="output" from_node="61" to_connector="input" to_node="107"/>
+    <link from_connector="filtered" from_node="105" to_connector="input" to_node="61"/>
+    <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
     <link from_connector="output" from_node="77" to_connector="input" to_node="78"/>
+    <link from_connector="current" from_node="99" to_connector="input" to_node="79"/>
     <link from_connector="output" from_node="78" to_connector="secondArgument" to_node="81"/>
-    <link from_connector="output" from_node="79" to_connector="dataIn" to_node="99"/>
     <link from_connector="output" from_node="80" to_connector="firstArgument" to_node="81"/>
     <link from_connector="result" from_node="81" to_connector="name" to_node="96"/>
-    <link from_connector="output" from_node="96" to_connector="typeIn" to_node="99"/>
     <link from_connector="output" from_node="97" to_connector="jobIn" to_node="96"/>
-    <link from_connector="current" from_node="99" to_connector="input" to_node="79"/>
-    <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
-    <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="97"/>
+    <link from_connector="output" from_node="61" to_connector="seqIn" to_node="98"/>
+    <link from_connector="output" from_node="309" to_connector="stopIn" to_node="98"/>
     <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="98"/>
+    <link from_connector="output" from_node="109" to_connector="startIn" to_node="98"/>
+    <link from_connector="output" from_node="96" to_connector="typeIn" to_node="99"/>
     <link from_connector="output" from_node="101" to_connector="parentIn" to_node="99"/>
     <link from_connector="output" from_node="102" to_connector="nodeIn" to_node="99"/>
+    <link from_connector="output" from_node="79" to_connector="dataIn" to_node="99"/>
     <link from_connector="output" from_node="103" to_connector="input" to_node="101"/>
-    <link from_connector="classified" from_node="104" to_connector="input" to_node="105"/>
-    <link from_connector="classified" from_node="104" to_connector="trigger" to_node="106"/>
-    <link from_connector="filtered" from_node="105" to_connector="input" to_node="61"/>
-    <link from_connector="filtered" from_node="105" to_connector="input" to_node="110"/>
-    <link from_connector="output" from_node="106" to_connector="inputSequence" to_node="104"/>
-    <link from_connector="output" from_node="107" to_connector="stopIn" to_node="98"/>
-    <link from_connector="output" from_node="108" to_connector="input" to_node="109"/>
-    <link from_connector="output" from_node="109" to_connector="startIn" to_node="98"/>
     <link from_connector="output" from_node="110" to_connector="input" to_node="102"/>
+    <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
+    <link from_connector="output" from_node="106" to_connector="inputSequence" to_node="104"/>
+    <link from_connector="classified" from_node="104" to_connector="input" to_node="105"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="106"/>
+    <link from_connector="classified" from_node="104" to_connector="trigger" to_node="106"/>
+    <link from_connector="output" from_node="61" to_connector="input" to_node="107"/>
+    <link from_connector="output" from_node="108" to_connector="input" to_node="109"/>
+    <link from_connector="filtered" from_node="105" to_connector="input" to_node="110"/>
+    <link from_connector="output" from_node="107" to_connector="input" to_node="309"/>
   </links>
 </graph>
