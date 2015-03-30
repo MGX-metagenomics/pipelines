@@ -10,7 +10,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="495" y="230">
+    <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="381" y="209">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.List.List`1">
@@ -21,7 +21,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="16" name="" type="Conveyor.List.HasElements`1" x="665" y="218">
+    <node id="16" name="" type="Conveyor.List.HasElements`1" x="595" y="192">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Blast.BlastHit`2">
@@ -221,7 +221,7 @@
         <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
       </typeParameters>
     </node>
-    <node id="116" name="" type="Conveyor.MGX.FilterBlastIdentity`2" x="289" y="219">
+    <node id="116" name="" type="Conveyor.MGX.FilterBlastIdentity`2" x="536" y="278">
       <configuration_items>
         <configuration_item name="threshold" user_description="relative identity with regard to best hit to keep" user_name="relative identity" value="0.8"/>
       </configuration_items>
@@ -233,20 +233,20 @@
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="filtered" from_node="116" to_connector="input" to_node="15"/>
+    <link from_connector="output" from_node="115" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
     <link from_connector="output" from_node="23" to_connector="secondArgument" to_node="20"/>
-    <link from_connector="output" from_node="15" to_connector="firstArgument" to_node="20"/>
+    <link from_connector="filtered" from_node="116" to_connector="firstArgument" to_node="20"/>
     <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
     <link from_connector="taxons" from_node="63" to_connector="vertices" to_node="57"/>
-    <link from_connector="output" from_node="15" to_connector="input" to_node="60"/>
+    <link from_connector="filtered" from_node="116" to_connector="input" to_node="60"/>
     <link from_connector="coveredRegionout" from_node="60" to_connector="input" to_node="61"/>
     <link from_connector="coveredRegionout" from_node="60" to_connector="input" to_node="62"/>
     <link from_connector="output" from_node="85" to_connector="entry" to_node="63"/>
     <link from_connector="db" from_node="114" to_connector="database" to_node="63"/>
     <link from_connector="lca" from_node="57" to_connector="elementIn" to_node="64"/>
-    <link from_connector="output" from_node="15" to_connector="listIn" to_node="64"/>
+    <link from_connector="filtered" from_node="116" to_connector="listIn" to_node="64"/>
     <link from_connector="listOut" from_node="64" to_connector="vertices" to_node="67"/>
     <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
     <link from_connector="output" from_node="77" to_connector="input" to_node="78"/>
@@ -274,6 +274,6 @@
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="113"/>
     <link from_connector="result" from_node="107" to_connector="loopIn" to_node="113"/>
     <link from_connector="output" from_node="113" to_connector="input" to_node="115"/>
-    <link from_connector="output" from_node="115" to_connector="listIn" to_node="116"/>
+    <link from_connector="output" from_node="15" to_connector="listIn" to_node="116"/>
   </links>
 </graph>
