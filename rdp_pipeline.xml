@@ -14,8 +14,8 @@
       <configuration_items>
         <configuration_item name="useComplexityFilter" value="0"/>
         <configuration_item name="chunkSize" value="2500"/>
-        <configuration_item name="blastType" value="blastn"/>
         <configuration_item name="maxAlignments" value="100"/>
+        <configuration_item name="blastType" value="blastn"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -39,20 +39,13 @@
         </type>
       </typeParameters>
     </node>
-    <node id="16" name="" type="Conveyor.List.HasElements`1" x="660" y="180">
+    <node id="16" name="" type="Conveyor.List.HasElements`1" x="700" y="191">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Blast.BlastHit`2">
           <type name="Conveyor.MGX.MGXSequence"/>
           <type name="Conveyor.Blast.DNABlastDatabaseSequence"/>
         </type>
-      </typeParameters>
-    </node>
-    <node id="17" name="" type="Conveyor.MGX.CoveredSubregion`2" x="820" y="230">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.Blast.DNABlastDatabaseSequence"/>
       </typeParameters>
     </node>
     <node id="18" name="" type="Conveyor.Pair.FirstElement`2" x="930" y="280">
@@ -78,9 +71,9 @@
         </type>
       </typeParameters>
     </node>
-    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="550" y="150">
+    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="337" y="171">
       <configuration_items>
-        <configuration_item name="evalueCutoff" value="1e-5" user_name="E-Value cutoff" user_description="E-Value cutoff for homology search"/>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-5"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -141,7 +134,7 @@
     <node id="47" name="" type="Conveyor.RDPClassifier.RDPClassifier`1" x="1090" y="400">
       <configuration_items>
         <configuration_item name="chunkSize" value="500"/>
-        <configuration_item name="threshold" value="0.7" user_name="confidence cutoff" user_description="Classification confidence cutoff"/>
+        <configuration_item name="threshold" user_description="Classification confidence cutoff" user_name="confidence cutoff" value="0.7"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
@@ -261,58 +254,67 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
+    <node id="76" name="" type="Conveyor.MGX.CoveredSubregion`1" x="607" y="315">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.DNABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="output" from_node="9" to_connector="input" to_node="73"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="75"/>
-    <link from_connector="result" from_node="13" to_connector="input" to_node="21"/>
+    <link from_connector="output" from_node="75" to_connector="query" to_node="13"/>
     <link from_connector="db" from_node="14" to_connector="database" to_node="13"/>
-    <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
-    <link from_connector="output" from_node="15" to_connector="firstArgument" to_node="20"/>
-    <link from_connector="output" from_node="15" to_connector="input" to_node="17"/>
-    <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
-    <link from_connector="coveredRegionout" from_node="17" to_connector="input" to_node="18"/>
-    <link from_connector="coveredRegionout" from_node="17" to_connector="input" to_node="19"/>
-    <link from_connector="coveredRegionout" from_node="17" to_connector="input" to_node="60"/>
-    <link from_connector="output" from_node="18" to_connector="from" to_node="28"/>
-    <link from_connector="output" from_node="19" to_connector="to" to_node="28"/>
-    <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
     <link from_connector="output" from_node="21" to_connector="input" to_node="15"/>
-    <link from_connector="output" from_node="21" to_connector="trigger" to_node="75"/>
+    <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
+    <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
+    <link from_connector="coveredRegionout" from_node="76" to_connector="input" to_node="18"/>
+    <link from_connector="coveredRegionout" from_node="76" to_connector="input" to_node="19"/>
     <link from_connector="output" from_node="23" to_connector="secondArgument" to_node="20"/>
-    <link from_connector="output" from_node="26" to_connector="nodeIn" to_node="67"/>
-    <link from_connector="subSequence" from_node="28" to_connector="inputSequence" to_node="47"/>
+    <link from_connector="output" from_node="15" to_connector="firstArgument" to_node="20"/>
+    <link from_connector="result" from_node="13" to_connector="input" to_node="21"/>
+    <link from_connector="result" from_node="69" to_connector="input" to_node="26"/>
+    <link from_connector="output" from_node="19" to_connector="to" to_node="28"/>
     <link from_connector="output" from_node="29" to_connector="sequence" to_node="28"/>
-    <link from_connector="output" from_node="29" to_connector="input" to_node="56"/>
-    <link from_connector="output" from_node="37" to_connector="secondArgument" to_node="43"/>
-    <link from_connector="output" from_node="38" to_connector="dataIn" to_node="67"/>
+    <link from_connector="output" from_node="18" to_connector="from" to_node="28"/>
+    <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
     <link from_connector="output" from_node="39" to_connector="input" to_node="37"/>
+    <link from_connector="current" from_node="67" to_connector="input" to_node="38"/>
+    <link from_connector="current" from_node="67" to_connector="input" to_node="39"/>
+    <link from_connector="output" from_node="37" to_connector="secondArgument" to_node="43"/>
     <link from_connector="output" from_node="42" to_connector="firstArgument" to_node="43"/>
-    <link from_connector="result" from_node="43" to_connector="name" to_node="65"/>
+    <link from_connector="subSequence" from_node="28" to_connector="inputSequence" to_node="47"/>
     <link from_connector="classifiedTaxons" from_node="47" to_connector="input" to_node="54"/>
-    <link from_connector="classifiedTaxons" from_node="47" to_connector="input" to_node="59"/>
+    <link from_connector="output" from_node="29" to_connector="input" to_node="56"/>
     <link from_connector="output" from_node="54" to_connector="pass" to_node="56"/>
-    <link from_connector="output" from_node="54" to_connector="pass" to_node="60"/>
+    <link from_connector="classifiedTaxons" from_node="47" to_connector="input" to_node="59"/>
     <link from_connector="output" from_node="54" to_connector="pass" to_node="59"/>
-    <link from_connector="output" from_node="56" to_connector="seqIn" to_node="68"/>
-    <link from_connector="output" from_node="59" to_connector="input" to_node="70"/>
-    <link from_connector="output" from_node="59" to_connector="firstArgument" to_node="69"/>
+    <link from_connector="coveredRegionout" from_node="76" to_connector="input" to_node="60"/>
+    <link from_connector="output" from_node="54" to_connector="pass" to_node="60"/>
     <link from_connector="output" from_node="60" to_connector="input" to_node="63"/>
     <link from_connector="output" from_node="60" to_connector="input" to_node="64"/>
-    <link from_connector="output" from_node="63" to_connector="startIn" to_node="68"/>
-    <link from_connector="output" from_node="64" to_connector="stopIn" to_node="68"/>
-    <link from_connector="output" from_node="65" to_connector="typeIn" to_node="67"/>
-    <link from_connector="current" from_node="67" to_connector="input" to_node="39"/>
-    <link from_connector="current" from_node="67" to_connector="input" to_node="38"/>
-    <link from_connector="nodeOut" from_node="67" to_connector="input" to_node="74"/>
-    <link from_connector="output" from_node="67" to_connector="attributeIn" to_node="68"/>
-    <link from_connector="result" from_node="69" to_connector="input" to_node="26"/>
-    <link from_connector="output" from_node="70" to_connector="firstArgument" to_node="71"/>
-    <link from_connector="result" from_node="71" to_connector="secondArgument" to_node="69"/>
-    <link from_connector="output" from_node="72" to_connector="secondArgument" to_node="71"/>
+    <link from_connector="result" from_node="43" to_connector="name" to_node="65"/>
     <link from_connector="output" from_node="73" to_connector="jobIn" to_node="65"/>
+    <link from_connector="output" from_node="65" to_connector="typeIn" to_node="67"/>
     <link from_connector="output" from_node="74" to_connector="parentIn" to_node="67"/>
-    <link from_connector="output" from_node="75" to_connector="query" to_node="13"/>
+    <link from_connector="output" from_node="38" to_connector="dataIn" to_node="67"/>
+    <link from_connector="output" from_node="26" to_connector="nodeIn" to_node="67"/>
+    <link from_connector="output" from_node="56" to_connector="seqIn" to_node="68"/>
+    <link from_connector="output" from_node="64" to_connector="stopIn" to_node="68"/>
+    <link from_connector="output" from_node="63" to_connector="startIn" to_node="68"/>
+    <link from_connector="output" from_node="67" to_connector="attributeIn" to_node="68"/>
+    <link from_connector="result" from_node="71" to_connector="secondArgument" to_node="69"/>
+    <link from_connector="output" from_node="59" to_connector="firstArgument" to_node="69"/>
+    <link from_connector="output" from_node="59" to_connector="input" to_node="70"/>
+    <link from_connector="output" from_node="72" to_connector="secondArgument" to_node="71"/>
+    <link from_connector="output" from_node="70" to_connector="firstArgument" to_node="71"/>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="73"/>
+    <link from_connector="nodeOut" from_node="67" to_connector="input" to_node="74"/>
+    <link from_connector="output" from_node="21" to_connector="trigger" to_node="75"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="75"/>
+    <link from_connector="output" from_node="15" to_connector="input" to_node="76"/>
   </links>
 </graph>
