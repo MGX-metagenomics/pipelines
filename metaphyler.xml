@@ -41,15 +41,6 @@
         </type>
       </typeParameters>
     </node>
-    <node id="20" name="" type="Conveyor.List.GetElement`1" x="150" y="340">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Blast.BlastHit`2">
-          <type name="Conveyor.MGX.MGXSequence"/>
-          <type name="Conveyor.MetaPhyler.MetaPhylerSequence"/>
-        </type>
-      </typeParameters>
-    </node>
     <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="570" y="80">
       <configuration_items>
         <configuration_item name="evalueCutoff" value="1e-5"/>
@@ -59,13 +50,7 @@
         <type name="Conveyor.MetaPhyler.MetaPhylerSequence"/>
       </typeParameters>
     </node>
-    <node id="23" name="" type="Conveyor.Math.IntegerOps.IntegerGenerator" x="100" y="280">
-      <configuration_items>
-        <configuration_item name="value" value="0"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="150" y="390">
+    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="201" y="451">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -103,7 +88,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="79" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonName" x="810" y="900">
+    <node id="79" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonName" x="842" y="883">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -113,7 +98,7 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="81" name="" type="Conveyor.Text.Concat" x="1160" y="720">
+    <node id="81" name="" type="Conveyor.Text.Concat" x="1092" y="784">
       <configuration_items>
         <configuration_item name="delimiter" value="_"/>
       </configuration_items>
@@ -141,7 +126,7 @@
         <type name="Conveyor.MGX.MGXJob"/>
       </typeParameters>
     </node>
-    <node id="98" name="" type="Conveyor.MGX.AnnotateAttribute" x="384" y="877">
+    <node id="98" name="" type="Conveyor.MGX.AnnotateAttribute" x="356" y="847">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -151,7 +136,7 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="101" name="" type="Conveyor.MGX.GetMajorRankedParent" x="630" y="890">
+    <node id="101" name="" type="Conveyor.MGX.GetMajorRankedParent" x="663" y="893">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -159,7 +144,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="103" name="" type="Conveyor.Tree.GetParent`1" x="530" y="840">
+    <node id="103" name="" type="Conveyor.Tree.GetParent`1" x="512" y="824">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
@@ -175,6 +160,15 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
+    <node id="106" name="" type="Conveyor.List.GetFirst`1" x="263" y="297">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.MetaPhyler.MetaPhylerSequence"/>
+        </type>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -183,10 +177,8 @@
     <link from_connector="output" from_node="21" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
-    <link from_connector="output" from_node="23" to_connector="secondArgument" to_node="20"/>
-    <link from_connector="filtered" from_node="84" to_connector="firstArgument" to_node="20"/>
     <link from_connector="result" from_node="13" to_connector="input" to_node="21"/>
-    <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
+    <link from_connector="result" from_node="106" to_connector="input" to_node="29"/>
     <link from_connector="filtered" from_node="84" to_connector="input" to_node="60"/>
     <link from_connector="coveredRegionout" from_node="60" to_connector="input" to_node="61"/>
     <link from_connector="coveredRegionout" from_node="60" to_connector="input" to_node="62"/>
@@ -211,5 +203,6 @@
     <link from_connector="taxon" from_node="105" to_connector="input" to_node="102"/>
     <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
     <link from_connector="filtered" from_node="84" to_connector="blastHits" to_node="105"/>
+    <link from_connector="filtered" from_node="84" to_connector="listIn" to_node="106"/>
   </links>
 </graph>
