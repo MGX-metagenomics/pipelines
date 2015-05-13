@@ -87,7 +87,9 @@
       </typeParameters>
     </node>
     <node id="105" name="" type="Conveyor.MetaCV.FilterMetaCVResult`1" x="550" y="180">
-      <configuration_items/>
+      <configuration_items>
+        <configuration_item name="minScore" user_description="MetaCV correlation score cutoff" user_name="score cutoff" value="10"/>
+      </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
