@@ -115,7 +115,7 @@
     </node>
     <node id="149" name="" type="Conveyor.Text.StringGenerator" x="959" y="693">
       <configuration_items>
-        <configuration_item name="value" user_description="name of attribute type to identify results within MGX" user_name="attribute type name" value="besthit"/>
+        <configuration_item name="value" value="ARG-ANNOT"/>
       </configuration_items>
       <typeParameters/>
     </node>
