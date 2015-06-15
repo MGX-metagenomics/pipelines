@@ -13,7 +13,7 @@
     <node id="13" name="" type="Conveyor.Blast.BlastvsDB`2" x="608" y="36">
       <configuration_items>
         <configuration_item name="useComplexityFilter" value="False"/>
-        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-8"/>
+        <configuration_item name="evalueCutoff" value="1"/>
         <configuration_item name="chunkSize" value="5000"/>
         <configuration_item name="maxAlignments" value="2"/>
         <configuration_item name="blastType" value="blastx"/>
@@ -45,7 +45,8 @@
     </node>
     <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="354" y="131">
       <configuration_items>
-        <configuration_item name="evalueCutoff" value="1e-2"/>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-8"/>
+        <configuration_item name="identityCutoff" user_description="Identity cutoff in percent (0-1)" user_name="Identity cutoff" value="0.7"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
