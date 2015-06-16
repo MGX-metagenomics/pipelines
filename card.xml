@@ -161,6 +161,14 @@
       <configuration_items/>
       <typeParameters/>
     </node>
+    <node id="163" name="" type="Conveyor.Blast.FillBlastDBSequences`1" x="751" y="426">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="500"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -192,6 +200,7 @@
     <link from_connector="output" from_node="111" to_connector="input" to_node="156"/>
     <link from_connector="output" from_node="112" to_connector="input" to_node="157"/>
     <link from_connector="output" from_node="15" to_connector="listIn" to_node="160"/>
-    <link from_connector="output" from_node="147" to_connector="input" to_node="162"/>
+    <link from_connector="output" from_node="163" to_connector="input" to_node="162"/>
+    <link from_connector="output" from_node="147" to_connector="input" to_node="163"/>
   </links>
 </graph>
