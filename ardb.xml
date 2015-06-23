@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="unnamed" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="50" y="100">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="260" y="40">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="13" name="" type="Conveyor.Blast.BlastvsDB`2" x="608" y="36">
+      <configuration_items>
+        <configuration_item name="useComplexityFilter" value="False"/>
+        <configuration_item name="evalueCutoff" value="1"/>
+        <configuration_item name="chunkSize" value="5000"/>
+        <configuration_item name="maxAlignments" value="2"/>
+        <configuration_item name="blastType" value="blastx"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="580" y="130">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.List.List`1">
+          <type name="Conveyor.Blast.BlastHit`2">
+            <type name="Conveyor.MGX.MGXSequence"/>
+            <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+          </type>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="16" name="" type="Conveyor.List.HasElements`1" x="755" y="111">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="354" y="131">
+      <configuration_items>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-8"/>
+        <configuration_item name="identityCutoff" user_description="Identity cutoff in percent (0-1)" user_name="Identity cutoff" value="0.7"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="60" y="386">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="107" name="" type="Homology.GetQueryRange" x="545" y="319">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="108" name="" type="Conveyor.Pair.FirstElement`2" x="280" y="400">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.Integer"/>
+        <type name="Conveyor.Math.Integer"/>
+      </typeParameters>
+    </node>
+    <node id="109" name="" type="Conveyor.Pair.SecondElement`2" x="430" y="400">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.Integer"/>
+        <type name="Conveyor.Math.Integer"/>
+      </typeParameters>
+    </node>
+    <node id="110" name="" type="Conveyor.MGX.AnnotateAttribute" x="207" y="859">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="111" name="" type="Conveyor.Math.ULongOps.IntToULong" x="247" y="504">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="112" name="" type="Conveyor.Math.ULongOps.IntToULong" x="421" y="530">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="117" name="" type="Conveyor.MGX.CreateMGXAttribute" x="394" y="859">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="118" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="768" y="856">
+      <configuration_items>
+        <configuration_item name="attrType" value="DISCRETE"/>
+        <configuration_item name="attrStruct" value="BASIC"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="144" name="" type="Conveyor.Core.Repeat`1" x="605" y="858">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXAttributeType"/>
+      </typeParameters>
+    </node>
+    <node id="147" name="" type="Conveyor.Blast.GetSubject`2" x="756" y="332">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="149" name="" type="Conveyor.Text.StringGenerator" x="959" y="693">
+      <configuration_items>
+        <configuration_item name="value" value="ARDB"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="150" name="" type="Conveyor.Core.Repeat`1" x="957" y="795">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Text.String"/>
+      </typeParameters>
+    </node>
+    <node id="151" name="" type="Conveyor.Logic.FlowThrottle`1" x="413" y="33">
+      <configuration_items>
+        <configuration_item name="processAhead" value="15000001"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="156" name="" type="Conveyor.MGX.MinusOne" x="246" y="623">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="157" name="" type="Conveyor.MGX.MinusOne" x="394" y="674">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="160" name="" type="Conveyor.List.GetFirst`1" x="585" y="213">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="161" name="" type="Conveyor.Blast.PublicAADB" x="812" y="26">
+      <configuration_items>
+        <configuration_item name="database" value="ardb.pin"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="162" name="" type="Sequence.GetDescription" x="644" y="535">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="163" name="" type="Conveyor.Blast.FillBlastDBSequences`1" x="751" y="426">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="500"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
+    <link from_connector="output" from_node="151" to_connector="query" to_node="13"/>
+    <link from_connector="db" from_node="161" to_connector="database" to_node="13"/>
+    <link from_connector="output" from_node="21" to_connector="input" to_node="15"/>
+    <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
+    <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
+    <link from_connector="result" from_node="13" to_connector="input" to_node="21"/>
+    <link from_connector="result" from_node="160" to_connector="input" to_node="29"/>
+    <link from_connector="result" from_node="160" to_connector="input" to_node="107"/>
+    <link from_connector="output" from_node="107" to_connector="input" to_node="108"/>
+    <link from_connector="output" from_node="107" to_connector="input" to_node="109"/>
+    <link from_connector="output" from_node="29" to_connector="seqIn" to_node="110"/>
+    <link from_connector="output" from_node="157" to_connector="stopIn" to_node="110"/>
+    <link from_connector="output" from_node="156" to_connector="startIn" to_node="110"/>
+    <link from_connector="output" from_node="117" to_connector="attributeIn" to_node="110"/>
+    <link from_connector="output" from_node="108" to_connector="input" to_node="111"/>
+    <link from_connector="output" from_node="109" to_connector="input" to_node="112"/>
+    <link from_connector="output" from_node="162" to_connector="valueIn" to_node="117"/>
+    <link from_connector="output" from_node="144" to_connector="typeIn" to_node="117"/>
+    <link from_connector="output" from_node="150" to_connector="name" to_node="118"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="118"/>
+    <link from_connector="output" from_node="118" to_connector="input" to_node="144"/>
+    <link from_connector="result" from_node="160" to_connector="input" to_node="147"/>
+    <link from_connector="output" from_node="149" to_connector="input" to_node="150"/>
+    <link from_connector="result" from_node="13" to_connector="trigger" to_node="151"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="151"/>
+    <link from_connector="output" from_node="111" to_connector="input" to_node="156"/>
+    <link from_connector="output" from_node="112" to_connector="input" to_node="157"/>
+    <link from_connector="output" from_node="15" to_connector="listIn" to_node="160"/>
+    <link from_connector="output" from_node="163" to_connector="input" to_node="162"/>
+    <link from_connector="output" from_node="147" to_connector="input" to_node="163"/>
+  </links>
+</graph>
