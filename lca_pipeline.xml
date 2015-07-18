@@ -13,7 +13,7 @@
     <node id="13" name="" type="Conveyor.Blast.BlastvsDB`2" x="679" y="41">
       <configuration_items>
         <configuration_item name="useComplexityFilter" value="0"/>
-        <configuration_item user_name="E-Value cutoff" user_description="E-Value cutoff for homology search" name="evalueCutoff" value="1e-5"/>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-5"/>
         <configuration_item name="chunkSize" value="300"/>
         <configuration_item name="maxAlignments" value="100"/>
         <configuration_item name="blastType" value="blastn"/>
@@ -47,7 +47,20 @@
         </type>
       </typeParameters>
     </node>
-    <node id="20" name="" type="Conveyor.List.GetElement`1" x="208" y="499">
+    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="317" y="627">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.DNABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="57" name="" type="Conveyor.Tree.GetLCA`1" x="1027" y="437">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="60" name="" type="Conveyor.MGX.CoveredSubregion`1" x="540" y="330">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Blast.BlastHit`2">
@@ -56,40 +69,14 @@
         </type>
       </typeParameters>
     </node>
-    <node id="23" name="" type="Conveyor.Math.IntegerOps.IntegerGenerator" x="198" y="399">
-      <configuration_items>
-        <configuration_item name="value" value="0"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="230" y="583">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.Blast.DNABlastDatabaseSequence"/>
-      </typeParameters>
-    </node>
-    <node id="57" name="" type="Conveyor.Tree.GetLCA`1" x="970" y="390">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
-      </typeParameters>
-    </node>
-    <node id="60" name="" type="Conveyor.MGX.CoveredSubregion`2" x="540" y="330">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.Blast.DNABlastDatabaseSequence"/>
-      </typeParameters>
-    </node>
-    <node id="61" name="" type="Conveyor.Pair.FirstElement`2" x="500" y="390">
+    <node id="61" name="" type="Conveyor.Pair.FirstElement`2" x="450" y="415">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Math.ULong"/>
         <type name="Conveyor.Math.ULong"/>
       </typeParameters>
     </node>
-    <node id="62" name="" type="Conveyor.Pair.SecondElement`2" x="580" y="390">
+    <node id="62" name="" type="Conveyor.Pair.SecondElement`2" x="609" y="420">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Math.ULong"/>
@@ -144,16 +131,16 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="84" name="" type="Conveyor.MGX.FilterBlastIdentity`2" x="546" y="246">
+    <node id="84" name="" type="Conveyor.MGX.FilterBlastIdentity`2" x="542" y="239">
       <configuration_items>
-        <configuration_item user_name="relative identity" user_description="relative identity with regard to best hit to keep" name="threshold" value="0.8"/>
+        <configuration_item name="threshold" user_description="relative identity with regard to best hit to keep" user_name="relative identity" value="0.8"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
         <type name="Conveyor.Blast.DNABlastDatabaseSequence"/>
       </typeParameters>
     </node>
-    <node id="85" name="" type="Conveyor.Blast.GetSubject`2" x="1010" y="310">
+    <node id="85" name="" type="Conveyor.Blast.GetSubject`2" x="1014" y="276">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -205,6 +192,15 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
+    <node id="105" name="" type="Conveyor.List.GetFirst`1" x="205" y="313">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.DNABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -213,9 +209,7 @@
     <link from_connector="result" from_node="13" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
-    <link from_connector="output" from_node="23" to_connector="secondArgument" to_node="20"/>
-    <link from_connector="filtered" from_node="84" to_connector="firstArgument" to_node="20"/>
-    <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
+    <link from_connector="result" from_node="105" to_connector="input" to_node="29"/>
     <link from_connector="taxons" from_node="63" to_connector="vertices" to_node="57"/>
     <link from_connector="filtered" from_node="84" to_connector="input" to_node="60"/>
     <link from_connector="coveredRegionout" from_node="60" to_connector="input" to_node="61"/>
@@ -248,5 +242,6 @@
     <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
     <link from_connector="result" from_node="13" to_connector="trigger" to_node="104"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="104"/>
+    <link from_connector="filtered" from_node="84" to_connector="listIn" to_node="105"/>
   </links>
 </graph>
