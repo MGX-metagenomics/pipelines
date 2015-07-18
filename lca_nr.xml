@@ -30,22 +30,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="20" name="" type="Conveyor.List.GetElement`1" x="223" y="550">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Blast.BlastHit`2">
-          <type name="Conveyor.MGX.MGXSequence"/>
-          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
-        </type>
-      </typeParameters>
-    </node>
-    <node id="23" name="" type="Conveyor.Math.IntegerOps.IntegerGenerator" x="193" y="457">
-      <configuration_items>
-        <configuration_item name="value" value="0"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="285" y="641">
+    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="269" y="624">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -58,11 +43,13 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="60" name="" type="Conveyor.MGX.CoveredSubregion`2" x="532" y="373">
+    <node id="60" name="" type="Conveyor.MGX.CoveredSubregion`1" x="532" y="373">
       <configuration_items/>
       <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
       </typeParameters>
     </node>
     <node id="61" name="" type="Conveyor.Pair.FirstElement`2" x="474" y="509">
@@ -230,15 +217,22 @@
         <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
       </typeParameters>
     </node>
+    <node id="140" name="" type="Conveyor.List.GetFirst`1" x="234" y="377">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
     <link from_connector="output" from_node="115" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
-    <link from_connector="output" from_node="23" to_connector="secondArgument" to_node="20"/>
-    <link from_connector="filtered" from_node="116" to_connector="firstArgument" to_node="20"/>
-    <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
+    <link from_connector="result" from_node="140" to_connector="input" to_node="29"/>
     <link from_connector="taxons" from_node="63" to_connector="vertices" to_node="57"/>
     <link from_connector="filtered" from_node="116" to_connector="input" to_node="60"/>
     <link from_connector="coveredRegionout" from_node="60" to_connector="input" to_node="61"/>
@@ -275,5 +269,6 @@
     <link from_connector="result" from_node="107" to_connector="loopIn" to_node="113"/>
     <link from_connector="output" from_node="113" to_connector="input" to_node="115"/>
     <link from_connector="output" from_node="15" to_connector="listIn" to_node="116"/>
+    <link from_connector="filtered" from_node="116" to_connector="listIn" to_node="140"/>
   </links>
 </graph>
