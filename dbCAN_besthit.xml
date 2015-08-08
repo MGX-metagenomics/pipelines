@@ -10,7 +10,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="3" name="" type="Conveyor.BioinformaticsTypes.SixFrameTranslate`3" x="106" y="117">
+    <node id="3" name="" type="Conveyor.BioinformaticsTypes.SixFrameTranslate`3" x="107" y="101">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -47,7 +47,7 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="6" name="" type="Conveyor.HMMER3.HMMScanv3`5" x="474" y="173">
+    <node id="6" name="" type="Conveyor.HMMER3.HMMScanv3`5" x="473" y="173">
       <configuration_items>
         <configuration_item name="chunkSize" value="3000"/>
       </configuration_items>
@@ -165,7 +165,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="109" name="" type="Conveyor.List.FlattenList`1" x="179" y="288">
+    <node id="109" name="" type="Conveyor.List.FlattenList`1" x="250" y="334">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.HMMER3.HMMER3ScanDomainHit`5">
@@ -266,10 +266,18 @@
         <type name="Conveyor.HMMER3.HMMv3AA"/>
       </typeParameters>
     </node>
+    <node id="123" name="" type="Conveyor.Logic.FlowThrottle`1" x="-87" y="54">
+      <configuration_items>
+        <configuration_item name="processAhead" value="9000001"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="1" to_connector="input" to_node="2"/>
-    <link from_connector="sequenceOut" from_node="2" to_connector="input" to_node="3"/>
+    <link from_connector="output" from_node="123" to_connector="input" to_node="3"/>
     <link from_connector="output" from_node="122" to_connector="elementIn" to_node="4"/>
     <link from_connector="output" from_node="3" to_connector="listIn" to_node="4"/>
     <link from_connector="elementOut" from_node="4" to_connector="seq" to_node="6"/>
@@ -302,5 +310,7 @@
     <link from_connector="output" from_node="30" to_connector="input" to_node="118"/>
     <link from_connector="output" from_node="111" to_connector="input" to_node="119"/>
     <link from_connector="result" from_node="6" to_connector="input" to_node="122"/>
+    <link from_connector="result" from_node="109" to_connector="trigger" to_node="123"/>
+    <link from_connector="sequenceOut" from_node="2" to_connector="input" to_node="123"/>
   </links>
 </graph>
