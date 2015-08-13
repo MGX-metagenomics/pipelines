@@ -49,7 +49,7 @@
     </node>
     <node id="6" name="" type="Conveyor.HMMER3.HMMScanv3`5" x="474" y="173">
       <configuration_items>
-        <configuration_item name="chunkSize" value="3000"/>
+        <configuration_item name="chunkSize" value="1500"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
@@ -284,7 +284,7 @@
     </node>
     <node id="124" name="" type="Conveyor.Logic.FlowThrottle`1" x="63" y="104">
       <configuration_items>
-        <configuration_item name="processAhead" value="9000001"/>
+        <configuration_item name="processAhead" value="4500001"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
