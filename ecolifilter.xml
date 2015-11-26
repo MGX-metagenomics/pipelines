@@ -2,7 +2,7 @@
 <graph description="" name="unnamed" service="MGX">
   <composites/>
   <nodes>
-    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="212" y="106">
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="12" y="242">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -17,6 +17,7 @@
     <node id="17" name="" type="Conveyor.ReadMapping.Applications.BWA.BWA_SingleEnded`2" x="407" y="362">
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
+        <configuration_item name="errorRate" value="0.02" user_description="max. allowed mapping error rate" user_name="error rate"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.QualitySequence.ArtificalDNAQSequence`1">
@@ -66,6 +67,7 @@
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
     <link from_connector="output" from_node="20" to_connector="seqIn" to_node="16"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="16"/>
     <link from_connector="index" from_node="18" to_connector="references" to_node="17"/>
     <link from_connector="output" from_node="22" to_connector="read" to_node="17"/>
     <link from_connector="sequenceOut" from_node="19" to_connector="sequence" to_node="18"/>
