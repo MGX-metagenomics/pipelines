@@ -127,7 +127,7 @@
     </node>
     <node id="145" name="" type="Conveyor.Blast.LocalAADatabase" x="850" y="30">
       <configuration_items>
-        <configuration_item name="databasePath" value="/vol/biodb-local/MGX/plasmid_proteins.faa"/>
+        <configuration_item name="databasePath" value="/vol/biodb/local_databases/MGX/misc/plasmid_proteins.faa"/>
       </configuration_items>
       <typeParameters/>
     </node>

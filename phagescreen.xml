@@ -166,7 +166,7 @@
     </node>
     <node id="153" name="" type="Conveyor.Blast.LocalDNADatabase" x="877" y="53">
       <configuration_items>
-        <configuration_item name="databasePath" value="/vol/biodb-local/MGX/phage_genomes.fas"/>
+        <configuration_item name="databasePath" value="/vol/biodb/local_databases/MGX/misc/phage_genomes.fas"/>
       </configuration_items>
       <typeParameters/>
     </node>
