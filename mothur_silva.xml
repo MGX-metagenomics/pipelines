@@ -6,7 +6,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="357" y="24">
+    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="200" y="26">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -36,8 +36,8 @@
     </node>
     <node id="65" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="39" y="352">
       <configuration_items>
-        <configuration_item name="attrType" value="DISCRETE"/>
         <configuration_item name="attrStruct" value="HIERARCHICAL"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -95,14 +95,6 @@
         <type name="Conveyor.Math.ULong"/>
       </typeParameters>
     </node>
-    <node id="104" name="" type="Conveyor.Mothur.Mothur_ClassifyReads`1" x="766" y="23">
-      <configuration_items>
-        <configuration_item name="chunkSize" value="5000"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-      </typeParameters>
-    </node>
     <node id="107" name="" type="Conveyor.Logic.PassCheck`1" x="469" y="227">
       <configuration_items/>
       <typeParameters>
@@ -136,6 +128,35 @@
       <configuration_items/>
       <typeParameters/>
     </node>
+    <node id="112" name="" type="Conveyor.Mothur.Mothur_ClassifyReads`1" x="677" y="25">
+      <configuration_items>
+        <configuration_item name="database" user_description="used database for classification" user_name="database" value="SILVA"/>
+        <configuration_item name="chunkSize" value="10000"/>
+        <configuration_item name="iter" user_description="times of iteration for calculating bootstrap value" user_name="iterations" value="100"/>
+        <configuration_item name="threshold" user_description="bootsrap value cutoff" user_name="cutoff" value="70"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="113" name="" type="Conveyor.Mothur.Mothur_Chimera`1" x="405" y="110">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="124" name="" type="Conveyor.Core.Conditional`1" x="402" y="25">
+      <configuration_items>
+        <configuration_item name="doProcessing" user_description="using uchime filter before classification" user_name="uchime filter" value="False"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="125" name="" type="Conveyor.Core.Discard" x="225" y="111">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -148,12 +169,12 @@
     <link from_connector="output" from_node="73" to_connector="jobIn" to_node="65"/>
     <link from_connector="output" from_node="65" to_connector="typeIn" to_node="67"/>
     <link from_connector="output" from_node="74" to_connector="parentIn" to_node="67"/>
-    <link from_connector="output" from_node="38" to_connector="dataIn" to_node="67"/>
     <link from_connector="second" from_node="108" to_connector="nodeIn" to_node="67"/>
+    <link from_connector="output" from_node="38" to_connector="dataIn" to_node="67"/>
     <link from_connector="first" from_node="108" to_connector="seqIn" to_node="68"/>
     <link from_connector="result" from_node="81" to_connector="stopIn" to_node="68"/>
-    <link from_connector="output" from_node="85" to_connector="startIn" to_node="68"/>
     <link from_connector="output" from_node="67" to_connector="attributeIn" to_node="68"/>
+    <link from_connector="output" from_node="85" to_connector="startIn" to_node="68"/>
     <link from_connector="output" from_node="9" to_connector="input" to_node="73"/>
     <link from_connector="nodeOut" from_node="67" to_connector="input" to_node="74"/>
     <link from_connector="first" from_node="108" to_connector="input" to_node="80"/>
@@ -161,12 +182,16 @@
     <link from_connector="output" from_node="80" to_connector="firstArgument" to_node="81"/>
     <link from_connector="output" from_node="82" to_connector="input" to_node="84"/>
     <link from_connector="output" from_node="83" to_connector="input" to_node="85"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="reads" to_node="104"/>
-    <link from_connector="classifiedTaxons" from_node="104" to_connector="input" to_node="107"/>
+    <link from_connector="classifiedTaxons" from_node="112" to_connector="input" to_node="107"/>
     <link from_connector="output" from_node="111" to_connector="pass" to_node="107"/>
     <link from_connector="output" from_node="107" to_connector="pair" to_node="108"/>
     <link from_connector="output" from_node="110" to_connector="input" to_node="109"/>
-    <link from_connector="classifiedTaxons" from_node="104" to_connector="input" to_node="110"/>
+    <link from_connector="classifiedTaxons" from_node="112" to_connector="input" to_node="110"/>
     <link from_connector="output" from_node="109" to_connector="input" to_node="111"/>
+    <link from_connector="output" from_node="124" to_connector="reads" to_node="112"/>
+    <link from_connector="procOut" from_node="124" to_connector="reads" to_node="113"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="124"/>
+    <link from_connector="nonChimeraReads" from_node="113" to_connector="procIn" to_node="124"/>
+    <link from_connector="chimeraReads" from_node="113" to_connector="input" to_node="125"/>
   </links>
 </graph>

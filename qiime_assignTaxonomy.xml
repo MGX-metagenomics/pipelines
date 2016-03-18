@@ -6,7 +6,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="357" y="24">
+    <node id="10" name="" type="Conveyor.MGX.ReadCSFFile" x="179" y="26">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -140,6 +140,24 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
+    <node id="177" name="" type="Conveyor.Core.Conditional`1" x="409" y="28">
+        <configuration_items>
+          <configuration_item name="doProcessing" user_description="using uchime filter before classification" user_name="uchime filter" value="False"/>
+        </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="178" name="" type="Conveyor.Mothur.Mothur_Chimera`1" x="405" y="120">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="179" name="" type="Conveyor.Core.Discard" x="208" y="120">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -171,6 +189,10 @@
     <link from_connector="output" from_node="110" to_connector="input" to_node="109"/>
     <link from_connector="classifiedTaxons" from_node="113" to_connector="input" to_node="110"/>
     <link from_connector="output" from_node="109" to_connector="input" to_node="111"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="reads" to_node="113"/>
+    <link from_connector="output" from_node="177" to_connector="reads" to_node="113"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="177"/>
+    <link from_connector="nonChimeraReads" from_node="178" to_connector="procIn" to_node="177"/>
+    <link from_connector="procOut" from_node="177" to_connector="reads" to_node="178"/>
+    <link from_connector="chimeraReads" from_node="178" to_connector="input" to_node="179"/>
   </links>
 </graph>
