@@ -43,8 +43,8 @@
     </node>
     <node id="96" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="1160" y="930">
       <configuration_items>
-        <configuration_item name="attrStruct" value="HIERARCHICAL"/>
         <configuration_item name="attrType" value="DISCRETE"/>
+        <configuration_item name="attrStruct" value="HIERARCHICAL"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -78,25 +78,17 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="106" name="" type="Conveyor.Logic.FlowThrottle`1" x="423" y="39">
-      <configuration_items>
-        <configuration_item name="processAhead" value="300000001"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-      </typeParameters>
-    </node>
-    <node id="107" name="" type="Sequence.GetLength" x="510" y="300">
+    <node id="107" name="" type="Sequence.GetLength" x="441" y="203">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="108" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="310" y="340">
+    <node id="108" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="334" y="283">
       <configuration_items>
         <configuration_item name="value" value="0"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="109" name="" type="Conveyor.Core.Repeat`1" x="400" y="440">
+    <node id="109" name="" type="Conveyor.Core.Repeat`1" x="431" y="371">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Math.ULong"/>
@@ -109,7 +101,7 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="111" name="" type="Conveyor.Kraken.Kraken`1" x="611" y="57">
+    <node id="113" name="" type="Conveyor.Kaiju.Kaiju`1" x="454" y="45">
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
       </configuration_items>
@@ -117,20 +109,14 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
-    <node id="112" name="" type="Conveyor.Kraken.FilterKrakenResult`1" x="541" y="196">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-      </typeParameters>
-    </node>
-    <node id="113" name="" type="Conveyor.MGX.MinusOne" x="493" y="554">
+    <node id="114" name="" type="Conveyor.MGX.MinusOne" x="541" y="292">
       <configuration_items/>
       <typeParameters/>
     </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="filtered" from_node="112" to_connector="input" to_node="61"/>
+    <link from_connector="classified" from_node="113" to_connector="input" to_node="61"/>
     <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
     <link from_connector="output" from_node="77" to_connector="input" to_node="78"/>
     <link from_connector="current" from_node="99" to_connector="input" to_node="79"/>
@@ -140,23 +126,20 @@
     <link from_connector="output" from_node="97" to_connector="jobIn" to_node="96"/>
     <link from_connector="output" from_node="9" to_connector="input" to_node="97"/>
     <link from_connector="output" from_node="61" to_connector="seqIn" to_node="98"/>
-    <link from_connector="output" from_node="113" to_connector="stopIn" to_node="98"/>
-    <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="98"/>
+    <link from_connector="output" from_node="114" to_connector="stopIn" to_node="98"/>
     <link from_connector="output" from_node="109" to_connector="startIn" to_node="98"/>
+    <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="98"/>
     <link from_connector="output" from_node="96" to_connector="typeIn" to_node="99"/>
     <link from_connector="output" from_node="101" to_connector="parentIn" to_node="99"/>
-    <link from_connector="output" from_node="102" to_connector="nodeIn" to_node="99"/>
     <link from_connector="output" from_node="79" to_connector="dataIn" to_node="99"/>
+    <link from_connector="output" from_node="102" to_connector="nodeIn" to_node="99"/>
     <link from_connector="output" from_node="103" to_connector="input" to_node="101"/>
     <link from_connector="output" from_node="110" to_connector="input" to_node="102"/>
     <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="106"/>
-    <link from_connector="classified" from_node="111" to_connector="trigger" to_node="106"/>
     <link from_connector="output" from_node="61" to_connector="input" to_node="107"/>
     <link from_connector="output" from_node="108" to_connector="input" to_node="109"/>
-    <link from_connector="filtered" from_node="112" to_connector="input" to_node="110"/>
-    <link from_connector="output" from_node="106" to_connector="inputSequence" to_node="111"/>
-    <link from_connector="classified" from_node="111" to_connector="input" to_node="112"/>
-    <link from_connector="output" from_node="107" to_connector="input" to_node="113"/>
+    <link from_connector="classified" from_node="113" to_connector="input" to_node="110"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="inputSequence" to_node="113"/>
+    <link from_connector="output" from_node="107" to_connector="input" to_node="114"/>
   </links>
 </graph>
