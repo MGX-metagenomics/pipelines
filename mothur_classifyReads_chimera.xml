@@ -130,10 +130,10 @@
     </node>
     <node id="112" name="" type="Conveyor.Mothur.Mothur_ClassifyReads`1" x="677" y="25">
       <configuration_items>
-        <configuration_item name="database" user_description="used database for classification" user_name="database" value="SILVA"/>
+        <configuration_item name="database" user_description="database for classification" user_name="database" value="SILVA"/>
         <configuration_item name="chunkSize" value="10000"/>
-        <configuration_item name="iter" user_description="times of iteration for calculating bootstrap value" user_name="iterations" value="100"/>
-        <configuration_item name="threshold" user_description="bootsrap value cutoff" user_name="cutoff" value="70"/>
+        <configuration_item name="iter" user_description="number of iterations for calculating bootstrap value" user_name="iterations" value="100"/>
+        <configuration_item name="threshold" user_description="bootstrap value cutoff" user_name="cutoff" value="70"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
