@@ -42,6 +42,7 @@
     <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="631" y="-6">
       <configuration_items>
         <configuration_item user_name="E-Value cutoff" user_description="E-Value cutoff for homology search" name="evalueCutoff" value="1e-5"/>
+        <configuration_item name="identityCutoff" user_description="Identity cutoff in percent (0-1)" user_name="Identity cutoff" value="0.7"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
