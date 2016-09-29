@@ -28,15 +28,14 @@
     <node id="6" name="" type="Conveyor.List.Iterator`1" x="217" y="579">
       <configuration_items/>
       <typeParameters>
-        <type name="Conveyor.ReadMapping.Applications.BlastToSam.BlastMappedRead`2">
+        <type name="Conveyor.ReadMapping.BlastToSAM.BlastMappedRead`2">
           <type name="Conveyor.MGX.MGXSequence"/>
           <type name="Conveyor.MGX.MGXReference"/>
         </type>
       </typeParameters>
     </node>
-    <node id="7" name="" type="Conveyor.ReadMapping.Applications.BlastToSam.BlastToSAM`2" x="179" y="420">
+    <node id="7" name="" type="Conveyor.ReadMapping.BlastToSAM.MagicBlast`2" x="179" y="420">
       <configuration_items>
-        <configuration_item name="useComplexityFilter" value="False" user_name="complexity filter" user_description="use DUST sequence complexity filter"/>
         <configuration_item name="identityThreshold" user_description="sequence identity threshold (in percent)" user_name="identity threshold" value="40"/>
         <configuration_item name="chunkSize" value="10000"/>
       </configuration_items>
