@@ -130,7 +130,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="125" name="" type="Conveyor.Logic.PassCheck`1" x="434" y="660">
+    <node id="125" name="" type="Conveyor.Logic.PassCheck`1" x="436" y="618">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Math.ULong"/>
@@ -400,14 +400,6 @@
         <type name="Conveyor.Math.ULong"/>
       </typeParameters>
     </node>
-    <node id="212" name="" type="Conveyor.MGX.MinusOne" x="258" y="536">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="213" name="" type="Conveyor.MGX.MinusOne" x="435" y="557">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -436,9 +428,9 @@
     <link from_connector="ogs" from_node="120" to_connector="input" to_node="123"/>
     <link from_connector="ogs" from_node="120" to_connector="input" to_node="124"/>
     <link from_connector="output" from_node="123" to_connector="pass" to_node="124"/>
-    <link from_connector="output" from_node="213" to_connector="input" to_node="125"/>
+    <link from_connector="output" from_node="112" to_connector="input" to_node="125"/>
     <link from_connector="output" from_node="123" to_connector="pass" to_node="125"/>
-    <link from_connector="output" from_node="212" to_connector="input" to_node="126"/>
+    <link from_connector="output" from_node="111" to_connector="input" to_node="126"/>
     <link from_connector="output" from_node="123" to_connector="pass" to_node="126"/>
     <link from_connector="output" from_node="29" to_connector="input" to_node="127"/>
     <link from_connector="output" from_node="123" to_connector="pass" to_node="127"/>
@@ -458,7 +450,7 @@
     <link from_connector="output" from_node="118" to_connector="input" to_node="144"/>
     <link from_connector="teraBlastDatabase" from_node="146" to_connector="database" to_node="145"/>
     <link from_connector="loopOut" from_node="191" to_connector="query" to_node="145"/>
-    <link from_connector="output" from_node="116" to_connector="systemDatabase" to_node="146"/>
+    <link from_connector="db" from_node="116" to_connector="systemDatabase" to_node="146"/>
     <link from_connector="result" from_node="20" to_connector="input" to_node="147"/>
     <link from_connector="output" from_node="149" to_connector="input" to_node="148"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="191"/>
@@ -491,7 +483,5 @@
     <link from_connector="output" from_node="207" to_connector="input" to_node="209"/>
     <link from_connector="output" from_node="205" to_connector="input" to_node="210"/>
     <link from_connector="output" from_node="205" to_connector="input" to_node="211"/>
-    <link from_connector="output" from_node="111" to_connector="input" to_node="212"/>
-    <link from_connector="output" from_node="112" to_connector="input" to_node="213"/>
   </links>
 </graph>
