@@ -96,11 +96,11 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="111" name="" type="Conveyor.Math.ULongOps.IntToULong" x="270" y="460">
+    <node id="111" name="" type="Conveyor.Math.ULongOps.IntToULong" x="269" y="494">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="112" name="" type="Conveyor.Math.ULongOps.IntToULong" x="478" y="479">
+    <node id="112" name="" type="Conveyor.Math.ULongOps.IntToULong" x="425" y="541">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -165,16 +165,6 @@
       </typeParameters>
     </node>
     <node id="155" name="" type="Conveyor.BioIO.Fasta.ReadAAFastaFile" x="1044" y="26">
-      <configuration_items>
-        <configuration_item name="inputFile" value="" user_name="AA FASTA file" user_description="FASTA file containing amino acid sequences to be used as a target database"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="156" name="" type="Conveyor.MGX.MinusOne" x="254" y="595">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="157" name="" type="Conveyor.MGX.MinusOne" x="418" y="661">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -194,9 +184,9 @@
     <link from_connector="output" from_node="107" to_connector="input" to_node="108"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="109"/>
     <link from_connector="output" from_node="29" to_connector="seqIn" to_node="110"/>
-    <link from_connector="output" from_node="157" to_connector="stopIn" to_node="110"/>
+    <link from_connector="output" from_node="112" to_connector="stopIn" to_node="110"/>
     <link from_connector="output" from_node="117" to_connector="attributeIn" to_node="110"/>
-    <link from_connector="output" from_node="156" to_connector="startIn" to_node="110"/>
+    <link from_connector="output" from_node="111" to_connector="startIn" to_node="110"/>
     <link from_connector="output" from_node="108" to_connector="input" to_node="111"/>
     <link from_connector="output" from_node="109" to_connector="input" to_node="112"/>
     <link from_connector="output" from_node="144" to_connector="typeIn" to_node="117"/>
@@ -211,7 +201,5 @@
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="151"/>
     <link from_connector="result" from_node="13" to_connector="trigger" to_node="151"/>
     <link from_connector="sequenceOut" from_node="155" to_connector="sequence" to_node="154"/>
-    <link from_connector="output" from_node="111" to_connector="input" to_node="156"/>
-    <link from_connector="output" from_node="112" to_connector="input" to_node="157"/>
   </links>
 </graph>

@@ -263,14 +263,6 @@
         </type>
       </typeParameters>
     </node>
-    <node id="77" name="" type="Conveyor.MGX.MinusOne" x="594" y="765">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="78" name="" type="Conveyor.MGX.MinusOne" x="754" y="765">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -311,9 +303,9 @@
     <link from_connector="output" from_node="26" to_connector="nodeIn" to_node="67"/>
     <link from_connector="output" from_node="38" to_connector="dataIn" to_node="67"/>
     <link from_connector="output" from_node="56" to_connector="seqIn" to_node="68"/>
-    <link from_connector="output" from_node="78" to_connector="stopIn" to_node="68"/>
+    <link from_connector="output" from_node="64" to_connector="stopIn" to_node="68"/>
     <link from_connector="output" from_node="67" to_connector="attributeIn" to_node="68"/>
-    <link from_connector="output" from_node="77" to_connector="startIn" to_node="68"/>
+    <link from_connector="output" from_node="63" to_connector="startIn" to_node="68"/>
     <link from_connector="result" from_node="71" to_connector="secondArgument" to_node="69"/>
     <link from_connector="output" from_node="59" to_connector="firstArgument" to_node="69"/>
     <link from_connector="output" from_node="59" to_connector="input" to_node="70"/>
@@ -324,7 +316,5 @@
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="75"/>
     <link from_connector="output" from_node="21" to_connector="trigger" to_node="75"/>
     <link from_connector="output" from_node="15" to_connector="input" to_node="76"/>
-    <link from_connector="output" from_node="63" to_connector="input" to_node="77"/>
-    <link from_connector="output" from_node="64" to_connector="input" to_node="78"/>
   </links>
 </graph>
