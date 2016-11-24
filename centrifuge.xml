@@ -112,6 +112,7 @@
     <node id="111" name="" type="Conveyor.Centrifuge.Centrifuge`1" x="611" y="57">
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
+        <configuration_item name="minHitLen" user_description="minimum length of partial hits (default 22, must be greater than 15)" user_name="hit length threshold" value="22"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
