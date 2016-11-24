@@ -2,7 +2,7 @@
 <graph description="" name="unnamed" service="MGX">
   <composites/>
   <nodes>
-    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="212" y="106">
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="62" y="109">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -37,7 +37,7 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="20" name="" type="Conveyor.Logic.PassCheck`1" x="203" y="489">
+    <node id="20" name="" type="Conveyor.Logic.PassCheck`1" x="238" y="414">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -66,8 +66,9 @@
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
     <link from_connector="output" from_node="20" to_connector="seqIn" to_node="16"/>
-    <link from_connector="index" from_node="18" to_connector="references" to_node="17"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="16"/>
     <link from_connector="output" from_node="22" to_connector="read" to_node="17"/>
+    <link from_connector="index" from_node="18" to_connector="references" to_node="17"/>
     <link from_connector="sequenceOut" from_node="19" to_connector="sequence" to_node="18"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="20"/>
     <link from_connector="output" from_node="21" to_connector="pass" to_node="20"/>
