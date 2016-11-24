@@ -12,11 +12,11 @@
     </node>
     <node id="13" name="Blast-GtRNAdb" type="Conveyor.Blast.BlastvsDB`2" x="896" y="107">
       <configuration_items>
-        <configuration_item name="useComplexityFilter" value="False"/>
-        <configuration_item name="evalueCutoff" value="1e-3"/>
         <configuration_item name="chunkSize" value="12000"/>
-        <configuration_item name="maxAlignments" value="1"/>
         <configuration_item name="blastType" value="blastn"/>
+        <configuration_item name="maxAlignments" value="1"/>
+        <configuration_item name="evalueCutoff" value="1e-3"/>
+        <configuration_item name="useComplexityFilter" value="False"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -53,11 +53,11 @@
     </node>
     <node id="78" name="Blast-LSU" type="Conveyor.Blast.BlastvsDB`2" x="739" y="918">
       <configuration_items>
-        <configuration_item name="useComplexityFilter" value="False"/>
-        <configuration_item name="evalueCutoff" value="1e-3"/>
         <configuration_item name="chunkSize" value="2200"/>
-        <configuration_item name="maxAlignments" value="1"/>
         <configuration_item name="blastType" value="blastn"/>
+        <configuration_item name="maxAlignments" value="1"/>
+        <configuration_item name="evalueCutoff" value="1e-3"/>
+        <configuration_item name="useComplexityFilter" value="False"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -85,11 +85,11 @@
     </node>
     <node id="85" name="Blast-RDP" type="Conveyor.Blast.BlastvsDB`2" x="337" y="1380">
       <configuration_items>
-        <configuration_item name="useComplexityFilter" value="False"/>
-        <configuration_item name="evalueCutoff" value="1e-3"/>
         <configuration_item name="chunkSize" value="1000"/>
-        <configuration_item name="maxAlignments" value="1"/>
         <configuration_item name="blastType" value="blastn"/>
+        <configuration_item name="maxAlignments" value="1"/>
+        <configuration_item name="evalueCutoff" value="1e-3"/>
+        <configuration_item name="useComplexityFilter" value="False"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -167,11 +167,11 @@
     </node>
     <node id="97" name="Blast-5SrRNA" type="Conveyor.Blast.BlastvsDB`2" x="802" y="491">
       <configuration_items>
-        <configuration_item name="useComplexityFilter" value="False"/>
-        <configuration_item name="evalueCutoff" value="1e-3"/>
         <configuration_item name="chunkSize" value="10000"/>
-        <configuration_item name="maxAlignments" value="1"/>
         <configuration_item name="blastType" value="blastn"/>
+        <configuration_item name="maxAlignments" value="1"/>
+        <configuration_item name="evalueCutoff" value="1e-3"/>
+        <configuration_item name="useComplexityFilter" value="False"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -217,21 +217,24 @@
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="conditionOut" from_node="92" to_connector="query" to_node="13"/>
     <link from_connector="db" from_node="14" to_connector="database" to_node="13"/>
+    <link from_connector="conditionOut" from_node="92" to_connector="query" to_node="13"/>
     <link from_connector="output" from_node="21" to_connector="input" to_node="16"/>
     <link from_connector="result" from_node="13" to_connector="input" to_node="21"/>
     <link from_connector="trueOut" from_node="92" to_connector="seqIn" to_node="76"/>
-    <link from_connector="conditionOut" from_node="93" to_connector="query" to_node="78"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="76"/>
     <link from_connector="db" from_node="79" to_connector="database" to_node="78"/>
+    <link from_connector="conditionOut" from_node="93" to_connector="query" to_node="78"/>
     <link from_connector="output" from_node="91" to_connector="input" to_node="81"/>
     <link from_connector="trueOut" from_node="93" to_connector="seqIn" to_node="82"/>
-    <link from_connector="conditionOut" from_node="94" to_connector="query" to_node="85"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="82"/>
     <link from_connector="db" from_node="86" to_connector="database" to_node="85"/>
+    <link from_connector="conditionOut" from_node="94" to_connector="query" to_node="85"/>
     <link from_connector="result" from_node="85" to_connector="input" to_node="87"/>
     <link from_connector="output" from_node="87" to_connector="input" to_node="88"/>
     <link from_connector="falseOut" from_node="94" to_connector="input" to_node="89"/>
     <link from_connector="trueOut" from_node="94" to_connector="seqIn" to_node="90"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="90"/>
     <link from_connector="result" from_node="78" to_connector="input" to_node="91"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="92"/>
     <link from_connector="output" from_node="16" to_connector="conditionIn" to_node="92"/>
@@ -242,8 +245,9 @@
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="95"/>
     <link from_connector="output" from_node="100" to_connector="conditionIn" to_node="95"/>
     <link from_connector="trueOut" from_node="95" to_connector="seqIn" to_node="96"/>
-    <link from_connector="conditionOut" from_node="95" to_connector="query" to_node="97"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="96"/>
     <link from_connector="db" from_node="101" to_connector="database" to_node="97"/>
+    <link from_connector="conditionOut" from_node="95" to_connector="query" to_node="97"/>
     <link from_connector="result" from_node="97" to_connector="input" to_node="99"/>
     <link from_connector="output" from_node="99" to_connector="input" to_node="100"/>
     <link from_connector="falseOut" from_node="93" to_connector="input" to_node="102"/>
