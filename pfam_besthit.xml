@@ -6,7 +6,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="2" name="" type="Conveyor.MGX.ReadCSFFile" x="261" y="20">
+    <node id="2" name="" type="Conveyor.MGX.GetSequences" x="261" y="20">
       <configuration_items/>
       <typeParameters/>
     </node>
