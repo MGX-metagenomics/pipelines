@@ -10,45 +10,35 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="77" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonRank" x="980" y="590">
+    <node id="77" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonRank" x="378" y="770">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="78" name="" type="Conveyor.Taxonomy.NCBI.GetRankName" x="1060" y="660">
+    <node id="78" name="" type="Conveyor.Taxonomy.NCBI.GetRankName" x="220" y="740">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="79" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonName" x="810" y="900">
+    <node id="79" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonName" x="841" y="615">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="80" name="" type="Conveyor.Text.StringGenerator" x="1280" y="720">
+    <node id="80" name="" type="Conveyor.Text.StringGenerator" x="53" y="697">
       <configuration_items>
         <configuration_item name="value" value="NCBI"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="81" name="" type="Conveyor.Text.Concat" x="1229" y="605">
+    <node id="81" name="" type="Conveyor.Text.Concat" x="141" y="615">
       <configuration_items>
         <configuration_item name="delimiter" value="_"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="96" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="1160" y="930">
+    <node id="96" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="152" y="433">
       <configuration_items>
-        <configuration_item name="attrType" value="DISCRETE"/>
         <configuration_item name="attrStruct" value="HIERARCHICAL"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
       </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="97" name="" type="Conveyor.Core.Repeat`1" x="50" y="930">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXJob"/>
-      </typeParameters>
-    </node>
-    <node id="98" name="" type="Conveyor.MGX.AnnotateAttribute" x="384" y="877">
-      <configuration_items/>
       <typeParameters/>
     </node>
     <node id="99" name="" type="Conveyor.MGX.CreateHierarchicalMGXAttribute`1" x="558" y="675">
@@ -57,7 +47,7 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="101" name="" type="Conveyor.MGX.GetMajorRankedParent" x="630" y="890">
+    <node id="101" name="" type="Conveyor.MGX.GetMajorRankedParent" x="810" y="752">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -65,26 +55,10 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="103" name="" type="Conveyor.Tree.GetParent`1" x="530" y="840">
+    <node id="103" name="" type="Conveyor.Tree.GetParent`1" x="623" y="787">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
-      </typeParameters>
-    </node>
-    <node id="107" name="" type="Sequence.GetLength" x="317" y="502">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="108" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="143" y="685">
-      <configuration_items>
-        <configuration_item name="value" value="0"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="109" name="" type="Conveyor.Core.Repeat`1" x="212" y="786">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Math.ULong"/>
       </typeParameters>
     </node>
     <node id="111" name="" type="Conveyor.MetaBin.MetaBin`1" x="681" y="-27">
@@ -121,13 +95,6 @@
         </type>
       </typeParameters>
     </node>
-    <node id="116" name="" type="Conveyor.Pair.FirstElement`2" x="353" y="366">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
-      </typeParameters>
-    </node>
     <node id="117" name="" type="Conveyor.Pair.SecondElement`2" x="770" y="367">
       <configuration_items/>
       <typeParameters>
@@ -153,6 +120,17 @@
       <configuration_items/>
       <typeParameters/>
     </node>
+    <node id="123" name="" type="Conveyor.MGX.AnnotateSequence" x="480" y="490">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="124" name="" type="Conveyor.Pair.FirstElement`2" x="424" y="378">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -162,21 +140,14 @@
     <link from_connector="output" from_node="78" to_connector="secondArgument" to_node="81"/>
     <link from_connector="output" from_node="80" to_connector="firstArgument" to_node="81"/>
     <link from_connector="result" from_node="81" to_connector="name" to_node="96"/>
-    <link from_connector="output" from_node="97" to_connector="jobIn" to_node="96"/>
-    <link from_connector="output" from_node="9" to_connector="input" to_node="97"/>
-    <link from_connector="output" from_node="116" to_connector="seqIn" to_node="98"/>
-    <link from_connector="output" from_node="107" to_connector="stopIn" to_node="98"/>
-    <link from_connector="output" from_node="109" to_connector="startIn" to_node="98"/>
-    <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="98"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="96"/>
     <link from_connector="output" from_node="96" to_connector="typeIn" to_node="99"/>
     <link from_connector="output" from_node="101" to_connector="parentIn" to_node="99"/>
-    <link from_connector="output" from_node="79" to_connector="dataIn" to_node="99"/>
     <link from_connector="output" from_node="102" to_connector="nodeIn" to_node="99"/>
+    <link from_connector="output" from_node="79" to_connector="dataIn" to_node="99"/>
     <link from_connector="output" from_node="103" to_connector="input" to_node="101"/>
     <link from_connector="output" from_node="117" to_connector="input" to_node="102"/>
     <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
-    <link from_connector="output" from_node="116" to_connector="input" to_node="107"/>
-    <link from_connector="output" from_node="108" to_connector="input" to_node="109"/>
     <link from_connector="output" from_node="118" to_connector="inputSequence" to_node="111"/>
     <link from_connector="output" from_node="121" to_connector="secondArgument" to_node="113"/>
     <link from_connector="classified" from_node="111" to_connector="firstArgument" to_node="113"/>
@@ -184,11 +155,13 @@
     <link from_connector="sequenceOut" from_node="10" to_connector="firstArgument" to_node="114"/>
     <link from_connector="result" from_node="114" to_connector="input" to_node="115"/>
     <link from_connector="output" from_node="122" to_connector="pass" to_node="115"/>
-    <link from_connector="output" from_node="115" to_connector="input" to_node="116"/>
     <link from_connector="output" from_node="115" to_connector="input" to_node="117"/>
-    <link from_connector="classified" from_node="111" to_connector="trigger" to_node="118"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="118"/>
+    <link from_connector="classified" from_node="111" to_connector="trigger" to_node="118"/>
     <link from_connector="output" from_node="112" to_connector="input" to_node="121"/>
     <link from_connector="result" from_node="113" to_connector="input" to_node="122"/>
+    <link from_connector="output" from_node="124" to_connector="seqIn" to_node="123"/>
+    <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="123"/>
+    <link from_connector="output" from_node="115" to_connector="input" to_node="124"/>
   </links>
 </graph>

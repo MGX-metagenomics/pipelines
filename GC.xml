@@ -2,16 +2,6 @@
 <graph description="" name="unnamed" service="MGX">
   <composites/>
   <nodes>
-    <node id="6" name="" type="Sequence.GetLength" x="800" y="180">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="8" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="550" y="210">
-      <configuration_items>
-        <configuration_item name="value" value="0"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
     <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="141" y="62">
       <configuration_items/>
       <typeParameters/>
@@ -20,55 +10,46 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="11" name="" type="Conveyor.MGX.AnnotateAttribute" x="560" y="460">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="12" name="" type="Conveyor.Text.StringGenerator" x="61" y="405">
+    <node id="12" name="" type="Conveyor.Text.StringGenerator" x="67" y="389">
       <configuration_items>
         <configuration_item name="value" value="GC"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="13" name="" type="Conveyor.MGX.GCContent" x="910" y="50">
+    <node id="13" name="" type="Conveyor.MGX.GCContent" x="629" y="81">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="14" name="" type="Conveyor.MGX.FormatString" x="930" y="420">
+    <node id="14" name="" type="Conveyor.MGX.FormatString" x="621" y="454">
       <configuration_items>
         <configuration_item name="fmt" value="{0:F1}"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="15" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="210" y="310">
+    <node id="15" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="208" y="299">
       <configuration_items>
         <configuration_item name="attrStruct" value="BASIC"/>
         <configuration_item name="attrType" value="NUMERICAL"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="16" name="" type="Conveyor.MGX.CreateMGXAttribute" x="430" y="600">
+    <node id="16" name="" type="Conveyor.MGX.CreateMGXAttribute" x="411" y="611">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="17" name="" type="Conveyor.Core.Repeat`1" x="350" y="430">
+    <node id="17" name="" type="Conveyor.Core.Repeat`1" x="277" y="431">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXAttributeType"/>
       </typeParameters>
     </node>
-    <node id="18" name="" type="Conveyor.MGX.MinusOne" x="716" y="319">
+    <node id="446" name="" type="Conveyor.MGX.AnnotateSequence" x="444" y="297">
       <configuration_items/>
       <typeParameters/>
     </node>
   </nodes>
   <links>
-    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="6"/>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="seqIn" to_node="11"/>
-    <link from_connector="output" from_node="18" to_connector="stopIn" to_node="11"/>
-    <link from_connector="output" from_node="16" to_connector="attributeIn" to_node="11"/>
-    <link from_connector="output" from_node="8" to_connector="startIn" to_node="11"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="13"/>
     <link from_connector="output" from_node="13" to_connector="input" to_node="14"/>
     <link from_connector="output" from_node="12" to_connector="name" to_node="15"/>
@@ -76,6 +57,7 @@
     <link from_connector="output" from_node="17" to_connector="typeIn" to_node="16"/>
     <link from_connector="output" from_node="14" to_connector="valueIn" to_node="16"/>
     <link from_connector="output" from_node="15" to_connector="input" to_node="17"/>
-    <link from_connector="output" from_node="6" to_connector="input" to_node="18"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="seqIn" to_node="446"/>
+    <link from_connector="output" from_node="16" to_connector="attributeIn" to_node="446"/>
   </links>
 </graph>

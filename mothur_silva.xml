@@ -47,52 +47,10 @@
         <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
       </typeParameters>
     </node>
-    <node id="68" name="" type="Conveyor.MGX.AnnotateAttribute" x="447" y="392">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="73" name="" type="Conveyor.Core.Repeat`1" x="33" y="258">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXJob"/>
-      </typeParameters>
-    </node>
     <node id="74" name="" type="Conveyor.Tree.GetParent`1" x="473" y="563">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
-      </typeParameters>
-    </node>
-    <node id="80" name="" type="Sequence.GetLength" x="568" y="301">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="81" name="" type="Conveyor.Math.ULongOps.Sub" x="669" y="376">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="82" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="844" y="526">
-      <configuration_items>
-        <configuration_item name="value" value="1"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="83" name="" type="Conveyor.Math.ULongOps.ULongGenerator" x="629" y="541">
-      <configuration_items>
-        <configuration_item name="value" value="0"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="84" name="" type="Conveyor.Core.Repeat`1" x="770" y="460">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Math.ULong"/>
-      </typeParameters>
-    </node>
-    <node id="85" name="" type="Conveyor.Core.Repeat`1" x="621" y="463">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Math.ULong"/>
       </typeParameters>
     </node>
     <node id="107" name="" type="Conveyor.Logic.PassCheck`1" x="469" y="227">
@@ -111,20 +69,20 @@
         <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
       </typeParameters>
     </node>
-    <node id="109" name="" type="Conveyor.Tree.IsRootVertex`1" x="980" y="211">
+    <node id="109" name="" type="Conveyor.Tree.IsRootVertex`1" x="880" y="203">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
       </typeParameters>
     </node>
-    <node id="110" name="" type="Conveyor.Pair.SecondElement`2" x="977" y="20">
+    <node id="110" name="" type="Conveyor.Pair.SecondElement`2" x="872" y="32">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
         <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
       </typeParameters>
     </node>
-    <node id="111" name="" type="Conveyor.Logic.Not" x="706" y="214">
+    <node id="111" name="" type="Conveyor.Logic.Not" x="683" y="204">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -157,6 +115,10 @@
       <configuration_items/>
       <typeParameters/>
     </node>
+    <node id="394" name="" type="Conveyor.MGX.AnnotateSequence" x="457" y="346">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -166,22 +128,12 @@
     <link from_connector="output" from_node="37" to_connector="secondArgument" to_node="43"/>
     <link from_connector="output" from_node="42" to_connector="firstArgument" to_node="43"/>
     <link from_connector="result" from_node="43" to_connector="name" to_node="65"/>
-    <link from_connector="output" from_node="73" to_connector="jobIn" to_node="65"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="65"/>
     <link from_connector="output" from_node="65" to_connector="typeIn" to_node="67"/>
     <link from_connector="output" from_node="74" to_connector="parentIn" to_node="67"/>
     <link from_connector="second" from_node="108" to_connector="nodeIn" to_node="67"/>
     <link from_connector="output" from_node="38" to_connector="dataIn" to_node="67"/>
-    <link from_connector="first" from_node="108" to_connector="seqIn" to_node="68"/>
-    <link from_connector="result" from_node="81" to_connector="stopIn" to_node="68"/>
-    <link from_connector="output" from_node="67" to_connector="attributeIn" to_node="68"/>
-    <link from_connector="output" from_node="85" to_connector="startIn" to_node="68"/>
-    <link from_connector="output" from_node="9" to_connector="input" to_node="73"/>
     <link from_connector="nodeOut" from_node="67" to_connector="input" to_node="74"/>
-    <link from_connector="first" from_node="108" to_connector="input" to_node="80"/>
-    <link from_connector="output" from_node="84" to_connector="secondArgument" to_node="81"/>
-    <link from_connector="output" from_node="80" to_connector="firstArgument" to_node="81"/>
-    <link from_connector="output" from_node="82" to_connector="input" to_node="84"/>
-    <link from_connector="output" from_node="83" to_connector="input" to_node="85"/>
     <link from_connector="classifiedTaxons" from_node="112" to_connector="input" to_node="107"/>
     <link from_connector="output" from_node="111" to_connector="pass" to_node="107"/>
     <link from_connector="output" from_node="107" to_connector="pair" to_node="108"/>
@@ -193,5 +145,7 @@
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="124"/>
     <link from_connector="nonChimeraReads" from_node="113" to_connector="procIn" to_node="124"/>
     <link from_connector="chimeraReads" from_node="113" to_connector="input" to_node="125"/>
+    <link from_connector="first" from_node="108" to_connector="seqIn" to_node="394"/>
+    <link from_connector="output" from_node="67" to_connector="attributeIn" to_node="394"/>
   </links>
 </graph>
