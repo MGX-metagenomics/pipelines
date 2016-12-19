@@ -181,40 +181,11 @@
         <type name="Conveyor.MGX.MGXAttributeType"/>
       </typeParameters>
     </node>
-    <node id="145" name="" type="Conveyor.Blast.TeraBlast.TeraBlast`2" x="272" y="-95">
-      <configuration_items>
-        <configuration_item name="chunkSize" value="2500"/>
-        <configuration_item name="blastType" value="blastx"/>
-        <configuration_item name="useQueryFilter" value="False"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
-      </typeParameters>
-    </node>
-    <node id="146" name="" type="Conveyor.Blast.TeraBlast.GetWrappedTeraBlastDatabase`1" x="443" y="-96">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
-      </typeParameters>
-    </node>
     <node id="147" name="" type="Conveyor.Blast.GetSubject`2" x="695" y="266">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
         <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
-      </typeParameters>
-    </node>
-    <node id="191" name="" type="Conveyor.Core.ParallelLoop`2" x="59" y="-67">
-      <configuration_items>
-        <configuration_item name="numberOfInstances" value="6"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.Blast.TeraBlast.TeraBlastResult`2">
-          <type name="Conveyor.MGX.MGXSequence"/>
-          <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
-        </type>
       </typeParameters>
     </node>
     <node id="192" name="" type="Conveyor.MGX.AnnotateAttribute" x="63" y="1549">
@@ -376,14 +347,38 @@
         </type>
       </typeParameters>
     </node>
+    <node id="221" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="412" y="-70">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="100000"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
+      </typeParameters>
+    </node>
+    <node id="222" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="668" y="-5">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
+      </typeParameters>
+    </node>
+    <node id="270" name="" type="Conveyor.Logic.FlowThrottle`1" x="83" y="-56">
+      <configuration_items>
+        <configuration_item name="processAhead" value="300000001"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
     <link from_connector="output" from_node="21" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
-    <link from_connector="output" from_node="191" to_connector="input" to_node="21"/>
+    <link from_connector="result" from_node="221" to_connector="input" to_node="21"/>
     <link from_connector="result" from_node="220" to_connector="input" to_node="29"/>
+    <link from_connector="result" from_node="220" to_connector="input" to_node="107"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="108"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="109"/>
     <link from_connector="output" from_node="127" to_connector="seqIn" to_node="110"/>
@@ -418,12 +413,7 @@
     <link from_connector="output" from_node="132" to_connector="secondArgument" to_node="140"/>
     <link from_connector="result" from_node="135" to_connector="firstArgument" to_node="140"/>
     <link from_connector="output" from_node="118" to_connector="input" to_node="144"/>
-    <link from_connector="teraBlastDatabase" from_node="146" to_connector="database" to_node="145"/>
-    <link from_connector="loopOut" from_node="191" to_connector="query" to_node="145"/>
-    <link from_connector="db" from_node="116" to_connector="systemDatabase" to_node="146"/>
     <link from_connector="result" from_node="220" to_connector="input" to_node="147"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="191"/>
-    <link from_connector="result" from_node="145" to_connector="loopIn" to_node="191"/>
     <link from_connector="output" from_node="204" to_connector="seqIn" to_node="192"/>
     <link from_connector="output" from_node="211" to_connector="stopIn" to_node="192"/>
     <link from_connector="output" from_node="206" to_connector="attributeIn" to_node="192"/>
@@ -454,5 +444,10 @@
     <link from_connector="output" from_node="205" to_connector="input" to_node="211"/>
     <link from_connector="output" from_node="124" to_connector="listIn" to_node="219"/>
     <link from_connector="output" from_node="15" to_connector="listIn" to_node="220"/>
+    <link from_connector="diamondDatabase" from_node="222" to_connector="database" to_node="221"/>
+    <link from_connector="output" from_node="270" to_connector="query" to_node="221"/>
+    <link from_connector="db" from_node="116" to_connector="systemDatabase" to_node="222"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="270"/>
+    <link from_connector="result" from_node="221" to_connector="trigger" to_node="270"/>
   </links>
 </graph>
