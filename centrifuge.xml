@@ -92,20 +92,21 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
-    <node id="112" name="" type="Conveyor.Centrifuge.FilterCentrifugeResult`1" x="554" y="135">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-      </typeParameters>
-    </node>
     <node id="188" name="" type="Conveyor.MGX.AnnotateSequence" x="314" y="295">
       <configuration_items/>
       <typeParameters/>
     </node>
+    <node id="206" name="" type="Conveyor.SequenceAssignment.FilterResult`2" x="554" y="135">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="filtered" from_node="112" to_connector="input" to_node="61"/>
+    <link from_connector="filtered" from_node="206" to_connector="input" to_node="61"/>
     <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
     <link from_connector="output" from_node="77" to_connector="input" to_node="78"/>
     <link from_connector="current" from_node="99" to_connector="input" to_node="79"/>
@@ -122,10 +123,10 @@
     <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="106"/>
     <link from_connector="classified" from_node="111" to_connector="trigger" to_node="106"/>
-    <link from_connector="filtered" from_node="112" to_connector="input" to_node="110"/>
+    <link from_connector="filtered" from_node="206" to_connector="input" to_node="110"/>
     <link from_connector="output" from_node="106" to_connector="inputSequence" to_node="111"/>
-    <link from_connector="classified" from_node="111" to_connector="input" to_node="112"/>
     <link from_connector="output" from_node="61" to_connector="seqIn" to_node="188"/>
     <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="188"/>
+    <link from_connector="classified" from_node="111" to_connector="input" to_node="206"/>
   </links>
 </graph>

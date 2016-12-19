@@ -10,7 +10,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="61" name="" type="Conveyor.Pair.FirstElement`2" x="326" y="133">
+    <node id="61" name="" type="Conveyor.Pair.FirstElement`2" x="466" y="134">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -68,14 +68,14 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="110" name="" type="Conveyor.Pair.SecondElement`2" x="605" y="134">
+    <node id="110" name="" type="Conveyor.Pair.SecondElement`2" x="682" y="125">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="113" name="" type="Conveyor.Kaiju.Kaiju`1" x="457" y="21">
+    <node id="113" name="" type="Conveyor.Kaiju.Kaiju`1" x="619" y="10">
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
       </configuration_items>
@@ -87,10 +87,25 @@
       <configuration_items/>
       <typeParameters/>
     </node>
+    <node id="235" name="" type="Conveyor.Logic.FlowThrottle`1" x="425" y="13">
+      <configuration_items>
+        <configuration_item name="processAhead" value="300000001"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="236" name="" type="Conveyor.SequenceAssignment.FilterResult`2" x="866" y="24">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="classified" from_node="113" to_connector="input" to_node="61"/>
+    <link from_connector="filtered" from_node="236" to_connector="input" to_node="61"/>
     <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
     <link from_connector="output" from_node="77" to_connector="input" to_node="78"/>
     <link from_connector="current" from_node="99" to_connector="input" to_node="79"/>
@@ -105,9 +120,12 @@
     <link from_connector="output" from_node="103" to_connector="input" to_node="101"/>
     <link from_connector="output" from_node="110" to_connector="input" to_node="102"/>
     <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
-    <link from_connector="classified" from_node="113" to_connector="input" to_node="110"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="inputSequence" to_node="113"/>
+    <link from_connector="filtered" from_node="236" to_connector="input" to_node="110"/>
+    <link from_connector="output" from_node="235" to_connector="inputSequence" to_node="113"/>
     <link from_connector="output" from_node="61" to_connector="seqIn" to_node="234"/>
     <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="234"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="235"/>
+    <link from_connector="classified" from_node="113" to_connector="trigger" to_node="235"/>
+    <link from_connector="classified" from_node="113" to_connector="input" to_node="236"/>
   </links>
 </graph>
