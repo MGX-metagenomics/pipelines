@@ -2,15 +2,15 @@
 <graph description="" name="unnamed" service="MGX">
   <composites/>
   <nodes>
-    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="34" y="-44">
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="-286" y="-70">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="10" name="" type="Conveyor.MGX.GetSequences" x="237" y="-48">
+    <node id="10" name="" type="Conveyor.MGX.GetSequences" x="-119" y="-67">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="542" y="48">
+    <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="363" y="89">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.List.List`1">
@@ -21,7 +21,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="16" name="" type="Conveyor.List.HasElements`1" x="733" y="48">
+    <node id="16" name="" type="Conveyor.List.HasElements`1" x="520" y="89">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Blast.BlastHit`2">
@@ -30,16 +30,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="20" name="" type="Conveyor.List.GetElement`1" x="536" y="118">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Blast.BlastHit`2">
-          <type name="Conveyor.MGX.MGXSequence"/>
-          <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
-        </type>
-      </typeParameters>
-    </node>
-    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="631" y="-6">
+    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="229" y="11">
       <configuration_items>
         <configuration_item name="evalueCutoff" user_description="BLAST E-Value cutoff" user_name="E-Value cutoff" value="1e-5"/>
       </configuration_items>
@@ -55,24 +46,18 @@
         <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
       </typeParameters>
     </node>
-    <node id="99" name="" type="Conveyor.Math.IntegerOps.IntegerGenerator" x="852" y="118">
-      <configuration_items>
-        <configuration_item name="value" value="0"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="107" name="" type="Homology.GetQueryRange" x="360" y="340">
+    <node id="107" name="" type="Homology.GetQueryRange" x="316" y="311">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="108" name="" type="Conveyor.Pair.FirstElement`2" x="280" y="400">
+    <node id="108" name="" type="Conveyor.Pair.FirstElement`2" x="285" y="401">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Math.Integer"/>
         <type name="Conveyor.Math.Integer"/>
       </typeParameters>
     </node>
-    <node id="109" name="" type="Conveyor.Pair.SecondElement`2" x="430" y="400">
+    <node id="109" name="" type="Conveyor.Pair.SecondElement`2" x="441" y="401">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Math.Integer"/>
@@ -83,15 +68,15 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="111" name="" type="Conveyor.Math.ULongOps.IntToULong" x="270" y="460">
+    <node id="111" name="" type="Conveyor.Math.ULongOps.IntToULong" x="272" y="486">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="112" name="" type="Conveyor.Math.ULongOps.IntToULong" x="434" y="460">
+    <node id="112" name="" type="Conveyor.Math.ULongOps.IntToULong" x="440" y="484">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="116" name="" type="Conveyor.EggNOG.V3.GetEggNOGProteinDatabase" x="1068" y="-73">
+    <node id="116" name="" type="Conveyor.EggNOG.V3.GetEggNOGProteinDatabase" x="604" y="-97">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -106,23 +91,23 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="120" name="" type="Conveyor.EggNOG.V3.GetDatabaseEntryGroups" x="860" y="410">
+    <node id="120" name="" type="Conveyor.EggNOG.V3.GetDatabaseEntryGroups" x="833" y="369">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="121" name="" type="Conveyor.EggNOG.V3.SelectLevel" x="1370" y="220">
+    <node id="121" name="" type="Conveyor.EggNOG.V3.SelectLevel" x="1313" y="361">
       <configuration_items>
         <configuration_item name="level" value="COG"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="123" name="" type="Conveyor.List.HasElements`1" x="760" y="510">
+    <node id="123" name="" type="Conveyor.List.HasElements`1" x="748" y="481">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.EggNOG.V3.OrthologGroup"/>
       </typeParameters>
     </node>
-    <node id="124" name="" type="Conveyor.Logic.PassCheck`1" x="970" y="610">
+    <node id="124" name="" type="Conveyor.Logic.PassCheck`1" x="907" y="505">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.List.List`1">
@@ -148,18 +133,6 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
-    <node id="128" name="" type="Conveyor.List.GetElement`1" x="822" y="718">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.EggNOG.V3.OrthologGroup"/>
-      </typeParameters>
-    </node>
-    <node id="130" name="" type="Conveyor.Core.Repeat`1" x="703" y="118">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Math.Integer"/>
-      </typeParameters>
-    </node>
     <node id="132" name="" type="Conveyor.EggNOG.V3.GetOrthologGroupDescription" x="1102" y="745">
       <configuration_items/>
       <typeParameters/>
@@ -174,19 +147,19 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="136" name="" type="Conveyor.Core.Repeat`1" x="1231" y="502">
+    <node id="136" name="" type="Conveyor.Core.Repeat`1" x="1182" y="534">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Text.String"/>
       </typeParameters>
     </node>
-    <node id="137" name="" type="Conveyor.Core.Repeat`1" x="1190" y="212">
+    <node id="137" name="" type="Conveyor.Core.Repeat`1" x="1144" y="361">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.EggNOG.V3.Level"/>
       </typeParameters>
     </node>
-    <node id="138" name="" type="Conveyor.EggNOG.V3.GetLevelName" x="1350" y="420">
+    <node id="138" name="" type="Conveyor.EggNOG.V3.GetLevelName" x="1312" y="453">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -208,7 +181,7 @@
         <type name="Conveyor.MGX.MGXAttributeType"/>
       </typeParameters>
     </node>
-    <node id="145" name="" type="Conveyor.Blast.TeraBlast.TeraBlast`2" x="550" y="-77">
+    <node id="145" name="" type="Conveyor.Blast.TeraBlast.TeraBlast`2" x="272" y="-95">
       <configuration_items>
         <configuration_item name="chunkSize" value="2500"/>
         <configuration_item name="blastType" value="blastx"/>
@@ -219,7 +192,7 @@
         <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
       </typeParameters>
     </node>
-    <node id="146" name="" type="Conveyor.Blast.TeraBlast.GetWrappedTeraBlastDatabase`1" x="836" y="-74">
+    <node id="146" name="" type="Conveyor.Blast.TeraBlast.GetWrappedTeraBlastDatabase`1" x="443" y="-96">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
@@ -232,19 +205,7 @@
         <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
       </typeParameters>
     </node>
-    <node id="148" name="" type="Conveyor.Core.Repeat`1" x="1143" y="634">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Math.Integer"/>
-      </typeParameters>
-    </node>
-    <node id="149" name="" type="Conveyor.Math.IntegerOps.IntegerGenerator" x="1433" y="636">
-      <configuration_items>
-        <configuration_item name="value" value="0"/>
-      </configuration_items>
-      <typeParameters/>
-    </node>
-    <node id="191" name="" type="Conveyor.Core.ParallelLoop`2" x="399" y="-4">
+    <node id="191" name="" type="Conveyor.Core.ParallelLoop`2" x="59" y="-67">
       <configuration_items>
         <configuration_item name="numberOfInstances" value="6"/>
       </configuration_items>
@@ -367,20 +328,20 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="207" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="-354" y="1114">
+    <node id="207" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="-289" y="1115">
       <configuration_items>
         <configuration_item name="attrStruct" value="BASIC"/>
         <configuration_item name="attrType" value="DISCRETE"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="208" name="" type="Conveyor.Text.StringGenerator" x="-437" y="1027">
+    <node id="208" name="" type="Conveyor.Text.StringGenerator" x="-364" y="1200">
       <configuration_items>
         <configuration_item name="value" value="COG_funccat"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="209" name="" type="Conveyor.Core.Repeat`1" x="-278" y="1211">
+    <node id="209" name="" type="Conveyor.Core.Repeat`1" x="-150" y="1256">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXAttributeType"/>
@@ -400,17 +361,29 @@
         <type name="Conveyor.Math.ULong"/>
       </typeParameters>
     </node>
+    <node id="219" name="" type="Conveyor.List.GetFirst`1" x="964" y="591">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.EggNOG.V3.OrthologGroup"/>
+      </typeParameters>
+    </node>
+    <node id="220" name="" type="Conveyor.List.GetFirst`1" x="388" y="168">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
+        </type>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
     <link from_connector="output" from_node="21" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
-    <link from_connector="output" from_node="130" to_connector="secondArgument" to_node="20"/>
-    <link from_connector="output" from_node="15" to_connector="firstArgument" to_node="20"/>
     <link from_connector="output" from_node="191" to_connector="input" to_node="21"/>
-    <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
-    <link from_connector="result" from_node="20" to_connector="input" to_node="107"/>
+    <link from_connector="result" from_node="220" to_connector="input" to_node="29"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="108"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="109"/>
     <link from_connector="output" from_node="127" to_connector="seqIn" to_node="110"/>
@@ -434,11 +407,8 @@
     <link from_connector="output" from_node="123" to_connector="pass" to_node="126"/>
     <link from_connector="output" from_node="29" to_connector="input" to_node="127"/>
     <link from_connector="output" from_node="123" to_connector="pass" to_node="127"/>
-    <link from_connector="output" from_node="148" to_connector="secondArgument" to_node="128"/>
-    <link from_connector="output" from_node="124" to_connector="firstArgument" to_node="128"/>
-    <link from_connector="output" from_node="99" to_connector="input" to_node="130"/>
-    <link from_connector="result" from_node="128" to_connector="input" to_node="132"/>
-    <link from_connector="result" from_node="128" to_connector="input" to_node="133"/>
+    <link from_connector="result" from_node="219" to_connector="input" to_node="132"/>
+    <link from_connector="result" from_node="219" to_connector="input" to_node="133"/>
     <link from_connector="output" from_node="139" to_connector="secondArgument" to_node="135"/>
     <link from_connector="output" from_node="136" to_connector="firstArgument" to_node="135"/>
     <link from_connector="output" from_node="138" to_connector="input" to_node="136"/>
@@ -451,8 +421,7 @@
     <link from_connector="teraBlastDatabase" from_node="146" to_connector="database" to_node="145"/>
     <link from_connector="loopOut" from_node="191" to_connector="query" to_node="145"/>
     <link from_connector="db" from_node="116" to_connector="systemDatabase" to_node="146"/>
-    <link from_connector="result" from_node="20" to_connector="input" to_node="147"/>
-    <link from_connector="output" from_node="149" to_connector="input" to_node="148"/>
+    <link from_connector="result" from_node="220" to_connector="input" to_node="147"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="191"/>
     <link from_connector="result" from_node="145" to_connector="loopIn" to_node="191"/>
     <link from_connector="output" from_node="204" to_connector="seqIn" to_node="192"/>
@@ -461,7 +430,7 @@
     <link from_connector="output" from_node="210" to_connector="startIn" to_node="192"/>
     <link from_connector="listOut" from_node="195" to_connector="inputList" to_node="193"/>
     <link from_connector="result" from_node="200" to_connector="element" to_node="193"/>
-    <link from_connector="result" from_node="128" to_connector="input" to_node="194"/>
+    <link from_connector="result" from_node="219" to_connector="input" to_node="194"/>
     <link from_connector="result" from_node="198" to_connector="elementIn" to_node="195"/>
     <link from_connector="output" from_node="194" to_connector="listIn" to_node="195"/>
     <link from_connector="elementOut" from_node="195" to_connector="input" to_node="196"/>
@@ -483,5 +452,7 @@
     <link from_connector="output" from_node="207" to_connector="input" to_node="209"/>
     <link from_connector="output" from_node="205" to_connector="input" to_node="210"/>
     <link from_connector="output" from_node="205" to_connector="input" to_node="211"/>
+    <link from_connector="output" from_node="124" to_connector="listIn" to_node="219"/>
+    <link from_connector="output" from_node="15" to_connector="listIn" to_node="220"/>
   </links>
 </graph>
