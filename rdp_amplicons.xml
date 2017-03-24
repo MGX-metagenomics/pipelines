@@ -44,6 +44,7 @@
     <node id="47" name="" type="Conveyor.RDPClassifier.RDPClassifier`1" x="611" y="87">
       <configuration_items>
         <configuration_item name="chunkSize" value="500"/>
+        <configuration_item name="trainset" user_description="training set type" user_name="training set" value="16srrna"/>
         <configuration_item name="threshold" user_description="Classification confidence cutoff" user_name="confidence cutoff" value="0.7"/>
       </configuration_items>
       <typeParameters>
