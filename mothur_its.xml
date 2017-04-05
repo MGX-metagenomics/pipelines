@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="Mothur based classification workflow for ITS amplicons" name="Mothur ITS amplicon classifier" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="34" y="26">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.MGX.GetSequences" x="200" y="26">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="37" name="" type="Conveyor.Taxonomy.Bergey.GetRankName" x="146" y="545">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="38" name="" type="Conveyor.Taxonomy.Bergey.GetTaxonName" x="319" y="570">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="39" name="" type="Conveyor.Taxonomy.Bergey.GetTaxonRank" x="244" y="655">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="42" name="" type="Conveyor.Text.StringGenerator" x="32" y="622">
+      <configuration_items>
+        <configuration_item name="value" value="Bergey_"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="43" name="" type="Conveyor.Text.Concat" x="53" y="466">
+      <configuration_items>
+        <configuration_item name="delimiter" value=""/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="65" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="39" y="352">
+      <configuration_items>
+        <configuration_item name="attrStruct" value="HIERARCHICAL"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="67" name="" type="Conveyor.MGX.CreateHierarchicalMGXAttribute`1" x="229" y="420">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="74" name="" type="Conveyor.Tree.GetParent`1" x="473" y="563">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="107" name="" type="Conveyor.Logic.PassCheck`1" x="469" y="227">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Pair.Pair`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="108" name="" type="Conveyor.Pair.PairSplit`2" x="229" y="309">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="109" name="" type="Conveyor.Tree.IsRootVertex`1" x="880" y="203">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="110" name="" type="Conveyor.Pair.SecondElement`2" x="872" y="32">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.Bergey.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="111" name="" type="Conveyor.Logic.Not" x="683" y="204">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="112" name="" type="Conveyor.Mothur.Mothur_ClassifyReads`1" x="677" y="25">
+      <configuration_items>
+        <configuration_item name="database" user_description="database for classification" user_name="database" value="UNITE"/>
+        <configuration_item name="chunkSize" value="1500"/>
+        <configuration_item name="iter" user_description="number of bootstrap iterations" user_name="iterations" value="100"/>
+        <configuration_item name="threshold" user_description="bootstrap value cutoff" user_name="cutoff" value="70"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="113" name="" type="Conveyor.Mothur.Mothur_Chimera`1" x="405" y="110">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="124" name="" type="Conveyor.Core.Conditional`1" x="402" y="25">
+      <configuration_items>
+        <configuration_item name="doProcessing" user_description="using uchime filter before classification" user_name="uchime filter" value="False"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="125" name="" type="Conveyor.Core.Discard" x="225" y="111">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="394" name="" type="Conveyor.MGX.AnnotateSequence" x="457" y="346">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
+    <link from_connector="output" from_node="39" to_connector="input" to_node="37"/>
+    <link from_connector="current" from_node="67" to_connector="input" to_node="38"/>
+    <link from_connector="current" from_node="67" to_connector="input" to_node="39"/>
+    <link from_connector="output" from_node="37" to_connector="secondArgument" to_node="43"/>
+    <link from_connector="output" from_node="42" to_connector="firstArgument" to_node="43"/>
+    <link from_connector="result" from_node="43" to_connector="name" to_node="65"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="65"/>
+    <link from_connector="output" from_node="65" to_connector="typeIn" to_node="67"/>
+    <link from_connector="output" from_node="74" to_connector="parentIn" to_node="67"/>
+    <link from_connector="second" from_node="108" to_connector="nodeIn" to_node="67"/>
+    <link from_connector="output" from_node="38" to_connector="dataIn" to_node="67"/>
+    <link from_connector="nodeOut" from_node="67" to_connector="input" to_node="74"/>
+    <link from_connector="classifiedTaxons" from_node="112" to_connector="input" to_node="107"/>
+    <link from_connector="output" from_node="111" to_connector="pass" to_node="107"/>
+    <link from_connector="output" from_node="107" to_connector="pair" to_node="108"/>
+    <link from_connector="output" from_node="110" to_connector="input" to_node="109"/>
+    <link from_connector="classifiedTaxons" from_node="112" to_connector="input" to_node="110"/>
+    <link from_connector="output" from_node="109" to_connector="input" to_node="111"/>
+    <link from_connector="output" from_node="124" to_connector="reads" to_node="112"/>
+    <link from_connector="procOut" from_node="124" to_connector="reads" to_node="113"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="124"/>
+    <link from_connector="nonChimeraReads" from_node="113" to_connector="procIn" to_node="124"/>
+    <link from_connector="chimeraReads" from_node="113" to_connector="input" to_node="125"/>
+    <link from_connector="first" from_node="108" to_connector="seqIn" to_node="394"/>
+    <link from_connector="output" from_node="67" to_connector="attributeIn" to_node="394"/>
+  </links>
+</graph>
