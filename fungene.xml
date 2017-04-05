@@ -20,7 +20,7 @@
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
         <configuration_item name="completeSeq" value="False"/>
-        <configuration_item name="trainTypes" value="illumina_5"/>
+        <configuration_item name="trainType" value="illumina_1"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
