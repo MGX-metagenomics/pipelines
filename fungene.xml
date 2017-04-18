@@ -19,8 +19,8 @@
     <node id="3" name="" type="Conveyor.Geneprediction.FragGeneScan.FragGeneScan`1" x="497" y="-22">
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
-        <configuration_item name="completeSeq" value="False"/>
         <configuration_item name="trainType" value="illumina_1"/>
+        <configuration_item name="completeSeq" value="False"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -56,7 +56,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="12" name="" type="Conveyor.HMMER3.HMMScanv3`5" x="496" y="562">
+    <node id="12" name="" type="Conveyor.HMMER3.HMMScanv3`5" x="495" y="515">
       <configuration_items>
         <configuration_item name="chunkSize" value="3000"/>
       </configuration_items>
@@ -72,7 +72,7 @@
         <type name="Conveyor.HMMER3.HMMv3AA"/>
       </typeParameters>
     </node>
-    <node id="15" name="" type="Conveyor.List.HasElements`1" x="552" y="759">
+    <node id="15" name="" type="Conveyor.List.HasElements`1" x="624" y="672">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.HMMER3.HMMER3ScanDomainHit`5">
@@ -88,7 +88,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="16" name="" type="Conveyor.List.GetFirst`1" x="352" y="948">
+    <node id="16" name="" type="Conveyor.List.GetFirst`1" x="351" y="876">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.HMMER3.HMMER3ScanDomainHit`5">
@@ -104,7 +104,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="124" name="" type="Conveyor.BioinformaticTypes.SortByEValue`1" x="410" y="864">
+    <node id="124" name="" type="Conveyor.BioinformaticTypes.SortByEValue`1" x="465" y="749">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.HMMER3.HMMER3ScanDomainHit`5">
@@ -120,7 +120,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="126" name="" type="Conveyor.HMMER3.GetHMMFromHMMERHit`5" x="161" y="945">
+    <node id="126" name="" type="Conveyor.HMMER3.GetHMMFromHMMERHit`5" x="34" y="947">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Geneprediction.FragGeneScan.FgsTranslation`1">
@@ -157,7 +157,7 @@
         <type name="Conveyor.MGX.MGXAttributeType"/>
       </typeParameters>
     </node>
-    <node id="142" name="" type="Conveyor.HMMER3.FilterHMMERHits`5" x="455" y="658">
+    <node id="142" name="" type="Conveyor.HMMER3.FilterHMMERHits`5" x="494" y="589">
       <configuration_items>
         <configuration_item name="evalueCutoff" user_description="E-Value cutoff for HMMer search" user_name="E-Value cutoff" value="1e-10"/>
       </configuration_items>
@@ -183,7 +183,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="146" name="" type="Conveyor.Logic.PassCheck`1" x="307" y="760">
+    <node id="146" name="" type="Conveyor.Logic.PassCheck`1" x="464" y="674">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.List.List`1">
@@ -209,7 +209,7 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
-    <node id="149" name="" type="Conveyor.HMMER3.GetQueryFromHMMERHit`5" x="709" y="947">
+    <node id="149" name="" type="Conveyor.HMMER3.GetQueryFromHMMERHit`5" x="722" y="1017">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Geneprediction.FragGeneScan.FgsTranslation`1">
@@ -232,7 +232,7 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
-    <node id="152" name="" type="Conveyor.Database.FunGene.GetFunGeneDB" x="709" y="556">
+    <node id="152" name="" type="Conveyor.Database.FunGene.GetFunGeneDB" x="647" y="514">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -273,7 +273,7 @@
         <type name="Conveyor.MGX.MGXAttributeType"/>
       </typeParameters>
     </node>
-    <node id="160" name="" type="IHMM`3.get_Name" x="1" y="1047">
+    <node id="160" name="" type="IHMM`3.get_Name" x="-69" y="1040">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.BioinformaticsTypes.AASequence"/>
@@ -283,32 +283,44 @@
         </type>
       </typeParameters>
     </node>
-    <node id="161" name="" type="Conveyor.MGX.AnnotateAttribute" x="354" y="1258">
+    <node id="161" name="" type="Conveyor.MGX.AnnotateAttribute" x="368" y="1260">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="162" name="" type="Homology.GetQueryRange" x="353" y="1045">
+    <node id="162" name="" type="Homology.GetQueryRange" x="351" y="955">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="163" name="" type="Conveyor.Math.ULongOps.IntToULong" x="214" y="1141">
+    <node id="163" name="" type="Conveyor.Math.ULongOps.IntToULong" x="214" y="1028">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="164" name="" type="Conveyor.Math.ULongOps.IntToULong" x="540" y="1132">
+    <node id="164" name="" type="Conveyor.Math.ULongOps.IntToULong" x="493" y="1026">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="165" name="" type="Conveyor.Pair.PairSplit`2" x="349" y="1115">
+    <node id="165" name="" type="Conveyor.Pair.PairSplit`2" x="353" y="1028">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Math.Integer"/>
         <type name="Conveyor.Math.Integer"/>
       </typeParameters>
     </node>
-    <node id="166" name="" type="Conveyor.MGX.AnnotateAttribute" x="344" y="1602">
+    <node id="166" name="" type="Conveyor.MGX.AnnotateAttribute" x="373" y="1603">
       <configuration_items/>
       <typeParameters/>
+    </node>
+    <node id="167" name="" type="Conveyor.BioinformaticsTypes.BackTranslate`1" x="595" y="1175">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="168" name="" type="Conveyor.BioinformaticsTypes.BackTranslate`1" x="171" y="1171">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
     </node>
   </nodes>
   <links>
@@ -347,16 +359,20 @@
     <link from_connector="output" from_node="157" to_connector="input" to_node="159"/>
     <link from_connector="output" from_node="126" to_connector="input" to_node="160"/>
     <link from_connector="output" from_node="151" to_connector="seqIn" to_node="161"/>
-    <link from_connector="output" from_node="164" to_connector="stopIn" to_node="161"/>
+    <link from_connector="result" from_node="167" to_connector="stopIn" to_node="161"/>
     <link from_connector="output" from_node="136" to_connector="attributeIn" to_node="161"/>
-    <link from_connector="output" from_node="163" to_connector="startIn" to_node="161"/>
+    <link from_connector="result" from_node="168" to_connector="startIn" to_node="161"/>
     <link from_connector="result" from_node="16" to_connector="input" to_node="162"/>
     <link from_connector="first" from_node="165" to_connector="input" to_node="163"/>
     <link from_connector="second" from_node="165" to_connector="input" to_node="164"/>
     <link from_connector="output" from_node="162" to_connector="pair" to_node="165"/>
     <link from_connector="output" from_node="151" to_connector="seqIn" to_node="166"/>
-    <link from_connector="output" from_node="164" to_connector="stopIn" to_node="166"/>
+    <link from_connector="result" from_node="167" to_connector="stopIn" to_node="166"/>
     <link from_connector="output" from_node="156" to_connector="attributeIn" to_node="166"/>
-    <link from_connector="output" from_node="163" to_connector="startIn" to_node="166"/>
+    <link from_connector="result" from_node="168" to_connector="startIn" to_node="166"/>
+    <link from_connector="output" from_node="164" to_connector="secondArgument" to_node="167"/>
+    <link from_connector="output" from_node="149" to_connector="firstArgument" to_node="167"/>
+    <link from_connector="output" from_node="163" to_connector="secondArgument" to_node="168"/>
+    <link from_connector="output" from_node="149" to_connector="firstArgument" to_node="168"/>
   </links>
 </graph>
