@@ -68,7 +68,6 @@ Use 0-based coordinates.
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-
 ||||||besthit_aa.xml |
 ||||||besthit_nt.xml |
 ||||||discard_rRNAs.xml |
