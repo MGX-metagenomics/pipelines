@@ -77,6 +77,7 @@
     </node>
     <node id="113" name="" type="Conveyor.Kaiju.Kaiju`1" x="619" y="10">
       <configuration_items>
+        <configuration_item name="minHitLen" user_description="minimum match length (default: 11)" user_name="match length threshold" value="11"/>
         <configuration_item name="chunkSize" value="100000"/>
       </configuration_items>
       <typeParameters>
