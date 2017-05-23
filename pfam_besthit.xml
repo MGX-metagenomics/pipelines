@@ -12,7 +12,7 @@
     </node>
     <node id="5" name="" type="Conveyor.HMMER3.HMMAADatabase" x="510" y="588">
       <configuration_items>
-        <configuration_item name="database" value="Pfam30-A"/>
+        <configuration_item name="database" value="Pfam-A"/>
       </configuration_items>
       <typeParameters/>
     </node>
