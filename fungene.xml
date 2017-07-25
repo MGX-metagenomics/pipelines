@@ -159,7 +159,8 @@
     </node>
     <node id="142" name="" type="Conveyor.HMMER3.FilterHMMERHits`5" x="494" y="589">
       <configuration_items>
-        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for HMMer search" user_name="E-Value cutoff" value="1e-10"/>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for HMMer search" user_name="E-Value cutoff" value="1e-5"/>
+        <configuration_item name="lengthCutoff" user_description="minimum alignment length cutoff" user_name="length cutoff" value="15"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.Geneprediction.FragGeneScan.FgsTranslation`1">
