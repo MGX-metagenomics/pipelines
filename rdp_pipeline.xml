@@ -24,7 +24,7 @@
     </node>
     <node id="14" name="" type="Conveyor.Blast.PublicDNADB" x="720" y="70">
       <configuration_items>
-        <configuration_item name="database" value="rdp.nin"/>
+        <configuration_item name="database" value="rdp.nal"/>
       </configuration_items>
       <typeParameters/>
     </node>
