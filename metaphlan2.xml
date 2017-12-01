@@ -76,7 +76,7 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="106" name="" type="Conveyor.Pair.SecondElement`2" x="440" y="154">
+    <node id="106" name="" type="Conveyor.Pair.SecondElement`2" x="647" y="231">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -86,6 +86,13 @@
     <node id="145" name="" type="Conveyor.MGX.AnnotateSequence" x="326" y="383">
       <configuration_items/>
       <typeParameters/>
+    </node>
+    <node id="285" name="" type="Conveyor.SequenceAssignment.FilterResult`2" x="430" y="156">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
     </node>
   </nodes>
   <links>
@@ -105,9 +112,10 @@
     <link from_connector="output" from_node="106" to_connector="input" to_node="102"/>
     <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="inputSequence" to_node="104"/>
-    <link from_connector="classified" from_node="104" to_connector="input" to_node="105"/>
-    <link from_connector="classified" from_node="104" to_connector="input" to_node="106"/>
+    <link from_connector="filtered" from_node="285" to_connector="input" to_node="105"/>
+    <link from_connector="filtered" from_node="285" to_connector="input" to_node="106"/>
     <link from_connector="output" from_node="105" to_connector="seqIn" to_node="145"/>
     <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="145"/>
+    <link from_connector="classified" from_node="104" to_connector="input" to_node="285"/>
   </links>
 </graph>
