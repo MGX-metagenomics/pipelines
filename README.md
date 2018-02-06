@@ -16,82 +16,83 @@ observations.
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-| Read length   | Distribution of sequence length | Sebastian Jaenicke | - | 1.0 |GC.xml |
-| GC content    | Distribution of GC content | Sebastian Jaenicke | - | 1.0 |readlength.xml |
+| Read length   | Distribution of sequence length | Sebastian Jaenicke | - | 1.0 | GC.xml |
+| GC content    | Distribution of GC content | Sebastian Jaenicke | - | 1.0 | readlength.xml |
 
 ## Taxonomic assignment
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-| Centrifuge || Sebastian Jaenicke | - | 1.0 |centrifuge.xml |
-| Kaiju || Sebastian Jaenicke | - | 1.0 |kaiju.xml |
-| Kraken || Sebastian Jaenicke | - | 1.0 |kraken.xml |
-| MetaBin || Sebastian Jaenicke | - | 1.0 |metabin.xml |
-| MetaCV || Sebastian Jaenicke | - | 1.0 |metacv.xml |
-| MetaPhlAn || Sebastian Jaenicke | - | 1.0 |metaphlan.xml |
-| MetaPhlAn2 || Sebastian Jaenicke | - | 1.0 |metaphlan2xml |
-| MetaPhyler || Sebastian Jaenicke | - | 1.0 |metaphyler.xml |
-||| Sebastian Jaenicke || 1.0 | rdp_pipeline.xml |
+| MGX default taxonomy || Sebastian Jaenicke | - | 1.0 | mgx_default_taxonomy.xml |
+| Centrifuge | Centrifuge: rapid and sensitive classification of metagenomic sequences | Sebastian Jaenicke | - | 1.0 | centrifuge.xml |
+| Kaiju | Kaiju: Fast and sensitive taxonomic classification for metagenomics | Sebastian Jaenicke | - | 1.0 | kaiju.xml |
+| Kraken | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken.xml |
+| MetaBin || Sebastian Jaenicke | - | 1.0 | metabin.xml |
+| MetaCV | MetaCV: a composition-based algorithm to classify metagenomic reads | Sebastian Jaenicke | - | 1.0 | metacv.xml |
+| MetaPhlAn | Metagenomic microbial community profiling using unique clade-specific marker genes | Sebastian Jaenicke | - | 1.0 | metaphlan.xml |
+| MetaPhlAn 2 | MetaPhlAn2 for enhanced metagenomic taxonomic profiling | Sebastian Jaenicke | - | 1.0 | metaphlan2xml |
+| MetaPhyler | MetaPhyler taxonomic classification | Sebastian Jaenicke | - | 1.0 | metaphyler.xml |
+| 16S Pipeline | Classification of 16S rRNA fragments | Sebastian Jaenicke || 1.0 | rdp_pipeline.xml |
 
 
 ## Functional profiling
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-||| Sebastian Jaenicke | - | 1.0 | eggnog.xml |
-||| Sebastian Jaenicke | - | 1.0 | ecnumber.xml |
-||| Sebastian Jaenicke | - | 1.0 | fungene.xml |
-||| Sebastian Jaenicke | - | 1.0 | dbCAN_besthit.xml |
-||| Sebastian Jaenicke | - | 1.0 | clustermine360.xml |
-||| Sebastian Jaenicke | - | 1.0 | pfam_besthit.xml |
-||| Sebastian Jaenicke | - | 1.0 | tigrfam_besthit.xml |
+| COG | COG-based functional classification | Sebastian Jaenicke | - | 1.0 | eggnog.xml |
+| SwissProt EC numbers | EC number annotation based on best-Blast-hit vs. SwissProt database | Sebastian Jaenicke | - | 1.0 | ecnumber.xml |
+| FunGene HMM search | HMM search vs. FunGene functional genes | Sebastian Jaenicke | - | 1.0 | fungene.xml |
+| dbCAN | Automated Carbohydrate-active enzyme annotation based on dbCAN | Sebastian Jaenicke | - | 1.0 | dbCAN_besthit.xml |
+| ClusterMine360 | PKS/NRPS analysis based on BLAST vs ClusterMine360 database | Sebastian Jaenicke | - | 1.0 | clustermine360.xml |
+| Pfam | Annotate best Pfam domain hit | Sebastian Jaenicke | - | 1.0 | pfam_besthit.xml |
+| TIGRFAMS | Annotate best TIGRFAMS domain hit | Sebastian Jaenicke | - | 1.0 | tigrfam_besthit.xml |
 
 ## Antimicrobial resistance
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-| ARDB || Sebastian Jaenicke | - | 1.0 |ardb.xml |
-| ARG-Annot || Sebastian Jaenicke | - | 1.0 |argannot.xml |
-| BacMet ||Sebastian Jaenicke | - | 1.0 |bacmet.xml |
-| CARD || Sebastian Jaenicke | - | 1.0 |card.xml |
-| MVirDB || Sebastian Jaenicke | - | 1.0 |mvirdb.xml |
+| ARDB | Antibiotic resistance gene annotation using best Blast hit vs. ARDB database | Sebastian Jaenicke | - | 1.0 | ardb.xml |
+| ARG-Annot | Antibiotic resistance gene annotation using best Blast hit vs. ARG-ANNOT database | Sebastian Jaenicke | - | 1.0 | argannot.xml |
+| BacMet | Antibacterial biocide- and metal-resistance gene annotation using best Blast hit vs. BacMet database | Sebastian Jaenicke | - | 1.0 | bacmet.xml |
+| CARD | Antibiotic resistance gene screening using Blast vs CARD (Comprehensive antibiotic resistance database) | Sebastian Jaenicke | - | 1.0 | card.xml |
+| MVirDB | MvirDB-based virulence analysis | Sebastian Jaenicke | - | 1.0 | mvirdb.xml |
 
 ## Reference mapping
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-||| Sebastian Jaenicke | - | 1.0 |blastn_refmap.xml |
-||| Sebastian Jaenicke | - | 1.0 |bowtie_refmap.xml |
-||| Sebastian Jaenicke | - | 1.0 |frhit_refmap.xml |
+| FR-HIT | Fragment recruitment based on NCBI Magic-BLAST | Sebastian Jaenicke | - | 1.0 | blastn_refmap.xml |
+| Bowtie2 | Bowtie2-based reference mapping | Sebastian Jaenicke | - | 1.0 | bowtie_refmap.xml |
+| Blast-Mapping | Fragment recruitment employing FR-HIT | Sebastian Jaenicke | - | 1.0 | frhit_refmap.xml |
 
 ## Amplicon analysis
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-||| Sebastian Jaenicke | - | 1.0 |mothur_custom.xml |
-||| Sebastian Jaenicke | - | 1.0 |mothur_its.xml |
-||| Sebastian Jaenicke | - | 1.0 |mothur_silva.xml |
-||| Sebastian Jaenicke | - | 1.0 |rdp_amplicons.xml |
-||| Sebastian Jaenicke | - | 1.0 |qiime_assignTaxonomy.xml |
+||| Sebastian Jaenicke | - | 1.0 | mothur_custom.xml |
+||| Sebastian Jaenicke | - | 1.0 | mothur_its.xml |
+||| Sebastian Jaenicke | - | 1.0 | mothur_silva.xml |
+||| Sebastian Jaenicke | - | 1.0 | rdp_amplicons.xml |
+||| Sebastian Jaenicke | - | 1.0 | qiime_assignTaxonomy.xml |
 
 
 ## Misc
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-||| Sebastian Jaenicke | - ||besthit_aa.xml |
-||| Sebastian Jaenicke | - ||besthit_nt.xml |
-||| Sebastian Jaenicke | - ||discard_rRNAs.xml |
-||| Sebastian Jaenicke | - ||ecolifilter.xml |
-||| Sebastian Jaenicke | - ||lca_nr_ghostx.xml |
-||| Sebastian Jaenicke | - ||lca_nr_rapsearch.xml |
-||| Sebastian Jaenicke | - ||lca_nr.xml |
-||| Sebastian Jaenicke | - ||lca_pipeline.xml |
-||| Sebastian Jaenicke | - ||phageprotscreen.xml |
-||| Sebastian Jaenicke | - ||phagescreen.xml |
-||| Sebastian Jaenicke | - ||pks.xml |
-||| Sebastian Jaenicke | - ||plasmidprotscreen.xml |
-||| Sebastian Jaenicke | - ||referencefilter.xml |
-||| Sebastian Jaenicke | - ||swissprot.xml |
+||| Sebastian Jaenicke | - | 1.0 | besthit_aa.xml |
+||| Sebastian Jaenicke | - | 1.0 | besthit_nt.xml |
+||| Sebastian Jaenicke | - | 1.0 | discard_rRNAs.xml |
+||| Sebastian Jaenicke | - | 1.0 | ecolifilter.xml |
+||| Sebastian Jaenicke | - | 1.0 | lca_nr_ghostx.xml |
+||| Sebastian Jaenicke | - | 1.0 | lca_nr_rapsearch.xml |
+||| Sebastian Jaenicke | - | 1.0 | lca_nr.xml |
+||| Sebastian Jaenicke | - | 1.0 | lca_pipeline.xml |
+||| Sebastian Jaenicke | - | 1.0 | phageprotscreen.xml |
+||| Sebastian Jaenicke | - | 1.0 | phagescreen.xml |
+||| Sebastian Jaenicke | - | 1.0 | pks.xml |
+||| Sebastian Jaenicke | - | 1.0 | plasmidprotscreen.xml |
+||| Sebastian Jaenicke | - | 1.0 | referencefilter.xml |
+||| Sebastian Jaenicke | - | 1.0 | swissprot.xml |
 
 
