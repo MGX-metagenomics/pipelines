@@ -54,11 +54,11 @@
         <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
       </typeParameters>
     </node>
-    <node id="101" name="" type="Conveyor.MGX.GetMajorRankedParent" x="773" y="678">
+    <node id="101" name="" type="Conveyor.Taxonomy.NCBI.GetMajorRankedParent" x="773" y="678">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="102" name="" type="Conveyor.MGX.GetMajorRankedParent" x="776" y="302">
+    <node id="102" name="" type="Conveyor.Taxonomy.NCBI.GetMajorRankedParent" x="776" y="302">
       <configuration_items/>
       <typeParameters/>
     </node>
