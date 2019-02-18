@@ -62,7 +62,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="108" name="" type="Conveyor.Pair.PairSplit`2" x="229" y="309">
+    <node id="108" name="" type="Conveyor.Pair.PairSplit`2" x="234" y="242">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -115,7 +115,19 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="394" name="" type="Conveyor.MGX.AnnotateSequence" x="457" y="346">
+    <node id="394" name="" type="Conveyor.MGX.AnnotateSequence" x="599" y="361">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="396" name="" type="Conveyor.Taxonomy.Bergey.GetMajorRankedParent" x="648" y="477">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="397" name="" type="Conveyor.Taxonomy.Bergey.GetMajorRankedParent" x="1017" y="114">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="398" name="" type="Conveyor.Taxonomy.Bergey.GetMajorRankedParent" x="278" y="337">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -130,14 +142,14 @@
     <link from_connector="result" from_node="43" to_connector="name" to_node="65"/>
     <link from_connector="output" from_node="9" to_connector="jobIn" to_node="65"/>
     <link from_connector="output" from_node="65" to_connector="typeIn" to_node="67"/>
-    <link from_connector="output" from_node="74" to_connector="parentIn" to_node="67"/>
-    <link from_connector="second" from_node="108" to_connector="nodeIn" to_node="67"/>
+    <link from_connector="output" from_node="396" to_connector="parentIn" to_node="67"/>
+    <link from_connector="output" from_node="398" to_connector="nodeIn" to_node="67"/>
     <link from_connector="output" from_node="38" to_connector="dataIn" to_node="67"/>
     <link from_connector="nodeOut" from_node="67" to_connector="input" to_node="74"/>
     <link from_connector="classifiedTaxons" from_node="112" to_connector="input" to_node="107"/>
     <link from_connector="output" from_node="111" to_connector="pass" to_node="107"/>
     <link from_connector="output" from_node="107" to_connector="pair" to_node="108"/>
-    <link from_connector="output" from_node="110" to_connector="input" to_node="109"/>
+    <link from_connector="output" from_node="397" to_connector="input" to_node="109"/>
     <link from_connector="classifiedTaxons" from_node="112" to_connector="input" to_node="110"/>
     <link from_connector="output" from_node="109" to_connector="input" to_node="111"/>
     <link from_connector="output" from_node="124" to_connector="reads" to_node="112"/>
@@ -147,5 +159,8 @@
     <link from_connector="chimeraReads" from_node="113" to_connector="input" to_node="125"/>
     <link from_connector="first" from_node="108" to_connector="seqIn" to_node="394"/>
     <link from_connector="output" from_node="67" to_connector="attributeIn" to_node="394"/>
+    <link from_connector="output" from_node="74" to_connector="input" to_node="396"/>
+    <link from_connector="output" from_node="110" to_connector="input" to_node="397"/>
+    <link from_connector="second" from_node="108" to_connector="input" to_node="398"/>
   </links>
 </graph>
