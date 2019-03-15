@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="mm2" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="1" name="mgx" type="Conveyor.MGX.GetMGXJob" x="42" y="94">
+      <configuration_items>
+        <configuration_item name="projectDir" value=""/>
+        <configuration_item name="password" value=""/>
+        <configuration_item name="database" value=""/>
+        <configuration_item name="host" value=""/>
+        <configuration_item name="username" value=""/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="2" name="" type="Conveyor.MGX.GetSequences" x="230" y="200">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="3" name="" type="Conveyor.Minimap2.Minimap2`2" x="409" y="196">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="200000"/>
+        <configuration_item name="seqdataType" user_name="data type" user_description="type of sequence data" value="NANOPORE"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="4" name="" type="Conveyor.Minimap2.PublicMinimap2Index" x="413" y="91">
+      <configuration_items>
+        <configuration_item name="index" user_description="public index" user_name="public index" value="hg38.mm2"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="5" name="" type="IMappedRead`2.IsMapped" x="528" y="386">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="11" name="" type="Conveyor.List.Iterator`1" x="440" y="284">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Minimap2.Minimap2MappedRead`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="12" name="" type="IMappedRead`2.GetRead" x="340" y="387">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="13" name="" type="Conveyor.Logic.PassCheck`1" x="440" y="504">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="14" name="" type="Conveyor.MGX.MarkDiscard" x="250" y="614">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="1" to_connector="input" to_node="2"/>
+    <link from_connector="sequenceOut" from_node="2" to_connector="read" to_node="3"/>
+    <link from_connector="indexOut" from_node="4" to_connector="references" to_node="3"/>
+    <link from_connector="output" from_node="11" to_connector="input" to_node="5"/>
+    <link from_connector="mappings" from_node="3" to_connector="input" to_node="11"/>
+    <link from_connector="output" from_node="11" to_connector="input" to_node="12"/>
+    <link from_connector="output" from_node="12" to_connector="input" to_node="13"/>
+    <link from_connector="output" from_node="5" to_connector="pass" to_node="13"/>
+    <link from_connector="output" from_node="13" to_connector="seqIn" to_node="14"/>
+    <link from_connector="output" from_node="1" to_connector="jobIn" to_node="14"/>
+  </links>
+</graph>
