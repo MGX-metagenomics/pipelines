@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="mm2" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="1" name="mgx" type="Conveyor.MGX.GetMGXJob" x="42" y="94">
+      <configuration_items>
+        <configuration_item name="projectDir" value=""/>
+        <configuration_item name="password" value=""/>
+        <configuration_item name="database" value=""/>
+        <configuration_item name="host" value=""/>
+        <configuration_item name="username" value=""/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="2" name="" type="Conveyor.MGX.GetSequences" x="193" y="185">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="3" name="" type="Conveyor.Minimap2.Minimap2`2" x="363" y="158">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="200000"/>
+        <configuration_item name="seqdataType" user_description="type of sequence data" user_name="data type" value="NANOPORE"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="12" name="" type="IMappedRead`2.GetRead" x="281" y="459">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="14" name="" type="Conveyor.MGX.MarkDiscard" x="125" y="620">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="20" name="" type="Conveyor.List.GetFirst`1" x="394" y="365">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Minimap2.Minimap2MappedRead`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="21" name="" type="Conveyor.List.HasElements`1" x="545" y="168">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Minimap2.Minimap2MappedRead`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="22" name="" type="Conveyor.Logic.PassCheck`1" x="454" y="266">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.List.List`1">
+          <type name="Conveyor.Minimap2.Minimap2MappedRead`2">
+            <type name="Conveyor.MGX.MGXSequence"/>
+            <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+          </type>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="24" name="" type="Conveyor.Minimap2.CreateMinimap2Index`1" x="410" y="50">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="25" name="" type="Conveyor.MGX.MGXDNAFastaFile" x="221" y="41">
+      <configuration_items>
+        <configuration_item name="fastaFile" user_description="DNA FASTA file containing reference genome" user_name="reference genome"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="1" to_connector="input" to_node="2"/>
+    <link from_connector="sequenceOut" from_node="2" to_connector="read" to_node="3"/>
+    <link from_connector="index" from_node="24" to_connector="references" to_node="3"/>
+    <link from_connector="result" from_node="20" to_connector="input" to_node="12"/>
+    <link from_connector="output" from_node="12" to_connector="seqIn" to_node="14"/>
+    <link from_connector="output" from_node="1" to_connector="jobIn" to_node="14"/>
+    <link from_connector="output" from_node="22" to_connector="listIn" to_node="20"/>
+    <link from_connector="mappings" from_node="3" to_connector="input" to_node="21"/>
+    <link from_connector="mappings" from_node="3" to_connector="input" to_node="22"/>
+    <link from_connector="output" from_node="21" to_connector="pass" to_node="22"/>
+    <link from_connector="output" from_node="25" to_connector="sequence" to_node="24"/>
+    <link from_connector="output" from_node="1" to_connector="jobIn" to_node="25"/>
+  </links>
+</graph>
