@@ -191,21 +191,6 @@
         </type>
       </typeParameters>
     </node>
-    <node id="174" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="541" y="32">
-      <configuration_items>
-        <configuration_item name="chunkSize" value="100000"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
-      </typeParameters>
-    </node>
-    <node id="175" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="806" y="40">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
-      </typeParameters>
-    </node>
     <node id="176" name="" type="Conveyor.Kraken.Kraken`1" x="-868" y="19">
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
@@ -305,6 +290,21 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
+    <node id="285" name="" type="Conveyor.Blast.GHOSTX.GetWrappedGHOSTZDatabase`1" x="799" y="127">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="286" name="" type="Conveyor.Blast.GHOSTX.GHOSTZ`2" x="572" y="30">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="100000"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
@@ -341,12 +341,9 @@
     <link from_connector="output" from_node="103" to_connector="input" to_node="101"/>
     <link from_connector="lca" from_node="67" to_connector="input" to_node="102"/>
     <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
-    <link from_connector="result" from_node="174" to_connector="input" to_node="115"/>
+    <link from_connector="result" from_node="286" to_connector="input" to_node="115"/>
     <link from_connector="output" from_node="15" to_connector="listIn" to_node="116"/>
     <link from_connector="filtered" from_node="116" to_connector="listIn" to_node="140"/>
-    <link from_connector="diamondDatabase" from_node="175" to_connector="database" to_node="174"/>
-    <link from_connector="filtered" from_node="178" to_connector="query" to_node="174"/>
-    <link from_connector="db" from_node="114" to_connector="systemDatabase" to_node="175"/>
     <link from_connector="output" from_node="284" to_connector="inputSequence" to_node="176"/>
     <link from_connector="classified" from_node="176" to_connector="input" to_node="177"/>
     <link from_connector="classified" from_node="176" to_connector="input" to_node="178"/>
@@ -370,5 +367,8 @@
     <link from_connector="current" from_node="275" to_connector="input" to_node="283"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="284"/>
     <link from_connector="classified" from_node="176" to_connector="trigger" to_node="284"/>
+    <link from_connector="db" from_node="114" to_connector="systemDatabase" to_node="285"/>
+    <link from_connector="ghostDatabase" from_node="285" to_connector="database" to_node="286"/>
+    <link from_connector="filtered" from_node="178" to_connector="query" to_node="286"/>
   </links>
 </graph>
