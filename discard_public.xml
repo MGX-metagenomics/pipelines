@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="refmapping" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="1" name="mgx" type="Conveyor.MGX.GetMGXJob" x="29" y="24">
+      <configuration_items>
+        <configuration_item name="password" value=""/>
+        <configuration_item name="database" value=""/>
+        <configuration_item name="host" value=""/>
+        <configuration_item name="username" value=""/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="2" name="" type="Conveyor.MGX.GetSequences" x="148" y="124">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.Minimap2.Minimap2`2" x="386" y="103">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="200000"/>
+        <configuration_item name="seqdataType" user_description="type of sequence data" user_name="data type" value="PACBIO"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+      </typeParameters>
+    </node>
+    <node id="18" name="" type="Conveyor.Minimap2.PublicMinimap2Index" x="407" y="16">
+      <configuration_items>
+        <configuration_item name="index" user_description="public reference genome" user_name="public genome index" value="hg38.mm2"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="19" name="" type="Conveyor.MGX.MarkDiscard" x="121" y="384">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="20" name="" type="Conveyor.Logic.PassFilter`1" x="348" y="198">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.List.List`1">
+          <type name="Conveyor.Minimap2.Minimap2MappedRead`2">
+            <type name="Conveyor.MGX.MGXSequence"/>
+            <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+          </type>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="21" name="" type="Conveyor.List.HasElements`1" x="541" y="198">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Minimap2.Minimap2MappedRead`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="22" name="" type="Conveyor.List.GetFirst`1" x="476" y="327">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Minimap2.Minimap2MappedRead`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="23" name="" type="IMappedRead`2.GetRead" x="300" y="350">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="1" to_connector="input" to_node="2"/>
+    <link from_connector="sequenceOut" from_node="2" to_connector="read" to_node="10"/>
+    <link from_connector="indexOut" from_node="18" to_connector="references" to_node="10"/>
+    <link from_connector="output" from_node="23" to_connector="seqIn" to_node="19"/>
+    <link from_connector="output" from_node="1" to_connector="jobIn" to_node="19"/>
+    <link from_connector="mappings" from_node="10" to_connector="input" to_node="20"/>
+    <link from_connector="output" from_node="21" to_connector="check_in" to_node="20"/>
+    <link from_connector="check_out" from_node="20" to_connector="input" to_node="21"/>
+    <link from_connector="output" from_node="20" to_connector="listIn" to_node="22"/>
+    <link from_connector="result" from_node="22" to_connector="input" to_node="23"/>
+  </links>
+</graph>
