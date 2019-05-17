@@ -73,7 +73,7 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="123" name="" type="Conveyor.List.HasElements`1" x="812" y="579">
+    <node id="123" name="" type="Conveyor.List.HasElements`1" x="747" y="564">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.EnzymeClassification.EnzymeClass"/>
@@ -123,37 +123,16 @@
         <type name="Conveyor.MGX.MGXAttributeType"/>
       </typeParameters>
     </node>
-    <node id="147" name="" type="Conveyor.Blast.GetSubject`2" x="671" y="295">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
-      </typeParameters>
-    </node>
-    <node id="192" name="" type="Conveyor.Logic.And" x="612" y="576">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
-    <node id="193" name="" type="Conveyor.Annotation.HasAnnotationField" x="872" y="294">
-      <configuration_items/>
-      <typeParameters/>
-    </node>
     <node id="194" name="" type="Conveyor.Annotation.SelectAnnotationField" x="1323" y="289">
       <configuration_items>
         <configuration_item name="field" value="Conveyor.Database.DatabaseFields.ecNumberField"/>
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="195" name="" type="Conveyor.Core.Repeat`1" x="1088" y="291">
+    <node id="195" name="" type="Conveyor.Core.Repeat`1" x="1202" y="160">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Annotation.AnnotationField"/>
-      </typeParameters>
-    </node>
-    <node id="196" name="" type="Conveyor.Logic.PassCheck`1" x="825" y="431">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
       </typeParameters>
     </node>
     <node id="197" name="" type="Conveyor.List.GetElement`1" x="1169" y="767">
@@ -174,7 +153,7 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="200" name="" type="Conveyor.Annotation.GetAnnotationField`1" x="1019" y="484">
+    <node id="200" name="" type="Conveyor.Annotation.GetAnnotationField`1" x="837" y="340">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.List.List`1">
@@ -227,7 +206,7 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
-    <node id="268" name="" type="Conveyor.List.GetFirst`1" x="420" y="169">
+    <node id="268" name="" type="Conveyor.List.GetFirst`1" x="430" y="137">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Blast.BlastHit`2">
@@ -236,7 +215,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="269" name="" type="Conveyor.Logic.PassFilter`1" x="502" y="53">
+    <node id="269" name="" type="Conveyor.Logic.PassFilter`1" x="503" y="48">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.List.List`1">
@@ -247,7 +226,34 @@
         </type>
       </typeParameters>
     </node>
-    <node id="271" name="" type="Homology.GetQueryRange" x="416" y="288">
+    <node id="273" name="" type="Conveyor.Logic.PassFilter`1" x="375" y="218">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="274" name="" type="Conveyor.Annotation.HasAnnotationField" x="986" y="150">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="275" name="" type="Conveyor.Blast.GetSubject`2" x="668" y="124">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+      </typeParameters>
+    </node>
+    <node id="276" name="" type="Conveyor.Blast.GetSubject`2" x="624" y="242">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+      </typeParameters>
+    </node>
+    <node id="277" name="" type="Homology.GetQueryRange" x="410" y="296">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -256,9 +262,9 @@
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
     <link from_connector="check_out" from_node="269" to_connector="input" to_node="16"/>
     <link from_connector="result" from_node="265" to_connector="input" to_node="21"/>
-    <link from_connector="result" from_node="268" to_connector="input" to_node="29"/>
-    <link from_connector="output" from_node="271" to_connector="input" to_node="108"/>
-    <link from_connector="output" from_node="271" to_connector="input" to_node="109"/>
+    <link from_connector="output" from_node="273" to_connector="input" to_node="29"/>
+    <link from_connector="output" from_node="277" to_connector="input" to_node="108"/>
+    <link from_connector="output" from_node="277" to_connector="input" to_node="109"/>
     <link from_connector="output" from_node="127" to_connector="seqIn" to_node="110"/>
     <link from_connector="output" from_node="125" to_connector="stopIn" to_node="110"/>
     <link from_connector="output" from_node="117" to_connector="attributeIn" to_node="110"/>
@@ -273,28 +279,21 @@
     <link from_connector="value" from_node="200" to_connector="input" to_node="124"/>
     <link from_connector="output" from_node="123" to_connector="pass" to_node="124"/>
     <link from_connector="output" from_node="112" to_connector="input" to_node="125"/>
-    <link from_connector="result" from_node="192" to_connector="pass" to_node="125"/>
+    <link from_connector="output" from_node="123" to_connector="pass" to_node="125"/>
     <link from_connector="output" from_node="111" to_connector="input" to_node="126"/>
-    <link from_connector="result" from_node="192" to_connector="pass" to_node="126"/>
+    <link from_connector="output" from_node="123" to_connector="pass" to_node="126"/>
     <link from_connector="output" from_node="29" to_connector="input" to_node="127"/>
-    <link from_connector="result" from_node="192" to_connector="pass" to_node="127"/>
+    <link from_connector="output" from_node="123" to_connector="pass" to_node="127"/>
     <link from_connector="result" from_node="197" to_connector="input" to_node="139"/>
     <link from_connector="output" from_node="201" to_connector="secondArgument" to_node="140"/>
     <link from_connector="output" from_node="139" to_connector="firstArgument" to_node="140"/>
     <link from_connector="output" from_node="118" to_connector="input" to_node="144"/>
-    <link from_connector="result" from_node="268" to_connector="input" to_node="147"/>
-    <link from_connector="hasAnnotation" from_node="193" to_connector="secondArgument" to_node="192"/>
-    <link from_connector="output" from_node="123" to_connector="firstArgument" to_node="192"/>
-    <link from_connector="output" from_node="147" to_connector="annotation" to_node="193"/>
-    <link from_connector="output" from_node="195" to_connector="fieldName" to_node="193"/>
     <link from_connector="output" from_node="194" to_connector="input" to_node="195"/>
-    <link from_connector="output" from_node="147" to_connector="input" to_node="196"/>
-    <link from_connector="hasAnnotation" from_node="193" to_connector="pass" to_node="196"/>
     <link from_connector="output" from_node="198" to_connector="secondArgument" to_node="197"/>
     <link from_connector="output" from_node="124" to_connector="firstArgument" to_node="197"/>
     <link from_connector="output" from_node="199" to_connector="input" to_node="198"/>
     <link from_connector="output" from_node="204" to_connector="fieldName" to_node="200"/>
-    <link from_connector="output" from_node="196" to_connector="annotatable" to_node="200"/>
+    <link from_connector="output" from_node="276" to_connector="annotatable" to_node="200"/>
     <link from_connector="result" from_node="197" to_connector="input" to_node="201"/>
     <link from_connector="output" from_node="194" to_connector="input" to_node="204"/>
     <link from_connector="diamondDatabase" from_node="266" to_connector="database" to_node="265"/>
@@ -305,6 +304,12 @@
     <link from_connector="output" from_node="269" to_connector="listIn" to_node="268"/>
     <link from_connector="output" from_node="21" to_connector="input" to_node="269"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="269"/>
-    <link from_connector="result" from_node="268" to_connector="input" to_node="271"/>
+    <link from_connector="result" from_node="268" to_connector="input" to_node="273"/>
+    <link from_connector="hasAnnotation" from_node="274" to_connector="check_in" to_node="273"/>
+    <link from_connector="output" from_node="275" to_connector="annotation" to_node="274"/>
+    <link from_connector="output" from_node="195" to_connector="fieldName" to_node="274"/>
+    <link from_connector="check_out" from_node="273" to_connector="input" to_node="275"/>
+    <link from_connector="output" from_node="273" to_connector="input" to_node="276"/>
+    <link from_connector="output" from_node="273" to_connector="input" to_node="277"/>
   </links>
 </graph>
