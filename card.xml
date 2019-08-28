@@ -145,7 +145,7 @@
     </node>
     <node id="161" name="" type="Conveyor.Blast.PublicAADB" x="812" y="26">
       <configuration_items>
-        <configuration_item name="database" value="AR-polypeptides.fa.pin"/>
+        <configuration_item name="database" value="card.pin"/>
       </configuration_items>
       <typeParameters/>
     </node>
