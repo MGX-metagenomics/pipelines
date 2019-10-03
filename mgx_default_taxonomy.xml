@@ -290,15 +290,15 @@
         <type name="Conveyor.MGX.MGXSequence"/>
       </typeParameters>
     </node>
-    <node id="285" name="" type="Conveyor.Blast.GHOSTX.GetWrappedGHOSTZDatabase`1" x="799" y="127">
+    <node id="285" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="799" y="127">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
       </typeParameters>
     </node>
-    <node id="286" name="" type="Conveyor.Blast.GHOSTX.GHOSTZ`2" x="572" y="30">
+    <node id="286" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="572" y="30">
       <configuration_items>
-        <configuration_item name="chunkSize" value="100000"/>
+        <configuration_item name="chunkSize" value="25000"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -368,7 +368,7 @@
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="284"/>
     <link from_connector="classified" from_node="176" to_connector="trigger" to_node="284"/>
     <link from_connector="db" from_node="114" to_connector="systemDatabase" to_node="285"/>
-    <link from_connector="ghostDatabase" from_node="285" to_connector="database" to_node="286"/>
+    <link from_connector="diamondDatabase" from_node="285" to_connector="database" to_node="286"/>
     <link from_connector="filtered" from_node="178" to_connector="query" to_node="286"/>
   </links>
 </graph>
