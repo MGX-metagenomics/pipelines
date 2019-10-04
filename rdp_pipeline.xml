@@ -93,11 +93,11 @@
         <type name="Conveyor.Math.Double"/>
       </typeParameters>
     </node>
-    <node id="28" name="" type="Conveyor.BioinformaticsTypes.GetSubSequence`2" x="1070" y="300">
+    <node id="28" name="" type="Conveyor.BioinformaticsTypes.GetSubSequence`2" x="1081" y="304">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+        <type name="Conveyor.MGX.MGXSubSequence"/>
       </typeParameters>
     </node>
     <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="145" y="431">
@@ -138,7 +138,7 @@
         <configuration_item name="threshold" user_description="Classification confidence cutoff" user_name="confidence cutoff" value="0.7"/>
       </configuration_items>
       <typeParameters>
-        <type name="Conveyor.BioinformaticsTypes.SimpleDNASequence"/>
+        <type name="Conveyor.MGX.MGXSubSequence"/>
       </typeParameters>
     </node>
     <node id="54" name="" type="Conveyor.List.HasElements`1" x="680" y="440">
