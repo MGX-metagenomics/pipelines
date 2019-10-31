@@ -10,27 +10,11 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="5" name="" type="Conveyor.HMMER3.HMMAADatabase" x="510" y="588">
+    <node id="5" name="" type="Conveyor.HMMER3.HMMAADatabase" x="551" y="588">
       <configuration_items>
         <configuration_item name="database" value="Pfam-A"/>
       </configuration_items>
       <typeParameters/>
-    </node>
-    <node id="6" name="" type="Conveyor.HMMER3.HMMScanv3`5" x="363" y="588">
-      <configuration_items>
-        <configuration_item name="chunkSize" value="1500"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.Geneprediction.FragGeneScan.FgsTranslation`1">
-          <type name="Conveyor.MGX.MGXSequence"/>
-        </type>
-        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
-        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
-        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
-          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
-        </type>
-        <type name="Conveyor.HMMER3.HMMv3AA"/>
-      </typeParameters>
     </node>
     <node id="30" name="" type="Conveyor.HMMER3.GetHMMFromHMMERHit`5" x="594" y="858">
       <configuration_items/>
@@ -154,16 +138,6 @@
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
-      </typeParameters>
-    </node>
-    <node id="118" name="" type="IHMM`3.get_Description" x="691" y="995">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
-        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
-        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
-          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
-        </type>
       </typeParameters>
     </node>
     <node id="119" name="" type="Conveyor.BioinformaticsTypes.GetTranslationSource`2" x="-80" y="1260">
@@ -293,13 +267,38 @@
         </type>
       </typeParameters>
     </node>
+    <node id="288" name="" type="Conveyor.HMMER3.HMMSearch`5" x="380" y="590">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="3000"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.Geneprediction.FragGeneScan.FgsTranslation`1">
+          <type name="Conveyor.MGX.MGXSequence"/>
+        </type>
+        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        </type>
+        <type name="Conveyor.HMMER3.HMMv3AA"/>
+      </typeParameters>
+    </node>
+    <node id="289" name="" type="Conveyor.HMMER3.GetHMMDescription`4" x="688" y="994">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        </type>
+        <type name="Conveyor.HMMER3.HMMv3AA"/>
+      </typeParameters>
+    </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="1" to_connector="input" to_node="2"/>
-    <link from_connector="db" from_node="5" to_connector="database" to_node="6"/>
-    <link from_connector="output" from_node="241" to_connector="seq" to_node="6"/>
     <link from_connector="result" from_node="102" to_connector="input" to_node="30"/>
-    <link from_connector="output" from_node="118" to_connector="secondArgument" to_node="34"/>
+    <link from_connector="result" from_node="289" to_connector="secondArgument" to_node="34"/>
     <link from_connector="output" from_node="123" to_connector="firstArgument" to_node="34"/>
     <link from_connector="result" from_node="102" to_connector="input" to_node="35"/>
     <link from_connector="output" from_node="35" to_connector="pair" to_node="37"/>
@@ -321,9 +320,8 @@
     <link from_connector="output" from_node="111" to_connector="firstArgument" to_node="114"/>
     <link from_connector="output" from_node="112" to_connector="secondArgument" to_node="115"/>
     <link from_connector="output" from_node="111" to_connector="firstArgument" to_node="115"/>
-    <link from_connector="output" from_node="30" to_connector="input" to_node="118"/>
     <link from_connector="output" from_node="111" to_connector="input" to_node="119"/>
-    <link from_connector="result" from_node="6" to_connector="input" to_node="122"/>
+    <link from_connector="result" from_node="288" to_connector="input" to_node="122"/>
     <link from_connector="output" from_node="30" to_connector="input" to_node="123"/>
     <link from_connector="sequenceOut" from_node="2" to_connector="input" to_node="124"/>
     <link from_connector="genes" from_node="235" to_connector="trigger" to_node="124"/>
@@ -337,5 +335,9 @@
     <link from_connector="output" from_node="122" to_connector="input" to_node="242"/>
     <link from_connector="output" from_node="122" to_connector="input" to_node="243"/>
     <link from_connector="output" from_node="242" to_connector="pass" to_node="243"/>
+    <link from_connector="db" from_node="5" to_connector="database" to_node="288"/>
+    <link from_connector="output" from_node="241" to_connector="seq" to_node="288"/>
+    <link from_connector="db" from_node="5" to_connector="database" to_node="289"/>
+    <link from_connector="output" from_node="123" to_connector="accessionIn" to_node="289"/>
   </links>
 </graph>
