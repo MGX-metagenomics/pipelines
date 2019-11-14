@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="FunGene" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="1" name="mgx" type="Conveyor.MGX.GetMGXJob" x="-436" y="351">
+      <configuration_items>
+        <configuration_item name="projectDir" value=""/>
+        <configuration_item name="password" value=""/>
+        <configuration_item name="database" value=""/>
+        <configuration_item name="host" value=""/>
+        <configuration_item name="username" value=""/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.BioinformaticsTypes.TranslateSequence`1" x="493" y="358">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="15" name="" type="Conveyor.List.HasElements`1" x="624" y="672">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.HMMER3.HMMER3ScanDomainHit`5">
+          <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+            <type name="Conveyor.MGX.MGXGene"/>
+          </type>
+          <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+          <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+            <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+          </type>
+          <type name="Conveyor.HMMER3.HMMv3AA"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="16" name="" type="Conveyor.List.GetFirst`1" x="351" y="876">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.HMMER3.HMMER3ScanDomainHit`5">
+          <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+            <type name="Conveyor.MGX.MGXGene"/>
+          </type>
+          <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+          <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+            <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+          </type>
+          <type name="Conveyor.HMMER3.HMMv3AA"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="124" name="" type="Conveyor.BioinformaticTypes.SortByEValue`1" x="465" y="749">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.HMMER3.HMMER3ScanDomainHit`5">
+          <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+            <type name="Conveyor.MGX.MGXGene"/>
+          </type>
+          <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+          <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+            <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+          </type>
+          <type name="Conveyor.HMMER3.HMMv3AA"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="126" name="" type="Conveyor.HMMER3.GetHMMFromHMMERHit`5" x="34" y="947">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        </type>
+        <type name="Conveyor.HMMER3.HMMv3AA"/>
+      </typeParameters>
+    </node>
+    <node id="136" name="" type="Conveyor.MGX.CreateMGXAttribute" x="-149" y="1152">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="137" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="-314" y="695">
+      <configuration_items>
+        <configuration_item name="attrStruct" value="BASIC"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="138" name="" type="Conveyor.Text.StringGenerator" x="-751" y="695">
+      <configuration_items>
+        <configuration_item name="value" value="FunGene"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="139" name="" type="Conveyor.Core.Repeat`1" x="-218" y="933">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXAttributeType"/>
+      </typeParameters>
+    </node>
+    <node id="142" name="" type="Conveyor.HMMER3.FilterHMMERHits`5" x="494" y="589">
+      <configuration_items>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for HMMer search" user_name="E-Value cutoff" value="1e-5"/>
+        <configuration_item name="lengthCutoff" user_description="minimum alignment length cutoff" user_name="length cutoff" value="15"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        </type>
+        <type name="Conveyor.HMMER3.HMMv3AA"/>
+      </typeParameters>
+    </node>
+    <node id="146" name="" type="Conveyor.Logic.PassCheck`1" x="464" y="674">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.List.List`1">
+          <type name="Conveyor.HMMER3.HMMER3ScanDomainHit`5">
+            <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+              <type name="Conveyor.MGX.MGXGene"/>
+            </type>
+            <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+            <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+            <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+              <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+            </type>
+            <type name="Conveyor.HMMER3.HMMv3AA"/>
+          </type>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="149" name="" type="Conveyor.HMMER3.GetQueryFromHMMERHit`5" x="722" y="1017">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        </type>
+        <type name="Conveyor.HMMER3.HMMv3AA"/>
+      </typeParameters>
+    </node>
+    <node id="151" name="" type="Conveyor.BioinformaticsTypes.GetTranslationSource`2" x="724" y="1259">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.MGX.MGXGene"/>
+      </typeParameters>
+    </node>
+    <node id="152" name="" type="Conveyor.Database.FunGene.GetFunGeneDB" x="705" y="460">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="153" name="" type="Conveyor.Database.FunGene.GetFunGeneCategory" x="167" y="1519">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="154" name="" type="IHMM`3.get_Name" x="163" y="1445">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="156" name="" type="Conveyor.MGX.CreateMGXAttribute" x="170" y="1604">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="157" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="-439" y="1378">
+      <configuration_items>
+        <configuration_item name="attrStruct" value="BASIC"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="158" name="" type="Conveyor.Text.StringGenerator" x="-635" y="1381">
+      <configuration_items>
+        <configuration_item name="value" value="FunGene_category"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="159" name="" type="Conveyor.Core.Repeat`1" x="-138" y="1496">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXAttributeType"/>
+      </typeParameters>
+    </node>
+    <node id="160" name="" type="IHMM`3.get_Name" x="-69" y="1040">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="162" name="" type="Homology.GetQueryRange" x="351" y="955">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="163" name="" type="Conveyor.Math.ULongOps.IntToULong" x="214" y="1028">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="164" name="" type="Conveyor.Math.ULongOps.IntToULong" x="493" y="1026">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="165" name="" type="Conveyor.Pair.PairSplit`2" x="353" y="1028">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.Integer"/>
+        <type name="Conveyor.Math.Integer"/>
+      </typeParameters>
+    </node>
+    <node id="167" name="" type="Conveyor.BioinformaticsTypes.BackTranslate`1" x="525" y="1179">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXGene"/>
+      </typeParameters>
+    </node>
+    <node id="168" name="" type="Conveyor.BioinformaticsTypes.BackTranslate`1" x="213" y="1176">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXGene"/>
+      </typeParameters>
+    </node>
+    <node id="169" name="" type="Conveyor.MGX.GetBins" x="-207" y="352">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="170" name="" type="Conveyor.MGX.GetContigs" x="10" y="358">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="171" name="" type="Conveyor.MGX.GetGenes" x="225" y="359">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="172" name="" type="Conveyor.HMMER3.HMMSearch`5" x="485" y="459">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="3000"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.BioinformaticsTypes.AASequence"/>
+        <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        <type name="Conveyor.Alignment.AnnotatableAlignment`1">
+          <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
+        </type>
+        <type name="Conveyor.HMMER3.HMMv3AA"/>
+      </typeParameters>
+    </node>
+    <node id="173" name="" type="Conveyor.MGX.AnnotateGeneAttribute" x="385" y="1306">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="174" name="" type="Conveyor.MGX.AnnotateGeneAttribute" x="382" y="1566">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="171" to_connector="input" to_node="10"/>
+    <link from_connector="output" from_node="142" to_connector="input" to_node="15"/>
+    <link from_connector="output" from_node="124" to_connector="listIn" to_node="16"/>
+    <link from_connector="output" from_node="146" to_connector="input" to_node="124"/>
+    <link from_connector="result" from_node="16" to_connector="input" to_node="126"/>
+    <link from_connector="output" from_node="139" to_connector="typeIn" to_node="136"/>
+    <link from_connector="output" from_node="160" to_connector="valueIn" to_node="136"/>
+    <link from_connector="output" from_node="138" to_connector="name" to_node="137"/>
+    <link from_connector="output" from_node="1" to_connector="jobIn" to_node="137"/>
+    <link from_connector="output" from_node="137" to_connector="input" to_node="139"/>
+    <link from_connector="result" from_node="172" to_connector="input" to_node="142"/>
+    <link from_connector="output" from_node="142" to_connector="input" to_node="146"/>
+    <link from_connector="output" from_node="15" to_connector="pass" to_node="146"/>
+    <link from_connector="result" from_node="16" to_connector="input" to_node="149"/>
+    <link from_connector="output" from_node="149" to_connector="input" to_node="151"/>
+    <link from_connector="output" from_node="154" to_connector="input" to_node="153"/>
+    <link from_connector="output" from_node="126" to_connector="input" to_node="154"/>
+    <link from_connector="output" from_node="159" to_connector="typeIn" to_node="156"/>
+    <link from_connector="result" from_node="153" to_connector="valueIn" to_node="156"/>
+    <link from_connector="output" from_node="158" to_connector="name" to_node="157"/>
+    <link from_connector="output" from_node="1" to_connector="jobIn" to_node="157"/>
+    <link from_connector="output" from_node="157" to_connector="input" to_node="159"/>
+    <link from_connector="output" from_node="126" to_connector="input" to_node="160"/>
+    <link from_connector="result" from_node="16" to_connector="input" to_node="162"/>
+    <link from_connector="first" from_node="165" to_connector="input" to_node="163"/>
+    <link from_connector="second" from_node="165" to_connector="input" to_node="164"/>
+    <link from_connector="output" from_node="162" to_connector="pair" to_node="165"/>
+    <link from_connector="output" from_node="164" to_connector="secondArgument" to_node="167"/>
+    <link from_connector="output" from_node="149" to_connector="firstArgument" to_node="167"/>
+    <link from_connector="output" from_node="163" to_connector="secondArgument" to_node="168"/>
+    <link from_connector="output" from_node="149" to_connector="firstArgument" to_node="168"/>
+    <link from_connector="output" from_node="1" to_connector="input" to_node="169"/>
+    <link from_connector="output" from_node="169" to_connector="input" to_node="170"/>
+    <link from_connector="output" from_node="170" to_connector="input" to_node="171"/>
+    <link from_connector="db" from_node="152" to_connector="database" to_node="172"/>
+    <link from_connector="output" from_node="10" to_connector="seq" to_node="172"/>
+    <link from_connector="output" from_node="151" to_connector="seqIn" to_node="173"/>
+    <link from_connector="result" from_node="167" to_connector="stopIn" to_node="173"/>
+    <link from_connector="output" from_node="136" to_connector="attributeIn" to_node="173"/>
+    <link from_connector="result" from_node="168" to_connector="startIn" to_node="173"/>
+    <link from_connector="output" from_node="151" to_connector="seqIn" to_node="174"/>
+    <link from_connector="result" from_node="167" to_connector="stopIn" to_node="174"/>
+    <link from_connector="output" from_node="156" to_connector="attributeIn" to_node="174"/>
+    <link from_connector="result" from_node="168" to_connector="startIn" to_node="174"/>
+  </links>
+</graph>
