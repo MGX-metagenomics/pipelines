@@ -6,7 +6,8 @@ Field description:
  - Author: Pipeline maintainer
  - URL: Web site with additional pipeline information
  - Version: Pipeline version
- - File: Conveyor-based pipeline implementation
+ - File: Conveyor workflow for read-based analysis
+ - File2: Conveyor workflow for gene annotation
 
 All pipelines should use 0-based coordinates when creating sequence
 observations.
@@ -21,12 +22,13 @@ observations.
 
 ## Taxonomic assignment
 
-| Name          | Description   | Author | URL | version | file |
-| ------------- | ------------- | ------ | --- | ------- | ---- |
+| Name          | Description   | Author | URL | version | file | file2 |
+| ------------- | ------------- | ------ | --- | ------- | ---- | ---- |
 | MGX default taxonomy | MGX default taxonomic classification based on Kraken and Diamond vs. RefSeq proteins | Sebastian Jaenicke | - | 1.0 | mgx_default_taxonomy.xml |
 | Centrifuge | Centrifuge: rapid and sensitive classification of metagenomic sequences | Sebastian Jaenicke | - | 1.0 | centrifuge.xml |
 | Kaiju | Kaiju: Fast and sensitive taxonomic classification for metagenomics | Sebastian Jaenicke | - | 1.0 | kaiju.xml |
 | Kraken | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken.xml |
+| Kraken 2 | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken2.xml | mgxgene_kraken2.xml |
 | MetaBin | | Sebastian Jaenicke | - | 1.0 | metabin.xml |
 | MetaCV | MetaCV: a composition-based algorithm to classify metagenomic reads | Sebastian Jaenicke | - | 1.0 | metacv.xml |
 | MetaPhlAn | Metagenomic microbial community profiling using unique clade-specific marker genes | Sebastian Jaenicke | - | 1.0 | metaphlan.xml |
