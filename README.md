@@ -12,14 +12,6 @@ Field description:
 All pipelines should use 0-based coordinates when creating sequence
 observations.
 
-
-## Quality control
-
-| Name          | Description   | Author | URL | version | file |
-| ------------- | ------------- | ------ | --- | ------- | ---- |
-| Read length   | Distribution of sequence length | Sebastian Jaenicke | - | 1.0 | GC.xml |
-| GC content    | Distribution of GC content | Sebastian Jaenicke | - | 1.0 | readlength.xml |
-
 ## Taxonomic assignment
 
 | Name          | Description   | Author | URL | version | file | file2 |
