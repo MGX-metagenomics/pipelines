@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="xx" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="1" name="mgx" type="Conveyor.MGX.GetMGXJob" x="1034" y="489">
+      <configuration_items>
+        <configuration_item name="projectDir" value=""/>
+        <configuration_item name="password" value=""/>
+        <configuration_item name="database" value=""/>
+        <configuration_item name="annotationService" value=""/>
+        <configuration_item name="apiKey" value=""/>
+        <configuration_item name="host" value=""/>
+        <configuration_item name="projectName" value=""/>
+        <configuration_item name="username" value=""/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="2" name="" type="Conveyor.MGX.GetBins" x="661" y="366">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="3" name="" type="Conveyor.MGX.GetContigs" x="359" y="366">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="4" name="" type="Conveyor.MGX.GetGenes" x="60" y="367">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="5" name="" type="Conveyor.BioinformaticsTypes.TranslateSequence`1" x="58" y="489">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="9" name="" type="Conveyor.SequenceAssignment.FilterResult`2" x="357" y="585">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.Text.String"/>
+      </typeParameters>
+    </node>
+    <node id="10" name="" type="Conveyor.Pair.FirstElement`2" x="278" y="733">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.Text.String"/>
+      </typeParameters>
+    </node>
+    <node id="11" name="" type="Conveyor.Pair.SecondElement`2" x="475" y="732">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.Text.String"/>
+      </typeParameters>
+    </node>
+    <node id="12" name="" type="Conveyor.BioinformaticsTypes.GetTranslationSource`2" x="278" y="871">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.MGX.MGXGene"/>
+      </typeParameters>
+    </node>
+    <node id="15" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="825" y="974">
+      <configuration_items>
+        <configuration_item name="attrStruct" value="BASIC"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="22" name="" type="Conveyor.MGX.AnnotateGene" x="389" y="997">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="24" name="" type="Conveyor.Text.StringGenerator" x="816" y="758">
+      <configuration_items>
+        <configuration_item name="value" value="AMRFinder+"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="27" name="" type="Conveyor.AMRFinderPlus.AMRFinderPlus`1" x="357" y="488">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="10000"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="28" name="" type="Conveyor.MGX.CreateMGXAttribute" x="475" y="867">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="29" name="" type="Conveyor.Core.Repeat`1" x="651" y="972">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXAttributeType"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="1" to_connector="input" to_node="2"/>
+    <link from_connector="output" from_node="2" to_connector="input" to_node="3"/>
+    <link from_connector="output" from_node="3" to_connector="input" to_node="4"/>
+    <link from_connector="output" from_node="4" to_connector="input" to_node="5"/>
+    <link from_connector="classified" from_node="27" to_connector="input" to_node="9"/>
+    <link from_connector="filtered" from_node="9" to_connector="input" to_node="10"/>
+    <link from_connector="filtered" from_node="9" to_connector="input" to_node="11"/>
+    <link from_connector="output" from_node="10" to_connector="input" to_node="12"/>
+    <link from_connector="output" from_node="24" to_connector="name" to_node="15"/>
+    <link from_connector="output" from_node="1" to_connector="jobIn" to_node="15"/>
+    <link from_connector="output" from_node="12" to_connector="seqIn" to_node="22"/>
+    <link from_connector="output" from_node="28" to_connector="attributeIn" to_node="22"/>
+    <link from_connector="output" from_node="5" to_connector="inputSequence" to_node="27"/>
+    <link from_connector="output" from_node="29" to_connector="typeIn" to_node="28"/>
+    <link from_connector="output" from_node="11" to_connector="valueIn" to_node="28"/>
+    <link from_connector="output" from_node="15" to_connector="input" to_node="29"/>
+  </links>
+</graph>
