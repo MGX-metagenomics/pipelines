@@ -58,7 +58,7 @@
     </node>
     <node id="12" name="" type="Conveyor.HMMER3.HMMScanv3`5" x="495" y="515">
       <configuration_items>
-        <configuration_item name="chunkSize" value="3000"/>
+        <configuration_item name="chunkSize" value="10000"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.Geneprediction.FragGeneScan.FgsTranslation`1">
