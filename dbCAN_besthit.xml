@@ -62,7 +62,7 @@
       </configuration_items>
       <typeParameters/>
     </node>
-    <node id="12" name="" type="Conveyor.HMMER3.HMMScanv3`5" x="496" y="562">
+    <node id="12" name="" type="Conveyor.HMMER3.HMMSearch`5" x="496" y="562">
       <configuration_items>
         <configuration_item name="chunkSize" value="3000"/>
       </configuration_items>
