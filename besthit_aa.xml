@@ -150,14 +150,6 @@
         <type name="Conveyor.Text.String"/>
       </typeParameters>
     </node>
-    <node id="151" name="" type="Conveyor.Logic.FlowThrottle`1" x="413" y="33">
-      <configuration_items>
-        <configuration_item name="processAhead" value="8751000"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-      </typeParameters>
-    </node>
     <node id="154" name="" type="Conveyor.Blast.CreateBlastDB`1" x="802" y="17">
       <configuration_items/>
       <typeParameters>
@@ -165,16 +157,14 @@
       </typeParameters>
     </node>
     <node id="155" name="" type="Conveyor.BioIO.Fasta.ReadAAFastaFile" x="1044" y="26">
-      <configuration_items>
-        <configuration_item name="inputFile" user_description="FASTA file with amino-acid sequences" user_name="amino-acid FASTA"/>
-      </configuration_items>
+      <configuration_items/>
       <typeParameters/>
     </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
     <link from_connector="db" from_node="154" to_connector="database" to_node="13"/>
-    <link from_connector="output" from_node="151" to_connector="query" to_node="13"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="query" to_node="13"/>
     <link from_connector="output" from_node="21" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
@@ -200,8 +190,6 @@
     <link from_connector="result" from_node="20" to_connector="input" to_node="147"/>
     <link from_connector="output" from_node="147" to_connector="input" to_node="148"/>
     <link from_connector="output" from_node="149" to_connector="input" to_node="150"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="151"/>
-    <link from_connector="result" from_node="13" to_connector="trigger" to_node="151"/>
     <link from_connector="sequenceOut" from_node="155" to_connector="sequence" to_node="154"/>
   </links>
 </graph>
