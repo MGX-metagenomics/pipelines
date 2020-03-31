@@ -2,15 +2,15 @@
 <graph description="" name="unnamed" service="MGX">
   <composites/>
   <nodes>
-    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="-286" y="-70">
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="-341" y="-168">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="10" name="" type="Conveyor.MGX.GetSequences" x="-119" y="-67">
+    <node id="10" name="" type="Conveyor.MGX.GetSequences" x="-68" y="-190">
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="363" y="89">
+    <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="381" y="-32">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.List.List`1">
@@ -21,7 +21,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="16" name="" type="Conveyor.List.HasElements`1" x="520" y="89">
+    <node id="16" name="" type="Conveyor.List.HasElements`1" x="532" y="-33">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.Blast.BlastHit`2">
@@ -30,7 +30,7 @@
         </type>
       </typeParameters>
     </node>
-    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="222" y="11">
+    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="397" y="-107">
       <configuration_items>
         <configuration_item name="evalueCutoff" user_description="BLAST E-Value cutoff" user_name="E-Value cutoff" value="1e-5"/>
         <configuration_item name="identityCutoff" user_description="BLAST sequence identity cutoff" user_name="Identity cutoff" value="0.8"/>
@@ -77,7 +77,7 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="116" name="" type="Conveyor.EggNOG.V3.GetEggNOGProteinDatabase" x="604" y="-97">
+    <node id="116" name="" type="Conveyor.EggNOG.V3.GetEggNOGProteinDatabase" x="801" y="-190">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -128,7 +128,7 @@
         <type name="Conveyor.Math.ULong"/>
       </typeParameters>
     </node>
-    <node id="127" name="" type="Conveyor.Logic.PassCheck`1" x="48" y="570">
+    <node id="127" name="" type="Conveyor.Logic.PassCheck`1" x="65" y="612">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -339,16 +339,7 @@
         <type name="Conveyor.EggNOG.V3.OrthologGroup"/>
       </typeParameters>
     </node>
-    <node id="220" name="" type="Conveyor.List.GetFirst`1" x="388" y="168">
-      <configuration_items/>
-      <typeParameters>
-        <type name="Conveyor.Blast.BlastHit`2">
-          <type name="Conveyor.MGX.MGXSequence"/>
-          <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
-        </type>
-      </typeParameters>
-    </node>
-    <node id="221" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="412" y="-70">
+    <node id="221" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="412" y="-199">
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
       </configuration_items>
@@ -357,18 +348,45 @@
         <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
       </typeParameters>
     </node>
-    <node id="222" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="668" y="-5">
+    <node id="222" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="609" y="-189">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
       </typeParameters>
     </node>
-    <node id="270" name="" type="Conveyor.Logic.FlowThrottle`1" x="83" y="-56">
+    <node id="270" name="" type="Conveyor.Logic.FlowThrottle`1" x="124" y="-184">
       <configuration_items>
         <configuration_item name="processAhead" value="300000001"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="348" name="" type="Conveyor.BioinformaticTypes.SortByEValue`1" x="383" y="39">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="349" name="" type="Conveyor.BioinformaticTypes.FilterOverlaps`1" x="386" y="115">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="350" name="" type="Conveyor.List.Iterator`1" x="353" y="213">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.EggNOG.V3.EggNOGProteinSequence"/>
+        </type>
       </typeParameters>
     </node>
   </nodes>
@@ -378,8 +396,8 @@
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
     <link from_connector="result" from_node="221" to_connector="input" to_node="21"/>
-    <link from_connector="result" from_node="220" to_connector="input" to_node="29"/>
-    <link from_connector="result" from_node="220" to_connector="input" to_node="107"/>
+    <link from_connector="output" from_node="350" to_connector="input" to_node="29"/>
+    <link from_connector="output" from_node="350" to_connector="input" to_node="107"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="108"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="109"/>
     <link from_connector="output" from_node="127" to_connector="seqIn" to_node="110"/>
@@ -414,7 +432,7 @@
     <link from_connector="output" from_node="132" to_connector="secondArgument" to_node="140"/>
     <link from_connector="result" from_node="135" to_connector="firstArgument" to_node="140"/>
     <link from_connector="output" from_node="118" to_connector="input" to_node="144"/>
-    <link from_connector="result" from_node="220" to_connector="input" to_node="147"/>
+    <link from_connector="output" from_node="350" to_connector="input" to_node="147"/>
     <link from_connector="output" from_node="204" to_connector="seqIn" to_node="192"/>
     <link from_connector="output" from_node="211" to_connector="stopIn" to_node="192"/>
     <link from_connector="output" from_node="206" to_connector="attributeIn" to_node="192"/>
@@ -444,11 +462,13 @@
     <link from_connector="output" from_node="205" to_connector="input" to_node="210"/>
     <link from_connector="output" from_node="205" to_connector="input" to_node="211"/>
     <link from_connector="output" from_node="124" to_connector="listIn" to_node="219"/>
-    <link from_connector="output" from_node="15" to_connector="listIn" to_node="220"/>
     <link from_connector="diamondDatabase" from_node="222" to_connector="database" to_node="221"/>
     <link from_connector="output" from_node="270" to_connector="query" to_node="221"/>
     <link from_connector="db" from_node="116" to_connector="systemDatabase" to_node="222"/>
     <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="270"/>
     <link from_connector="result" from_node="221" to_connector="trigger" to_node="270"/>
+    <link from_connector="output" from_node="15" to_connector="input" to_node="348"/>
+    <link from_connector="output" from_node="348" to_connector="input" to_node="349"/>
+    <link from_connector="output" from_node="349" to_connector="input" to_node="350"/>
   </links>
 </graph>
