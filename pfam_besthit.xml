@@ -284,7 +284,9 @@
       </typeParameters>
     </node>
     <node id="289" name="" type="Conveyor.HMMER3.GetHMMDescription`4" x="688" y="994">
-      <configuration_items/>
+      <configuration_items>
+        <configuration_item name="chunkSize" value="1000"/>
+      </configuration_items>
       <typeParameters>
         <type name="Conveyor.BioinformaticsTypes.AASequence"/>
         <type name="Conveyor.BioinformaticsTypes.SimpleAASequence"/>
