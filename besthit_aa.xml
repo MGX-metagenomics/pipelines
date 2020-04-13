@@ -157,7 +157,9 @@
       </typeParameters>
     </node>
     <node id="155" name="" type="Conveyor.BioIO.Fasta.ReadAAFastaFile" x="1044" y="26">
-      <configuration_items/>
+      <configuration_items>
+        <configuration_item name="inputFile" user_description="FASTA file containing amino-acid sequences" user_name="FASTA file"/>
+      </configuration_items>
       <typeParameters/>
     </node>
   </nodes>
