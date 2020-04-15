@@ -91,7 +91,7 @@
         <type name="Conveyor.MGX.MGXAttributeType"/>
       </typeParameters>
     </node>
-    <node id="212" name="" type="MVir.GetMVirDatabase" x="853" y="-70">
+    <node id="212" name="" type="MVir.GetMVirDatabase" x="933" y="-64">
       <configuration_items/>
       <typeParameters/>
     </node>
@@ -185,21 +185,6 @@
         <type name="MVir.MVirSequence"/>
       </typeParameters>
     </node>
-    <node id="277" name="" type="Conveyor.Blast.GHOSTX.GetWrappedGHOSTZDatabase`1" x="715" y="-140">
-      <configuration_items/>
-      <typeParameters>
-        <type name="MVir.MVirSequence"/>
-      </typeParameters>
-    </node>
-    <node id="278" name="" type="Conveyor.Blast.GHOSTX.GHOSTZ`2" x="515" y="-137">
-      <configuration_items>
-        <configuration_item name="chunkSize" value="5000"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="MVir.MVirSequence"/>
-      </typeParameters>
-    </node>
     <node id="279" name="" type="Conveyor.List.GetFirst`1" x="487" y="141">
       <configuration_items/>
       <typeParameters>
@@ -207,6 +192,22 @@
           <type name="Conveyor.MGX.MGXSequence"/>
           <type name="MVir.MVirSequence"/>
         </type>
+      </typeParameters>
+    </node>
+    <node id="317" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="766" y="-67">
+      <configuration_items/>
+      <typeParameters>
+        <type name="MVir.MVirSequence"/>
+      </typeParameters>
+    </node>
+    <node id="318" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="677" y="-198">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="25000"/>
+        <configuration_item name="threads" value="2"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="MVir.MVirSequence"/>
       </typeParameters>
     </node>
   </nodes>
@@ -246,10 +247,10 @@
     <link from_connector="output" from_node="228" to_connector="firstArgument" to_node="227"/>
     <link from_connector="output" from_node="112" to_connector="input" to_node="229"/>
     <link from_connector="output" from_node="111" to_connector="input" to_node="230"/>
-    <link from_connector="result" from_node="278" to_connector="input" to_node="276"/>
-    <link from_connector="output" from_node="212" to_connector="systemDatabase" to_node="277"/>
-    <link from_connector="ghostDatabase" from_node="277" to_connector="database" to_node="278"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="query" to_node="278"/>
+    <link from_connector="result" from_node="318" to_connector="input" to_node="276"/>
     <link from_connector="output" from_node="15" to_connector="listIn" to_node="279"/>
+    <link from_connector="output" from_node="212" to_connector="systemDatabase" to_node="317"/>
+    <link from_connector="diamondDatabase" from_node="317" to_connector="database" to_node="318"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="query" to_node="318"/>
   </links>
 </graph>

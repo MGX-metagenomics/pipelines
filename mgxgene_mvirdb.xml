@@ -217,23 +217,6 @@
         <type name="Conveyor.MGX.MGXGene"/>
       </typeParameters>
     </node>
-    <node id="239" name="" type="Conveyor.Blast.GHOSTX.GetWrappedGHOSTZDatabase`1" x="914" y="20">
-      <configuration_items/>
-      <typeParameters>
-        <type name="MVir.MVirSequence"/>
-      </typeParameters>
-    </node>
-    <node id="240" name="" type="Conveyor.Blast.GHOSTX.GHOSTZ`2" x="650" y="-50">
-      <configuration_items>
-        <configuration_item name="chunkSize" value="5000"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
-          <type name="Conveyor.MGX.MGXGene"/>
-        </type>
-        <type name="MVir.MVirSequence"/>
-      </typeParameters>
-    </node>
     <node id="241" name="" type="Conveyor.Blast.FilterBlastHits`2" x="373" y="8">
       <configuration_items>
         <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-5"/>
@@ -254,6 +237,24 @@
           </type>
           <type name="MVir.MVirSequence"/>
         </type>
+      </typeParameters>
+    </node>
+    <node id="281" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="936" y="59">
+      <configuration_items/>
+      <typeParameters>
+        <type name="MVir.MVirSequence"/>
+      </typeParameters>
+    </node>
+    <node id="282" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="664" y="-82">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="25000"/>
+        <configuration_item name="threads" value="2"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="MVir.MVirSequence"/>
       </typeParameters>
     </node>
   </nodes>
@@ -299,10 +300,10 @@
     <link from_connector="output" from_node="29" to_connector="firstArgument" to_node="237"/>
     <link from_connector="output" from_node="111" to_connector="secondArgument" to_node="238"/>
     <link from_connector="output" from_node="29" to_connector="firstArgument" to_node="238"/>
-    <link from_connector="output" from_node="212" to_connector="systemDatabase" to_node="239"/>
-    <link from_connector="ghostDatabase" from_node="239" to_connector="database" to_node="240"/>
-    <link from_connector="output" from_node="234" to_connector="query" to_node="240"/>
-    <link from_connector="result" from_node="240" to_connector="input" to_node="241"/>
+    <link from_connector="result" from_node="282" to_connector="input" to_node="241"/>
     <link from_connector="output" from_node="15" to_connector="listIn" to_node="280"/>
+    <link from_connector="output" from_node="212" to_connector="systemDatabase" to_node="281"/>
+    <link from_connector="diamondDatabase" from_node="281" to_connector="database" to_node="282"/>
+    <link from_connector="output" from_node="234" to_connector="query" to_node="282"/>
   </links>
 </graph>
