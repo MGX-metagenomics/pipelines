@@ -6,22 +6,9 @@
       <configuration_items/>
       <typeParameters/>
     </node>
-    <node id="10" name="" type="Conveyor.MGX.GetSequences" x="260" y="40">
+    <node id="10" name="" type="Conveyor.MGX.GetSequences" x="279" y="33">
       <configuration_items/>
       <typeParameters/>
-    </node>
-    <node id="13" name="" type="Conveyor.Blast.BlastvsDB`2" x="608" y="36">
-      <configuration_items>
-        <configuration_item name="chunkSize" value="5000"/>
-        <configuration_item name="blastType" value="blastx"/>
-        <configuration_item name="maxAlignments" value="2"/>
-        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="0.01"/>
-        <configuration_item name="useComplexityFilter" value="False"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-        <type name="Conveyor.BioIO.FastaAASequence"/>
-      </typeParameters>
     </node>
     <node id="15" name="" type="Conveyor.Logic.PassFilter`1" x="580" y="130">
       <configuration_items/>
@@ -54,7 +41,7 @@
     </node>
     <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="354" y="131">
       <configuration_items>
-        <configuration_item name="evalueCutoff" value="1e-2"/>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff" user_name="E-Value cutoff for homology search" value="0.01"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -150,29 +137,35 @@
         <type name="Conveyor.Text.String"/>
       </typeParameters>
     </node>
-    <node id="154" name="" type="Conveyor.Blast.CreateBlastDB`1" x="802" y="17">
+    <node id="155" name="" type="Conveyor.BioIO.Fasta.ReadAAFastaFile" x="1073" y="8">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="156" name="" type="Conveyor.Blast.DIAMOND.CreateDiamondDB`1" x="937" y="85">
       <configuration_items/>
       <typeParameters>
         <type name="Conveyor.BioIO.FastaAASequence"/>
       </typeParameters>
     </node>
-    <node id="155" name="" type="Conveyor.BioIO.Fasta.ReadAAFastaFile" x="1044" y="26">
+    <node id="157" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="605" y="-81">
       <configuration_items>
-        <configuration_item name="inputFile" user_description="FASTA file containing amino-acid sequences" user_name="FASTA file"/>
+        <configuration_item name="chunkSize" value="100000"/>
+        <configuration_item name="threads" value="2"/>
       </configuration_items>
-      <typeParameters/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.BioIO.FastaAASequence"/>
+      </typeParameters>
     </node>
   </nodes>
   <links>
     <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
-    <link from_connector="db" from_node="154" to_connector="database" to_node="13"/>
-    <link from_connector="sequenceOut" from_node="10" to_connector="query" to_node="13"/>
     <link from_connector="output" from_node="21" to_connector="input" to_node="15"/>
     <link from_connector="output" from_node="16" to_connector="check_in" to_node="15"/>
     <link from_connector="check_out" from_node="15" to_connector="input" to_node="16"/>
     <link from_connector="output" from_node="130" to_connector="secondArgument" to_node="20"/>
     <link from_connector="output" from_node="15" to_connector="firstArgument" to_node="20"/>
-    <link from_connector="result" from_node="13" to_connector="input" to_node="21"/>
+    <link from_connector="result" from_node="157" to_connector="input" to_node="21"/>
     <link from_connector="result" from_node="20" to_connector="input" to_node="29"/>
     <link from_connector="result" from_node="20" to_connector="input" to_node="107"/>
     <link from_connector="output" from_node="107" to_connector="input" to_node="108"/>
@@ -192,6 +185,8 @@
     <link from_connector="result" from_node="20" to_connector="input" to_node="147"/>
     <link from_connector="output" from_node="147" to_connector="input" to_node="148"/>
     <link from_connector="output" from_node="149" to_connector="input" to_node="150"/>
-    <link from_connector="sequenceOut" from_node="155" to_connector="sequence" to_node="154"/>
+    <link from_connector="sequenceOut" from_node="155" to_connector="sequence" to_node="156"/>
+    <link from_connector="db" from_node="156" to_connector="database" to_node="157"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="query" to_node="157"/>
   </links>
 </graph>
