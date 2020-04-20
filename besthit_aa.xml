@@ -137,8 +137,10 @@
         <type name="Conveyor.Text.String"/>
       </typeParameters>
     </node>
-    <node id="155" name="" type="Conveyor.BioIO.Fasta.ReadAAFastaFile" x="1073" y="8">
-      <configuration_items/>
+    <node id="155" name="" type="Conveyor.BioIO.Fasta.ReadAAFastaFile" x="1077" y="4">
+      <configuration_items>
+        <configuration_item name="inputFile" user_description="FASTA file" user_name="FASTA file containing amino acid sequences"/>
+      </configuration_items>
       <typeParameters/>
     </node>
     <node id="156" name="" type="Conveyor.Blast.DIAMOND.CreateDiamondDB`1" x="937" y="85">
