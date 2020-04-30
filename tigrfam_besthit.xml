@@ -18,7 +18,7 @@
     </node>
     <node id="6" name="" type="Conveyor.HMMER3.HMMSearch`5" x="363" y="588">
       <configuration_items>
-        <configuration_item name="chunkSize" value="1500"/>
+        <configuration_item name="chunkSize" value="5000"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.Geneprediction.FragGeneScan.FgsTranslation`1">
@@ -201,14 +201,6 @@
         </type>
       </typeParameters>
     </node>
-    <node id="124" name="" type="Conveyor.Logic.FlowThrottle`1" x="83" y="112">
-      <configuration_items>
-        <configuration_item name="processAhead" value="300000001"/>
-      </configuration_items>
-      <typeParameters>
-        <type name="Conveyor.MGX.MGXSequence"/>
-      </typeParameters>
-    </node>
     <node id="235" name="" type="Conveyor.Geneprediction.FragGeneScan.FragGeneScan`1" x="354" y="103">
       <configuration_items>
         <configuration_item name="chunkSize" value="100000"/>
@@ -325,9 +317,7 @@
     <link from_connector="output" from_node="111" to_connector="input" to_node="119"/>
     <link from_connector="result" from_node="6" to_connector="input" to_node="122"/>
     <link from_connector="output" from_node="30" to_connector="input" to_node="123"/>
-    <link from_connector="sequenceOut" from_node="2" to_connector="input" to_node="124"/>
-    <link from_connector="genes" from_node="235" to_connector="trigger" to_node="124"/>
-    <link from_connector="output" from_node="124" to_connector="reads" to_node="235"/>
+    <link from_connector="sequenceOut" from_node="2" to_connector="reads" to_node="235"/>
     <link from_connector="genes" from_node="235" to_connector="input" to_node="236"/>
     <link from_connector="output" from_node="238" to_connector="listIn" to_node="237"/>
     <link from_connector="genes" from_node="235" to_connector="input" to_node="238"/>
