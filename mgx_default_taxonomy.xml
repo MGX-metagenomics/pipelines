@@ -298,6 +298,7 @@
     </node>
     <node id="286" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="572" y="30">
       <configuration_items>
+        <configuration_item name="threads" value="2"/>
         <configuration_item name="chunkSize" value="25000"/>
       </configuration_items>
       <typeParameters>
