@@ -16,7 +16,9 @@
       <typeParameters/>
     </node>
     <node id="3" name="" type="Conveyor.MGX.GetMGXReference" x="521" y="48">
-      <configuration_items/>
+      <configuration_items>
+        <configuration_item name="refId" user_name="reference" user_description="reference sequence to map reads against"/>
+      </configuration_items>
       <typeParameters/>
     </node>
     <node id="4" name="" type="Conveyor.MGX.CreateMapping" x="503" y="367">
