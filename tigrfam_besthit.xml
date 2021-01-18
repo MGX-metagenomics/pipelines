@@ -18,7 +18,7 @@
     </node>
     <node id="6" name="" type="Conveyor.HMMER3.HMMSearch`5" x="363" y="588">
       <configuration_items>
-        <configuration_item name="chunkSize" value="5000"/>
+        <configuration_item name="chunkSize" value="20000"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.Geneprediction.FragGeneScan.FgsTranslation`1">
