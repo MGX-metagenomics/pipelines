@@ -178,7 +178,7 @@
     </node>
     <node id="276" name="" type="Conveyor.Blast.FilterBlastHits`2" x="549" y="-52">
       <configuration_items>
-        <configuration_item name="evalueCutoff" value="1e-5"/>
+        <configuration_item name="evalueCutoff" value="1e-5" user_name="E-Value cutoff" user_description="E-Value cutoff for homology search"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
