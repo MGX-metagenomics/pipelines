@@ -85,6 +85,7 @@
     </node>
     <node id="111" name="" type="Conveyor.Kraken.Kraken2`1" x="586" y="24">
       <configuration_items>
+        <configuration_item name="database" value="RefSeq-Microbial"/>
         <configuration_item name="chunkSize" value="100000"/>
       </configuration_items>
       <typeParameters>
