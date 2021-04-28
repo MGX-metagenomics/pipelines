@@ -68,7 +68,7 @@
     </node>
     <node id="63" name="" type="Conveyor.Blast.GetNCBITaxonsForEntry`1" x="1200" y="315">
       <configuration_items>
-        <configuration_item name="chunkSize" value="50000"/>
+        <configuration_item name="chunkSize" value="100000"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
