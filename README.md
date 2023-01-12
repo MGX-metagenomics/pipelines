@@ -68,7 +68,6 @@ observations.
 ||| Sebastian Jaenicke | - | 1.0 | mothur_silva.xml |
 | 16S-Amplicons Bergey | RDP-based taxonomic assignment for 16S amplicons | Burkhard Linke | - | 1.0 | rdp_amplicons.xml |
 | Mothur-Classifier | Mothur based classification workflow for 16S amplicons | Patrick Blumenkamp | - | 1.0 | mothur_classifyReads_chimera.xml |
-| Qiime-Classifier  | Qiime based classification workflow for 16S amplicons | Patrick Blumenkamp | - | 1.0 | qiime_assignTaxonomy.xml |
 
 ## Misc
 
