@@ -36,19 +36,20 @@ observations.
 | SwissProt EC numbers | EC number annotation based on best-Blast-hit vs. SwissProt database | Sebastian Jaenicke | - | 1.0 | ecnumber.xml | mgxgene_ecnumber.xml |
 | FunGene HMM search | HMM search vs. FunGene functional genes | Sebastian Jaenicke | - | 1.0 | fungene.xml |
 | dbCAN | Automated Carbohydrate-active enzyme annotation based on dbCAN | Sebastian Jaenicke | - | 1.0 | dbCAN_besthit.xml |
-| ClusterMine360 | PKS/NRPS analysis based on BLAST vs ClusterMine360 database | Sebastian Jaenicke | - | 1.0 | clustermine360.xml |
-| Pfam | Annotate best Pfam domain hit | Sebastian Jaenicke | - | 1.0 | pfam_besthit.xml |
+| ClusterMine360 | PKS/NRPS analysis based on BLAST vs ClusterMine360 database | Sebastian Jaenicke | - | 1.0 | clustermine360.xml | mgxgene_clustermine360.xml |
+| Pfam | Annotate best Pfam domain hit | Sebastian Jaenicke | - | 1.0 | pfam_besthit.xml | mgxgene_pfam.xml |
 | TIGRFAMS | Annotate best TIGRFAMS domain hit | Sebastian Jaenicke | - | 1.0 | tigrfam_besthit.xml |
+| PGAP| Annotate best NCBI PGAP HMM hit | Sebastian Jaenicke | - | 1.0 | pgap.xml | mgxgene_pgap.xml |
 
 ## Antimicrobial resistance
 
-| Name          | Description   | Author | URL | version | file |
-| ------------- | ------------- | ------ | --- | ------- | ---- |
+| Name          | Description   | Author | URL | version | file | file2 |
+| ------------- | ------------- | ------ | --- | ------- | ---- | ----- |
 | ARDB | Antibiotic resistance gene annotation using best Blast hit vs. ARDB database | Sebastian Jaenicke | - | 1.0 | ardb.xml |
 | ARG-Annot | Antibiotic resistance gene annotation using best Blast hit vs. ARG-ANNOT database | Sebastian Jaenicke | - | 1.0 | argannot.xml |
 | BacMet | Antibacterial biocide- and metal-resistance gene annotation using best Blast hit vs. BacMet database | Sebastian Jaenicke | - | 1.0 | bacmet.xml |
 | CARD | Antibiotic resistance gene screening using Blast vs CARD (Comprehensive antibiotic resistance database) | Sebastian Jaenicke | - | 1.0 | card.xml |
-| MVirDB | MvirDB-based virulence analysis | Sebastian Jaenicke | - | 1.0 | mvirdb.xml |
+| MVirDB | MvirDB-based virulence analysis | Sebastian Jaenicke | - | 1.0 | mvirdb.xml | mgxgene_mvirdb.xml |
 
 ## Reference mapping
 
