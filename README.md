@@ -33,7 +33,7 @@ observations.
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
 | COG | COG-based functional classification | Sebastian Jaenicke | - | 1.0 | eggnog.xml |
-| SwissProt EC numbers | EC number annotation based on best-Blast-hit vs. SwissProt database | Sebastian Jaenicke | - | 1.0 | ecnumber.xml |
+| SwissProt EC numbers | EC number annotation based on best-Blast-hit vs. SwissProt database | Sebastian Jaenicke | - | 1.0 | ecnumber.xml | mgxgene_ecnumber.xml |
 | FunGene HMM search | HMM search vs. FunGene functional genes | Sebastian Jaenicke | - | 1.0 | fungene.xml |
 | dbCAN | Automated Carbohydrate-active enzyme annotation based on dbCAN | Sebastian Jaenicke | - | 1.0 | dbCAN_besthit.xml |
 | ClusterMine360 | PKS/NRPS analysis based on BLAST vs ClusterMine360 database | Sebastian Jaenicke | - | 1.0 | clustermine360.xml |
