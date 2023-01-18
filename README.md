@@ -62,11 +62,7 @@ observations.
 
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
-||| Sebastian Jaenicke | - | 1.0 | mothur_custom.xml |
-||| Sebastian Jaenicke | - | 1.0 | mothur_its.xml |
-||| Sebastian Jaenicke | - | 1.0 | mothur_silva.xml |
 | 16S-Amplicons Bergey | RDP-based taxonomic assignment for 16S amplicons | Burkhard Linke | - | 1.0 | rdp_amplicons.xml |
-| Mothur-Classifier | Mothur based classification workflow for 16S amplicons | Patrick Blumenkamp | - | 1.0 | mothur_classifyReads_chimera.xml |
 
 ## Misc
 
