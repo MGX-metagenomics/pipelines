@@ -30,8 +30,8 @@ observations.
 
 ## Functional profiling
 
-| Name          | Description   | Author | URL | version | file |
-| ------------- | ------------- | ------ | --- | ------- | ---- |
+| Name          | Description   | Author | URL | version | file | file2 |
+| ------------- | ------------- | ------ | --- | ------- | ---- | ----- |
 | COG | COG-based functional classification | Sebastian Jaenicke | - | 1.0 | eggnog.xml | mgxgene_eggnog.xml |
 | SwissProt EC numbers | EC number annotation based on best-Blast-hit vs. SwissProt database | Sebastian Jaenicke | - | 1.0 | ecnumber.xml | mgxgene_ecnumber.xml |
 | FunGene HMM search | HMM search vs. FunGene functional genes | Sebastian Jaenicke | - | 1.0 | fungene.xml |
