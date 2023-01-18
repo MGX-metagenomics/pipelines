@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="unnamed" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="-37" y="-46">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="16" name="" type="Conveyor.List.HasElements`1" x="610" y="-7">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+            <type name="Conveyor.MGX.MGXGene"/>
+          </type>
+          <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="448" y="-79">
+      <configuration_items>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-5"/>
+        <configuration_item name="identityCutoff" user_description="BLAST sequence identity cutoff" user_name="Identity cutoff" value="0.8"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+      </typeParameters>
+    </node>
+    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="60" y="400">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+      </typeParameters>
+    </node>
+    <node id="108" name="" type="Conveyor.Pair.FirstElement`2" x="282" y="380">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.Integer"/>
+        <type name="Conveyor.Math.Integer"/>
+      </typeParameters>
+    </node>
+    <node id="109" name="" type="Conveyor.Pair.SecondElement`2" x="451" y="384">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.Integer"/>
+        <type name="Conveyor.Math.Integer"/>
+      </typeParameters>
+    </node>
+    <node id="111" name="" type="Conveyor.Math.ULongOps.IntToULong" x="270" y="460">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="112" name="" type="Conveyor.Math.ULongOps.IntToULong" x="434" y="460">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="117" name="" type="Conveyor.MGX.CreateMGXAttribute" x="800" y="1070">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="118" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="-50" y="920">
+      <configuration_items>
+        <configuration_item name="attrStruct" value="BASIC"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="123" name="" type="Conveyor.List.HasElements`1" x="747" y="564">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.EnzymeClassification.EnzymeClass"/>
+      </typeParameters>
+    </node>
+    <node id="124" name="" type="Conveyor.Logic.PassCheck`1" x="1039" y="677">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.EnzymeClassification.EnzymeClass"/>
+      </typeParameters>
+    </node>
+    <node id="125" name="" type="Conveyor.Logic.PassCheck`1" x="433" y="621">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.ULong"/>
+      </typeParameters>
+    </node>
+    <node id="126" name="" type="Conveyor.Logic.PassCheck`1" x="269" y="620">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.ULong"/>
+      </typeParameters>
+    </node>
+    <node id="127" name="" type="Conveyor.Logic.PassCheck`1" x="58" y="582">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="139" name="" type="Conveyor.Text.ToString`1" x="834" y="882">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.EnzymeClassification.EnzymeClass"/>
+      </typeParameters>
+    </node>
+    <node id="140" name="" type="Conveyor.Text.Concat" x="937" y="982">
+      <configuration_items>
+        <configuration_item name="delimiter" value=" "/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="144" name="" type="Conveyor.Core.Repeat`1" x="190" y="1010">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXAttributeType"/>
+      </typeParameters>
+    </node>
+    <node id="194" name="" type="Conveyor.Annotation.SelectAnnotationField" x="1222" y="263">
+      <configuration_items>
+        <configuration_item name="field" value="Conveyor.Database.DatabaseFields.ecNumberField"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="195" name="" type="Conveyor.Core.Repeat`1" x="1202" y="160">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Annotation.AnnotationField"/>
+      </typeParameters>
+    </node>
+    <node id="200" name="" type="Conveyor.Annotation.GetAnnotationField`1" x="847" y="337">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.List.List`1">
+          <type name="Conveyor.EnzymeClassification.EnzymeClass"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="201" name="" type="Conveyor.EnzymeClassification.GetDescription" x="1026" y="869">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="202" name="" type="Conveyor.Text.StringGenerator" x="-40" y="1050">
+      <configuration_items>
+        <configuration_item name="value" value="EC_number"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="203" name="" type="Conveyor.Database.UniProt.GetUniProtDatabase" x="801" y="-158">
+      <configuration_items>
+        <configuration_item name="database" value="SwissProt"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="204" name="" type="Conveyor.Core.Repeat`1" x="1083" y="370">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Annotation.AnnotationField"/>
+      </typeParameters>
+    </node>
+    <node id="266" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="619" y="-154">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+      </typeParameters>
+    </node>
+    <node id="268" name="" type="Conveyor.List.GetFirst`1" x="332" y="102">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+            <type name="Conveyor.MGX.MGXGene"/>
+          </type>
+          <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="269" name="" type="Conveyor.Logic.PassFilter`1" x="450" y="-6">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.List.List`1">
+          <type name="Conveyor.Blast.BlastHit`2">
+            <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+              <type name="Conveyor.MGX.MGXGene"/>
+            </type>
+            <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+          </type>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="273" name="" type="Conveyor.Logic.PassFilter`1" x="375" y="218">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+            <type name="Conveyor.MGX.MGXGene"/>
+          </type>
+          <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="274" name="" type="Conveyor.Annotation.HasAnnotationField" x="986" y="150">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="275" name="" type="Conveyor.Blast.GetSubject`2" x="668" y="124">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+      </typeParameters>
+    </node>
+    <node id="276" name="" type="Conveyor.Blast.GetSubject`2" x="624" y="242">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+      </typeParameters>
+    </node>
+    <node id="277" name="" type="Homology.GetQueryRange" x="410" y="296">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="278" name="" type="Conveyor.MGX.GetBins" x="60" y="-203">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="279" name="" type="Conveyor.MGX.GetContigs" x="129" y="-274">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="280" name="" type="Conveyor.MGX.GetGenes" x="287" y="-273">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="281" name="" type="Conveyor.BioinformaticsTypes.TranslateSequence`1" x="456" y="-264">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="282" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="447" y="-147">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.Database.UniProt.UniProtEntry"/>
+      </typeParameters>
+    </node>
+    <node id="283" name="" type="Conveyor.List.GetFirst`1" x="916" y="767">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.EnzymeClassification.EnzymeClass"/>
+      </typeParameters>
+    </node>
+    <node id="288" name="" type="Conveyor.BioinformaticsTypes.BackTranslate`1" x="279" y="741">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXGene"/>
+      </typeParameters>
+    </node>
+    <node id="289" name="" type="Conveyor.BioinformaticsTypes.GetTranslationSource`2" x="62" y="765">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
+          <type name="Conveyor.MGX.MGXGene"/>
+        </type>
+        <type name="Conveyor.MGX.MGXGene"/>
+      </typeParameters>
+    </node>
+    <node id="290" name="" type="Conveyor.BioinformaticsTypes.BackTranslate`1" x="482" y="745">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXGene"/>
+      </typeParameters>
+    </node>
+    <node id="291" name="" type="Conveyor.MGX.AnnotateGeneAttribute" x="396" y="892">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="check_out" from_node="269" to_connector="input" to_node="16"/>
+    <link from_connector="result" from_node="282" to_connector="input" to_node="21"/>
+    <link from_connector="output" from_node="273" to_connector="input" to_node="29"/>
+    <link from_connector="output" from_node="277" to_connector="input" to_node="108"/>
+    <link from_connector="output" from_node="277" to_connector="input" to_node="109"/>
+    <link from_connector="output" from_node="108" to_connector="input" to_node="111"/>
+    <link from_connector="output" from_node="109" to_connector="input" to_node="112"/>
+    <link from_connector="output" from_node="144" to_connector="typeIn" to_node="117"/>
+    <link from_connector="result" from_node="140" to_connector="valueIn" to_node="117"/>
+    <link from_connector="output" from_node="202" to_connector="name" to_node="118"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="118"/>
+    <link from_connector="value" from_node="200" to_connector="input" to_node="123"/>
+    <link from_connector="value" from_node="200" to_connector="input" to_node="124"/>
+    <link from_connector="output" from_node="123" to_connector="pass" to_node="124"/>
+    <link from_connector="output" from_node="112" to_connector="input" to_node="125"/>
+    <link from_connector="output" from_node="123" to_connector="pass" to_node="125"/>
+    <link from_connector="output" from_node="111" to_connector="input" to_node="126"/>
+    <link from_connector="output" from_node="123" to_connector="pass" to_node="126"/>
+    <link from_connector="output" from_node="29" to_connector="input" to_node="127"/>
+    <link from_connector="output" from_node="123" to_connector="pass" to_node="127"/>
+    <link from_connector="result" from_node="283" to_connector="input" to_node="139"/>
+    <link from_connector="output" from_node="201" to_connector="secondArgument" to_node="140"/>
+    <link from_connector="output" from_node="139" to_connector="firstArgument" to_node="140"/>
+    <link from_connector="output" from_node="118" to_connector="input" to_node="144"/>
+    <link from_connector="output" from_node="194" to_connector="input" to_node="195"/>
+    <link from_connector="output" from_node="204" to_connector="fieldName" to_node="200"/>
+    <link from_connector="output" from_node="276" to_connector="annotatable" to_node="200"/>
+    <link from_connector="result" from_node="283" to_connector="input" to_node="201"/>
+    <link from_connector="output" from_node="194" to_connector="input" to_node="204"/>
+    <link from_connector="db" from_node="203" to_connector="systemDatabase" to_node="266"/>
+    <link from_connector="output" from_node="269" to_connector="listIn" to_node="268"/>
+    <link from_connector="output" from_node="21" to_connector="input" to_node="269"/>
+    <link from_connector="output" from_node="16" to_connector="check_in" to_node="269"/>
+    <link from_connector="result" from_node="268" to_connector="input" to_node="273"/>
+    <link from_connector="hasAnnotation" from_node="274" to_connector="check_in" to_node="273"/>
+    <link from_connector="output" from_node="275" to_connector="annotation" to_node="274"/>
+    <link from_connector="output" from_node="195" to_connector="fieldName" to_node="274"/>
+    <link from_connector="check_out" from_node="273" to_connector="input" to_node="275"/>
+    <link from_connector="output" from_node="273" to_connector="input" to_node="276"/>
+    <link from_connector="output" from_node="273" to_connector="input" to_node="277"/>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="278"/>
+    <link from_connector="output" from_node="278" to_connector="input" to_node="279"/>
+    <link from_connector="output" from_node="279" to_connector="input" to_node="280"/>
+    <link from_connector="output" from_node="280" to_connector="input" to_node="281"/>
+    <link from_connector="diamondDatabase" from_node="266" to_connector="database" to_node="282"/>
+    <link from_connector="output" from_node="281" to_connector="query" to_node="282"/>
+    <link from_connector="output" from_node="124" to_connector="listIn" to_node="283"/>
+    <link from_connector="output" from_node="126" to_connector="secondArgument" to_node="288"/>
+    <link from_connector="output" from_node="127" to_connector="firstArgument" to_node="288"/>
+    <link from_connector="output" from_node="127" to_connector="input" to_node="289"/>
+    <link from_connector="output" from_node="125" to_connector="secondArgument" to_node="290"/>
+    <link from_connector="output" from_node="127" to_connector="firstArgument" to_node="290"/>
+    <link from_connector="output" from_node="289" to_connector="seqIn" to_node="291"/>
+    <link from_connector="result" from_node="290" to_connector="stopIn" to_node="291"/>
+    <link from_connector="output" from_node="117" to_connector="attributeIn" to_node="291"/>
+    <link from_connector="result" from_node="288" to_connector="startIn" to_node="291"/>
+  </links>
+</graph>
