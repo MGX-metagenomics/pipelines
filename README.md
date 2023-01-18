@@ -22,7 +22,6 @@ observations.
 | Kraken | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken.xml |
 | Kraken 2 | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken2.xml | mgxgene_kraken2.xml |
 | MetaBin | | Sebastian Jaenicke | - | 1.0 | metabin.xml |
-| MetaCV | MetaCV: a composition-based algorithm to classify metagenomic reads | Sebastian Jaenicke | - | 1.0 | metacv.xml |
 | MetaPhlAn | Metagenomic microbial community profiling using unique clade-specific marker genes | Sebastian Jaenicke | - | 1.0 | metaphlan.xml |
 | MetaPhlAn 2 | MetaPhlAn2 for enhanced metagenomic taxonomic profiling | Sebastian Jaenicke | - | 1.0 | metaphlan2xml |
 | MetaPhyler | MetaPhyler taxonomic classification | Sebastian Jaenicke | - | 1.0 | metaphyler.xml |
