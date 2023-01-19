@@ -24,7 +24,6 @@ observations.
 | MetaBin | | Sebastian Jaenicke | - | 1.0 | metabin.xml |
 | MetaPhlAn | Metagenomic microbial community profiling using unique clade-specific marker genes | Sebastian Jaenicke | - | 1.0 | metaphlan.xml |
 | MetaPhlAn 4 | MetaPhlAn 4 marker-based taxonomic classification | Sebastian Jaenicke | - | 1.0 | metaphlan4.xml |
-| MetaPhyler | MetaPhyler taxonomic classification | Sebastian Jaenicke | - | 1.0 | metaphyler.xml |
 | 16S Pipeline | Classification of 16S rRNA fragments | Sebastian Jaenicke || 1.0 | rdp_pipeline.xml |
 
 
