@@ -48,6 +48,7 @@ observations.
 | BacMet | Antibacterial biocide- and metal-resistance gene annotation using best Blast hit vs. BacMet database | Sebastian Jaenicke | - | 1.0 | bacmet.xml |
 | CARD | Antibiotic resistance gene screening using Blast vs CARD (Comprehensive antibiotic resistance database) | Sebastian Jaenicke | - | 1.0 | card.xml |
 | MVirDB | MvirDB-based virulence analysis | Sebastian Jaenicke | - | 1.0 | mvirdb.xml | mgxgene_mvirdb.xml |
+| AMRFinder+ | NCBI AMRFinder+ | Sebastian Jaenicke | - | 1.0 | - | mgxgene_amrfinder.xml |
 
 ## Reference mapping
 
