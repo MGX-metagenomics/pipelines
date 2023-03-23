@@ -38,6 +38,7 @@ observations.
 | Pfam | Annotate best Pfam domain hit | Sebastian Jaenicke | - | 1.0 | pfam_besthit.xml | mgxgene_pfam.xml |
 | TIGRFAMS | Annotate best TIGRFAMS domain hit | Sebastian Jaenicke | - | 1.0 | tigrfam_besthit.xml |
 | PGAP| Annotate best NCBI PGAP HMM hit | Sebastian Jaenicke | - | 1.0 | pgap.xml | mgxgene_pgap.xml |
+| MIBiG | MIBiG secondary metabolite screening | Sebastian Jaenicke | - | 1.0 | mibig.xml | mgxgene_mibig.xml |
 
 ## Antimicrobial resistance
 

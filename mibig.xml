@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="unnamed" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="-37" y="-46">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="16" name="" type="Conveyor.List.HasElements`1" x="610" y="-7">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="21" name="" type="Conveyor.Blast.FilterBlastHits`2" x="448" y="-79">
+      <configuration_items>
+        <configuration_item name="evalueCutoff" user_description="E-Value cutoff for homology search" user_name="E-Value cutoff" value="1e-20"/>
+        <configuration_item name="identityCutoff" user_description="BLAST sequence identity cutoff" user_name="Identity cutoff" value="0.8"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="29" name="" type="Conveyor.Blast.GetQueryFromBlastHit`2" x="68" y="484">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="108" name="" type="Conveyor.Pair.FirstElement`2" x="368" y="441">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.Integer"/>
+        <type name="Conveyor.Math.Integer"/>
+      </typeParameters>
+    </node>
+    <node id="109" name="" type="Conveyor.Pair.SecondElement`2" x="511" y="450">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Math.Integer"/>
+        <type name="Conveyor.Math.Integer"/>
+      </typeParameters>
+    </node>
+    <node id="111" name="" type="Conveyor.Math.ULongOps.IntToULong" x="361" y="514">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="112" name="" type="Conveyor.Math.ULongOps.IntToULong" x="512" y="516">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="117" name="" type="Conveyor.MGX.CreateMGXAttribute" x="813" y="1000">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="118" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="-50" y="920">
+      <configuration_items>
+        <configuration_item name="attrStruct" value="BASIC"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="144" name="" type="Conveyor.Core.Repeat`1" x="190" y="1010">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXAttributeType"/>
+      </typeParameters>
+    </node>
+    <node id="202" name="" type="Conveyor.Text.StringGenerator" x="-40" y="1050">
+      <configuration_items>
+        <configuration_item name="value" value="MIBiG"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="268" name="" type="Conveyor.List.GetFirst`1" x="433" y="179">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.BlastHit`2">
+          <type name="Conveyor.MGX.MGXSequence"/>
+          <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="269" name="" type="Conveyor.Logic.PassFilter`1" x="450" y="-6">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.List.List`1">
+          <type name="Conveyor.Blast.BlastHit`2">
+            <type name="Conveyor.MGX.MGXSequence"/>
+            <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+          </type>
+        </type>
+      </typeParameters>
+    </node>
+    <node id="276" name="" type="Conveyor.Blast.GetSubject`2" x="816" y="345">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="277" name="" type="Homology.GetQueryRange" x="446" y="342">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="282" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="447" y="-147">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="30000"/>
+        <configuration_item name="threads" value="2"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="292" name="" type="Conveyor.Blast.PublicAADB" x="910" y="-152">
+      <configuration_items>
+        <configuration_item name="database" value="MIBiG.pin"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="293" name="" type="Conveyor.Blast.DIAMOND.GetWrappedDIAMONDDatabase`1" x="698" y="-152">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="295" name="" type="Sequence.GetDescription" x="828" y="623">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="296" name="" type="Conveyor.Blast.FillBlastDBSequences`1" x="809" y="469">
+      <configuration_items>
+        <configuration_item name="chunkSize" value="250"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.Blast.AABlastDatabaseSequence"/>
+      </typeParameters>
+    </node>
+    <node id="297" name="" type="Conveyor.MGX.GetSequences" x="203" y="-142">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="298" name="" type="Conveyor.MGX.AnnotateAttribute" x="400" y="741">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="check_out" from_node="269" to_connector="input" to_node="16"/>
+    <link from_connector="result" from_node="282" to_connector="input" to_node="21"/>
+    <link from_connector="result" from_node="268" to_connector="input" to_node="29"/>
+    <link from_connector="output" from_node="277" to_connector="input" to_node="108"/>
+    <link from_connector="output" from_node="277" to_connector="input" to_node="109"/>
+    <link from_connector="output" from_node="108" to_connector="input" to_node="111"/>
+    <link from_connector="output" from_node="109" to_connector="input" to_node="112"/>
+    <link from_connector="output" from_node="144" to_connector="typeIn" to_node="117"/>
+    <link from_connector="output" from_node="295" to_connector="valueIn" to_node="117"/>
+    <link from_connector="output" from_node="202" to_connector="name" to_node="118"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="118"/>
+    <link from_connector="output" from_node="118" to_connector="input" to_node="144"/>
+    <link from_connector="output" from_node="269" to_connector="listIn" to_node="268"/>
+    <link from_connector="output" from_node="21" to_connector="input" to_node="269"/>
+    <link from_connector="output" from_node="16" to_connector="check_in" to_node="269"/>
+    <link from_connector="result" from_node="268" to_connector="input" to_node="276"/>
+    <link from_connector="result" from_node="268" to_connector="input" to_node="277"/>
+    <link from_connector="diamondDatabase" from_node="293" to_connector="database" to_node="282"/>
+    <link from_connector="sequenceOut" from_node="297" to_connector="query" to_node="282"/>
+    <link from_connector="db" from_node="292" to_connector="systemDatabase" to_node="293"/>
+    <link from_connector="output" from_node="296" to_connector="input" to_node="295"/>
+    <link from_connector="output" from_node="276" to_connector="input" to_node="296"/>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="297"/>
+    <link from_connector="output" from_node="29" to_connector="seqIn" to_node="298"/>
+    <link from_connector="output" from_node="112" to_connector="stopIn" to_node="298"/>
+    <link from_connector="output" from_node="117" to_connector="attributeIn" to_node="298"/>
+    <link from_connector="output" from_node="111" to_connector="startIn" to_node="298"/>
+  </links>
+</graph>
