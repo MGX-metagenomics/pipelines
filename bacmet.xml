@@ -115,7 +115,7 @@
     </node>
     <node id="151" name="" type="Conveyor.Logic.FlowThrottle`1" x="413" y="33">
       <configuration_items>
-        <configuration_item name="processAhead" value="45000001"/>
+        <configuration_item name="processAhead" value="450000001"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
@@ -150,7 +150,7 @@
     </node>
     <node id="164" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="589" y="10">
       <configuration_items>
-        <configuration_item name="chunkSize" value="15000"/>
+        <configuration_item name="chunkSize" value="150000"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
