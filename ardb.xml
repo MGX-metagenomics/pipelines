@@ -12,7 +12,7 @@
     </node>
     <node id="13" name="" type="Conveyor.Blast.BlastvsDB`2" x="608" y="36">
       <configuration_items>
-        <configuration_item name="chunkSize" value="5000"/>
+        <configuration_item name="chunkSize" value="10000"/>
         <configuration_item name="blastType" value="blastx"/>
         <configuration_item name="maxAlignments" value="2"/>
         <configuration_item name="evalueCutoff" value="1"/>
@@ -128,7 +128,7 @@
     </node>
     <node id="151" name="" type="Conveyor.Logic.FlowThrottle`1" x="413" y="33">
       <configuration_items>
-        <configuration_item name="processAhead" value="15000001"/>
+        <configuration_item name="processAhead" value="30000001"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
