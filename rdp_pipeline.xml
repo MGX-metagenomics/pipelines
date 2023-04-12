@@ -249,7 +249,7 @@
     </node>
     <node id="75" name="" type="Conveyor.Logic.FlowThrottle`1" x="380" y="90">
       <configuration_items>
-        <configuration_item name="processAhead" value="8751000"/>
+        <configuration_item name="processAhead" value="2400001"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
