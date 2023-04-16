@@ -81,6 +81,5 @@ observations.
 ||| Sebastian Jaenicke | - | 1.0 | pks.xml |
 ||| Sebastian Jaenicke | - | 1.0 | plasmidprotscreen.xml |
 ||| Sebastian Jaenicke | - | 1.0 | referencefilter.xml |
-||| Sebastian Jaenicke | - | 1.0 | swissprot.xml |
 
 
