@@ -37,7 +37,9 @@
     </node>
     <node id="6" name="" type="Conveyor.Kraken.Kraken2`1" x="359" y="489">
       <configuration_items>
+        <configuration_item name="database" value="RefSeq-Microbial-AA"/>
         <configuration_item name="chunkSize" value="25000"/>
+        <configuration_item name="confidenceCutoff" user_name="confidence cutoff" user_desc="Kraken 2 confidence cutoff (range [0,1])" value="0.6"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXTranslatedAASequence`1">

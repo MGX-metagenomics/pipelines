@@ -87,6 +87,7 @@
       <configuration_items>
         <configuration_item name="database" value="RefSeq-Microbial"/>
         <configuration_item name="chunkSize" value="100000"/>
+        <configuration_item name="confidenceCutoff" user_name="confidence cutoff" user_desc="Kraken 2 confidence cutoff (range [0,1])" value="0.6"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXSequence"/>
