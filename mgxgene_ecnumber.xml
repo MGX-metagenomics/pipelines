@@ -251,7 +251,10 @@
       </typeParameters>
     </node>
     <node id="282" name="" type="Conveyor.Blast.DIAMOND.DIAMOND`2" x="447" y="-147">
-      <configuration_items/>
+      <configuration_items>
+         <configuration_item name="chunkSize" value="100000"/>
+         <configuration_item name="arraySize" value="1000"/>
+      <configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
           <type name="Conveyor.MGX.MGXGene"/>
