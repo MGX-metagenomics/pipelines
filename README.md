@@ -20,6 +20,7 @@ observations.
 | Centrifuge | Centrifuge: rapid and sensitive classification of metagenomic sequences | Sebastian Jaenicke | - | 1.0 | centrifuge.xml |
 | Kaiju | Kaiju: Fast and sensitive taxonomic classification for metagenomics | Sebastian Jaenicke | - | 1.0 | kaiju.xml |
 | Kraken | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken.xml |
+| KrakenUniq | Taxonomic sequence classification with KrakenUniq | Sebastian Jaenicke | - | 1.0 | krakenuniq.xml |
 | Kraken 2 | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken2.xml | mgxgene_kraken2.xml |
 | MetaPhlAn 4 | MetaPhlAn 4 marker-based taxonomic classification | Sebastian Jaenicke | - | 1.0 | metaphlan4.xml |
 | 16S Pipeline | Classification of 16S rRNA fragments | Sebastian Jaenicke || 1.0 | rdp_pipeline.xml |

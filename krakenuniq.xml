@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph description="" name="unnamed" service="MGX">
+  <composites/>
+  <nodes>
+    <node id="9" name="mgx" type="Conveyor.MGX.GetMGXJob" x="30" y="20">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="10" name="" type="Conveyor.MGX.GetSequences" x="220" y="21">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="61" name="" type="Conveyor.Pair.FirstElement`2" x="406" y="171">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="77" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonRank" x="195" y="353">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="78" name="" type="Conveyor.Taxonomy.NCBI.GetRankName" x="166" y="440">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="79" name="" type="Conveyor.Taxonomy.NCBI.GetTaxonName" x="855" y="425">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="80" name="" type="Conveyor.Text.StringGenerator" x="337" y="445">
+      <configuration_items>
+        <configuration_item name="value" value="NCBI"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="81" name="" type="Conveyor.Text.Concat" x="193" y="524">
+      <configuration_items>
+        <configuration_item name="delimiter" value="_"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="96" name="" type="Conveyor.MGX.CreateMGXAttributeType" x="97" y="664">
+      <configuration_items>
+        <configuration_item name="attrStruct" value="HIERARCHICAL"/>
+        <configuration_item name="attrType" value="DISCRETE"/>
+      </configuration_items>
+      <typeParameters/>
+    </node>
+    <node id="99" name="" type="Conveyor.MGX.CreateHierarchicalMGXAttribute`1" x="586" y="414">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="101" name="" type="Conveyor.Taxonomy.NCBI.GetMajorRankedParent" x="718" y="543">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="102" name="" type="Conveyor.Taxonomy.NCBI.GetMajorRankedParent" x="774" y="261">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="103" name="" type="Conveyor.Tree.GetParent`1" x="561" y="543">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="106" name="" type="Conveyor.Logic.FlowThrottle`1" x="392" y="23">
+      <configuration_items>
+        <configuration_item name="processAhead" value="300000001"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+    <node id="110" name="" type="Conveyor.Pair.SecondElement`2" x="772" y="183">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="212" name="" type="Conveyor.MGX.AnnotateSequence" x="284" y="281">
+      <configuration_items/>
+      <typeParameters/>
+    </node>
+    <node id="270" name="" type="Conveyor.SequenceAssignment.FilterResult`2" x="593" y="166">
+      <configuration_items/>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+        <type name="Conveyor.Taxonomy.NCBI.Taxon"/>
+      </typeParameters>
+    </node>
+    <node id="271" name="" type="Conveyor.Kraken.KrakenUniq`1" x="600" y="25">
+      <configuration_items>
+        <configuration_item name="database" user_description="KrakenUniq database" user_name="database" value="EuPathDB46"/>
+        <configuration_item name="chunkSize" value="100000"/>
+        <configuration_item name="numThreads" value="2"/>
+      </configuration_items>
+      <typeParameters>
+        <type name="Conveyor.MGX.MGXSequence"/>
+      </typeParameters>
+    </node>
+  </nodes>
+  <links>
+    <link from_connector="output" from_node="9" to_connector="input" to_node="10"/>
+    <link from_connector="filtered" from_node="270" to_connector="input" to_node="61"/>
+    <link from_connector="current" from_node="99" to_connector="input" to_node="77"/>
+    <link from_connector="output" from_node="77" to_connector="input" to_node="78"/>
+    <link from_connector="current" from_node="99" to_connector="input" to_node="79"/>
+    <link from_connector="output" from_node="78" to_connector="secondArgument" to_node="81"/>
+    <link from_connector="output" from_node="80" to_connector="firstArgument" to_node="81"/>
+    <link from_connector="result" from_node="81" to_connector="name" to_node="96"/>
+    <link from_connector="output" from_node="9" to_connector="jobIn" to_node="96"/>
+    <link from_connector="output" from_node="96" to_connector="typeIn" to_node="99"/>
+    <link from_connector="output" from_node="101" to_connector="parentIn" to_node="99"/>
+    <link from_connector="output" from_node="102" to_connector="nodeIn" to_node="99"/>
+    <link from_connector="output" from_node="79" to_connector="dataIn" to_node="99"/>
+    <link from_connector="output" from_node="103" to_connector="input" to_node="101"/>
+    <link from_connector="output" from_node="110" to_connector="input" to_node="102"/>
+    <link from_connector="nodeOut" from_node="99" to_connector="input" to_node="103"/>
+    <link from_connector="sequenceOut" from_node="10" to_connector="input" to_node="106"/>
+    <link from_connector="classified" from_node="271" to_connector="trigger" to_node="106"/>
+    <link from_connector="filtered" from_node="270" to_connector="input" to_node="110"/>
+    <link from_connector="output" from_node="61" to_connector="seqIn" to_node="212"/>
+    <link from_connector="output" from_node="99" to_connector="attributeIn" to_node="212"/>
+    <link from_connector="classified" from_node="271" to_connector="input" to_node="270"/>
+    <link from_connector="output" from_node="106" to_connector="inputSequence" to_node="271"/>
+  </links>
+</graph>
