@@ -70,13 +70,8 @@ observations.
 | Name          | Description   | Author | URL | version | file |
 | ------------- | ------------- | ------ | --- | ------- | ---- |
 ||| Sebastian Jaenicke | - | 1.0 | besthit_aa.xml |
-||| Sebastian Jaenicke | - | 1.0 | besthit_nt.xml |
 ||| Sebastian Jaenicke | - | 1.0 | discard_rRNAs.xml |
 ||| Sebastian Jaenicke | - | 1.0 | ecolifilter.xml |
-||| Sebastian Jaenicke | - | 1.0 | lca_nr_ghostx.xml |
-||| Sebastian Jaenicke | - | 1.0 | lca_nr_rapsearch.xml |
-||| Sebastian Jaenicke | - | 1.0 | lca_nr.xml |
-||| Sebastian Jaenicke | - | 1.0 | lca_pipeline.xml |
 ||| Sebastian Jaenicke | - | 1.0 | phageprotscreen.xml |
 ||| Sebastian Jaenicke | - | 1.0 | phagescreen.xml |
 ||| Sebastian Jaenicke | - | 1.0 | pks.xml |
