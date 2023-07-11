@@ -96,7 +96,7 @@
     </node>
     <node id="271" name="" type="Conveyor.Metabuli.Metabuli`1" x="597" y="21">
       <configuration_items>
-        <configuration_item name="database" user_description="database name" user_name="database" value="RefSeq-ProkViral"/>
+        <configuration_item name="database" user_description="database name" user_name="database" value="RefSeq217"/>
         <configuration_item name="chunkSize" value="100000"/>
         <configuration_item name="speciesScoreCutoff" user_description="species score cutoff (0..1)" user_name="species score cutoff" value="0.5"/>
         <configuration_item name="scoreCutoff" user_description="score cutoff (0..1)" user_name="score cutoff" value="0.15"/>
