@@ -128,7 +128,7 @@
     </node>
     <node id="161" name="" type="Conveyor.Blast.PublicAADB" x="1029" y="-29">
       <configuration_items>
-        <configuration_item name="database" value="card.pin"/>
+        <configuration_item name="database" value="uniref50.pal"/>
       </configuration_items>
       <typeParameters/>
     </node>
@@ -227,6 +227,7 @@
     <link from_connector="result" from_node="160" to_connector="input" to_node="147"/>
     <link from_connector="output" from_node="149" to_connector="input" to_node="150"/>
     <link from_connector="output" from_node="15" to_connector="listIn" to_node="160"/>
+    <link from_connector="output" from_node="163" to_connector="input" to_node="162"/>
     <link from_connector="output" from_node="147" to_connector="input" to_node="163"/>
     <link from_connector="output" from_node="9" to_connector="input" to_node="164"/>
     <link from_connector="output" from_node="164" to_connector="input" to_node="165"/>
