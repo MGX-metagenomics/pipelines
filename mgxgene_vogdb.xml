@@ -195,7 +195,7 @@
     </node>
     <node id="288" name="" type="Conveyor.HMMER3.HMMSearch`5" x="380" y="590">
       <configuration_items>
-        <configuration_item name="chunkSize" value="10000"/>
+        <configuration_item name="chunkSize" value="7000"/>
       </configuration_items>
       <typeParameters>
         <type name="Conveyor.MGX.MGXTranslatedAASequence`1">
