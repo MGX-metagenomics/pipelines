@@ -39,6 +39,9 @@ observations.
 | TIGRFAMS | Annotate best TIGRFAMS domain hit | Sebastian Jaenicke | - | 1.0 | tigrfam_besthit.xml |
 | PGAP| Annotate best NCBI PGAP HMM hit | Sebastian Jaenicke | - | 1.0 | pgap.xml | mgxgene_pgap.xml |
 | MIBiG | MIBiG secondary metabolite screening | Sebastian Jaenicke | - | 1.0 | mibig.xml | mgxgene_mibig.xml |
+| KOfam | KO number annotation | Sebastian Jaenicke | - | 1.0 | kofam.xml | mgxgene_kofam.xml |
+| UniRef50 | UniRef50 annotation | Sebastian Jaenicke | - | 1.0 | uniref50.xml | mgxgene_uniref50.xml |
+| VOGDB | Virus orthologous groups | Sebastian Jaenicke | - | 1.0 | - | mgxgene_vogdb.xml |
 
 ## Antimicrobial resistance
 
