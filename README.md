@@ -17,8 +17,8 @@ observations.
 | Name          | Description   | Author | URL | version | file | file2 |
 | ------------- | ------------- | ------ | --- | ------- | ---- | ---- |
 | MGX default taxonomy | MGX default taxonomic classification based on Kraken and Diamond vs. RefSeq proteins | Sebastian Jaenicke | - | 1.0 | mgx_default_taxonomy.xml |
-| Centrifuge | Centrifuge: rapid and sensitive classification of metagenomic sequences | Sebastian Jaenicke | - | 1.0 | centrifuge.xml |
-| Kaiju | Kaiju: Fast and sensitive taxonomic classification for metagenomics | Sebastian Jaenicke | - | 1.0 | kaiju.xml |
+| Centrifuge | Centrifuge: rapid and sensitive classification of metagenomic sequences | Sebastian Jaenicke | - | 1.0 | centrifuge.xml | mgxgene_centrifuge.xml |
+| Kaiju | Kaiju: Fast and sensitive taxonomic classification for metagenomics | Sebastian Jaenicke | - | 1.0 | kaiju.xml | mgxgene_kaiju.xml |
 | Kraken | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken.xml |
 | KrakenUniq | Taxonomic sequence classification with KrakenUniq | Sebastian Jaenicke | - | 1.0 | krakenuniq.xml |
 | Kraken 2 | Kraken: ultrafast metagenomic sequence classification using exact alignments | Sebastian Jaenicke | - | 1.0 | kraken2.xml | mgxgene_kraken2.xml |
@@ -36,8 +36,8 @@ observations.
 | dbCAN | Automated Carbohydrate-active enzyme annotation based on dbCAN | Sebastian Jaenicke | - | 1.0 | dbCAN_besthit.xml | mgxgene_dbcan.xml |
 | ClusterMine360 | PKS/NRPS analysis based on BLAST vs ClusterMine360 database | Sebastian Jaenicke | - | 1.0 | clustermine360.xml | mgxgene_clustermine360.xml |
 | Pfam | Annotate best Pfam domain hit | Sebastian Jaenicke | - | 1.0 | pfam_besthit.xml | mgxgene_pfam.xml |
-| TIGRFAMS | Annotate best TIGRFAMS domain hit | Sebastian Jaenicke | - | 1.0 | tigrfam_besthit.xml |
-| PGAP| Annotate best NCBI PGAP HMM hit | Sebastian Jaenicke | - | 1.0 | pgap.xml | mgxgene_pgap.xml |
+| TIGRFAMS | Annotate best TIGRFAMS domain hit | Sebastian Jaenicke | - | 1.0 | tigrfam_besthit.xml | mgxgene_tigrfam.xml |
+| PGAP| Annotate best NCBI PGAP HMM hit | Sebastian Jaenicke | - | 1.0 | pgap.xml | mgxgene_pgap.xml | 
 | MIBiG | MIBiG secondary metabolite screening | Sebastian Jaenicke | - | 1.0 | mibig.xml | mgxgene_mibig.xml |
 | KOfam | KO number annotation | Sebastian Jaenicke | - | 1.0 | kofam.xml | mgxgene_kofam.xml |
 | UniRef50 | UniRef50 annotation | Sebastian Jaenicke | - | 1.0 | uniref50.xml | mgxgene_uniref50.xml |
@@ -47,10 +47,10 @@ observations.
 
 | Name          | Description   | Author | URL | version | file | file2 |
 | ------------- | ------------- | ------ | --- | ------- | ---- | ----- |
-| ARDB | Antibiotic resistance gene annotation using best Blast hit vs. ARDB database | Sebastian Jaenicke | - | 1.0 | ardb.xml |
+| ARDB | Antibiotic resistance gene annotation using best Blast hit vs. ARDB database | Sebastian Jaenicke | - | 1.0 | ardb.xml | mgxgene_ardb.xml |
 | ARG-Annot | Antibiotic resistance gene annotation using best Blast hit vs. ARG-ANNOT database | Sebastian Jaenicke | - | 1.0 | argannot.xml |
-| BacMet | Antibacterial biocide- and metal-resistance gene annotation using best Blast hit vs. BacMet database | Sebastian Jaenicke | - | 1.0 | bacmet.xml |
-| CARD | Antibiotic resistance gene screening using Blast vs CARD (Comprehensive antibiotic resistance database) | Sebastian Jaenicke | - | 1.0 | card.xml |
+| BacMet | Antibacterial biocide- and metal-resistance gene annotation using best Blast hit vs. BacMet database | Sebastian Jaenicke | - | 1.0 | bacmet.xml | mgxgene_bacmet.xml |
+| CARD | Antibiotic resistance gene screening using Blast vs CARD (Comprehensive antibiotic resistance database) | Sebastian Jaenicke | - | 1.0 | card.xml | mgxgene_card.xml |
 | MVirDB | MvirDB-based virulence analysis | Sebastian Jaenicke | - | 1.0 | mvirdb.xml | mgxgene_mvirdb.xml |
 | AMRFinder+ | NCBI AMRFinder+ | Sebastian Jaenicke | - | 1.0 | - | mgxgene_amrfinder.xml |
 
